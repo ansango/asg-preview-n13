@@ -1,8 +1,6 @@
+'use client';
+
 import type { FC, ReactNode } from 'react';
-
-import { motion } from 'framer-motion';
-
-import type { SerieMasonry } from '.tina/__generated__/types';
 
 import { Container } from './Container';
 import { Section } from './Section';
@@ -192,7 +190,7 @@ type Columns = {
   xl: keyof ColumnsObject;
 };
 
-type Props = {
+export type Props = {
   gap: Gap;
   columns: Columns;
   children: ReactNode;
@@ -216,9 +214,7 @@ export const Masonry: FC<Props> = ({ columns, gap, children }) => {
   return (
     <Section>
       <Container>
-        <motion.div initial="hidden" className={`${gapClasses} ${columnsClasses}`}>
-          {children}
-        </motion.div>
+        <div className={`${gapClasses} ${columnsClasses}`}>{children}</div>
       </Container>
     </Section>
   );
