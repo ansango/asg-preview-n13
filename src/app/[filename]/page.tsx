@@ -6,38 +6,34 @@ type Params = {
   filename: string;
 };
 
-async function getData({ params }: { params: Params }) {
+async function getPage({ params }: { params: Params }) {
   const args = { relativePath: `${params.filename}.mdx` };
 
   try {
-    const { data, query, variables } = await tinaClient.queries.page(args);
-    return { data, query, variables };
+    const {
+      data: { page },
+    } = await tinaClient.queries.page(args);
+
+    return page;
   } catch (error) {
     console.error(error);
     return null;
   }
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Params;
-}): Promise<Metadata> {
-  const props = await getData({ params });
-  if (!props) return {};
-  const { data } = props;
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+  const data = await getPage({ params });
   return {
-    title: data.page.title,
-  } as Metadata;
+    title: data?.title,
+  };
 }
 
 export default async function Page({ params }: { params: Params }) {
-  const props = await getData({ params });
-  if (!props) return null;
+  const data = await getPage({ params });
 
   return (
     <main>
-      <h1 className="text-3xl font-sans">Hello world!</h1>
+      <h1 className="text-3xl font-sans">{data?.title}</h1>
     </main>
   );
 }

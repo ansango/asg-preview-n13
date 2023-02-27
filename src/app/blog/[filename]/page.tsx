@@ -1,30 +1,40 @@
+import type { Metadata } from 'next';
+
 import { TinaMarkdown, tinaClient } from '@/lib';
 
 type Params = {
   filename: string;
 };
 
-async function getData({ params }: { params: Params }) {
+async function getPost({ params }: { params: Params }) {
   const args = { relativePath: `${params.filename}.md` };
 
   try {
-    const { data, query, variables } = await tinaClient.queries.post(args);
-    return { data, query, variables };
+    const {
+      data: { post },
+    } = await tinaClient.queries.post(args);
+    return post;
   } catch (error) {
     console.error(error);
     return null;
   }
 }
 
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+  const data = await getPost({ params });
+
+  return {
+    title: data?.title,
+  };
+}
+
 export default async function Page({ params }: { params: Params }) {
-  const props = await getData({ params });
-  if (!props) return null;
-  const { data } = props;
+  const data = await getPost({ params });
+
   return (
     <main className="prose mx-auto">
-      <h1>{data.post.title}</h1>
-
-      <TinaMarkdown content={data.post.body} />
+      <h1>{data?.title}</h1>
+      <TinaMarkdown content={data?.body} />
     </main>
   );
 }
