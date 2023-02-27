@@ -42,6 +42,41 @@ export default defineConfig({
           router: ({ document }) => `/blog/${document._sys.filename}`,
         },
       },
+      {
+        label: 'Pages',
+        name: 'page',
+        path: 'src/content/pages',
+        format: 'mdx',
+        fields: [
+          {
+            type: 'string',
+            name: 'title',
+            label: 'Title',
+            isTitle: true,
+            required: true,
+          },
+          {
+            name: 'seo',
+            label: 'SEO',
+            type: 'object',
+            fields: [
+              {
+                name: 'title',
+                label: 'Title',
+                type: 'string',
+              },
+              {
+                name: 'description',
+                label: 'Description',
+                type: 'string',
+              },
+            ],
+          },
+        ],
+        ui: {
+          router: ({ document }) => `/${document._sys.filename}`,
+        },
+      },
     ],
   },
 });

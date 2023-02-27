@@ -1,5 +1,9 @@
 import { TinaMarkdown, tinaClient } from '@/lib';
 
+type Params = {
+  filename: string;
+};
+
 async function getData({ params }: { params: Params }) {
   const args = { relativePath: `${params.filename}.md` };
 
@@ -11,10 +15,6 @@ async function getData({ params }: { params: Params }) {
     return null;
   }
 }
-
-type Params = {
-  filename: string;
-};
 
 export default async function Page({ params }: { params: Params }) {
   const props = await getData({ params });
