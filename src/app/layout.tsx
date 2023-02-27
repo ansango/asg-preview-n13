@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import './globals.css';
+import './styles/index.css';
 
 export const metadata = {
   title: 'Create Next App',

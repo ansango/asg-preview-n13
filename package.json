@@ -15,11 +15,14 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@tailwindcss/line-clamp": "^0.4.2",
+    "@tailwindcss/typography": "^0.5.9",
     "@types/node": "18.14.2",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
     "@typescript-eslint/eslint-plugin": "^5.53.0",
     "@typescript-eslint/parser": "^5.53.0",
+    "autoprefixer": "^10.4.13",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "8.35.0",
     "eslint-config-next": "13.2.1",
@@ -30,7 +33,10 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.0",
     "lint-staged": "^13.1.2",
+    "postcss": "^8.4.21",
     "prettier": "^2.8.4",
+    "tailwindcss": "^3.2.7",
+    "tailwindcss-fluid-type": "^2.0.3",
     "typescript": "4.9.5"
   },
   "lint-staged": {
