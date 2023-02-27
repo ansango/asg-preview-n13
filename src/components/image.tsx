@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import ImageNext from 'next/image';
 
-export type Props = {
+export type ImageProps = {
   url?: string;
   alt?: string;
   parentField?: string;
@@ -96,7 +96,7 @@ const getSize = (aspectRatio: keyof typeof aspectRatioCn | string) => {
   }
 };
 
-export const Image: FC<Props> = ({
+export const Image: FC<ImageProps> = ({
   alt = '',
   url,
   parentField = '',

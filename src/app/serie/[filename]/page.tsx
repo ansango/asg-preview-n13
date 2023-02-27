@@ -1,9 +1,6 @@
-import type { ReactNode } from 'react';
-
 import type { Metadata } from 'next';
 
-import { Image, type Props as ImageProps } from '@/components/Image';
-import { Masonry, type Props as MasonryProps } from '@/components/Masonry';
+import { Image, type ImageProps, Masonry, type MasonryProps } from '@/components';
 
 import tinaClient from '../../../../.tina/__generated__/client';
 
@@ -39,7 +36,7 @@ export default async function Page({ params }: { params: Params }) {
   const gap = data && (data.masonry?.gap as unknown as MasonryProps['gap']);
   const images = data && (data?.masonry?.images as unknown as ImageProps[]);
   return (
-    <main className="prose mx-auto">
+    <main>
       {columns && gap && (
         <Masonry {...{ columns, gap }}>
           {images?.map((image, i) => (

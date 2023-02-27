@@ -4,6 +4,7 @@ type Props = {
   children?: ReactNode;
   className?: string;
 };
+
 export const Section: FC<Props> = ({ children, className = '' }) => {
   return (
     <section

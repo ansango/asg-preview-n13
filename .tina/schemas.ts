@@ -11,8 +11,8 @@ import {
   gapMd,
   gapSm,
   gapXl,
-} from '../src/components/Masonry';
-import { aspectRatio, centerImage } from '../src/components/Image';
+} from '../src/components/masonry';
+import { aspectRatio, centerImage } from '../src/components/image';
 
 export const seoSchemaField: SchemaField = {
   name: 'seo',

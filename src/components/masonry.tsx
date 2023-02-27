@@ -1,9 +1,7 @@
-'use client';
-
 import type { FC, ReactNode } from 'react';
 
-import { Container } from './Container';
-import { Section } from './Section';
+import { Container } from './container';
+import { Section } from './section';
 
 export const gapOptionsCn = {
   default: {
@@ -190,13 +188,13 @@ type Columns = {
   xl: keyof ColumnsObject;
 };
 
-export type Props = {
+export type MasonryProps = {
   gap: Gap;
   columns: Columns;
   children: ReactNode;
 };
 
-export const Masonry: FC<Props> = ({ columns, gap, children }) => {
+export const Masonry: FC<MasonryProps> = ({ columns, gap, children }) => {
   const gapDefault = gapOptionsCn['default'][gap?.default] || gapOptionsCn['default']['3'];
   const gapSm = gapOptionsCn['sm'][gap?.sm] || gapOptionsCn['sm']['3'];
   const gapMd = gapOptionsCn['md'][gap?.md] || gapOptionsCn['md']['3'];
