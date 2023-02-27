@@ -17,15 +17,14 @@ type Params = {
 };
 
 export default async function Page({ params }: { params: Params }) {
-  console.log('params', params);
   const props = await getData({ params });
   if (!props) return null;
   const { data } = props;
-  const content = data.post.body;
   return (
-    <>
+    <main className="prose mx-auto">
       <h1>{data.post.title}</h1>
-      <TinaMarkdown content={content} />
-    </>
+
+      <TinaMarkdown content={data.post.body} />
+    </main>
   );
 }
