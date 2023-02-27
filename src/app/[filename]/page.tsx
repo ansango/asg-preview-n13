@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { tinaClient } from '@/lib';
+import tinaClient from '../../../.tina/__generated__/client';
 
 type Params = {
   filename: string;

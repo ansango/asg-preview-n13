@@ -1,1 +1,1 @@
-export * from './tina';
+export * from './utils';
