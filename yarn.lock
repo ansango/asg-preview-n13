@@ -10894,6 +10894,11 @@ yarn@^1.22.17:
   resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.22.19.tgz#4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
   integrity sha512-/0V5q0WbslqnwP91tirOvldvYISzaqhClxzyUKXYxs07yUILIs5jx/k6CFe8bvKSkds5w+eiOqta39Wk3WxdcQ==
 
+yet-another-react-lightbox@^2.4.3:
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/yet-another-react-lightbox/-/yet-another-react-lightbox-2.4.3.tgz#83d6b76b5ae7a743949ffc0d97a738007fd6f954"
+  integrity sha512-w7/jnplKot17dkHSUI8VpgNxWfWqEueiut4hVGvy4fs0e+2ubh9JBdgU+JEpEtxj6tbKIaljGXZoZJGqt7ijpg==
+
 yn@3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/yn/-/yn-3.1.1.tgz#1e87401a09d767c1d5eab26a6e4c185182d2eb50"

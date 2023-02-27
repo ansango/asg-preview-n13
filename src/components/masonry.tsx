@@ -1,6 +1,10 @@
 import type { FC, ReactNode } from 'react';
+import { useEffect } from 'react';
 
 import { Container } from './container';
+import type { ImageProps } from './image';
+import { Image } from './image';
+import { LightBox, useLightBox } from './lightbox';
 import { Section } from './section';
 
 export const gapOptionsCn = {
@@ -215,6 +219,38 @@ export const Masonry: FC<MasonryProps> = ({ columns, gap, children }) => {
         <div className={`${gapClasses} ${columnsClasses}`}>{children}</div>
       </Container>
     </Section>
+  );
+};
+
+type Images = { images: ImageProps[] };
+
+type MasonryWithLightBoxProps = Omit<MasonryProps, 'children'> & Images;
+
+export const MasonryWidget: FC<MasonryWithLightBoxProps> = ({ columns, gap, images }) => {
+  const { setIndex, setSlides } = useLightBox();
+  useEffect(() => {
+    if (images) {
+      const mappedImages = images.map((img, index) => {
+        return {
+          src: img.url || '',
+          index,
+        };
+      });
+      setSlides(mappedImages);
+    }
+  }, [images, setSlides]);
+  return (
+    <Masonry columns={columns} gap={gap}>
+      {images.map((image, index) => (
+        <Image key={index} {...image} alt={image.alt} onClick={() => setIndex(index)} />
+      ))}
+    </Masonry>
+  );
+};
+
+export const MasonryWithLightBox: FC<MasonryWithLightBoxProps> = ({ columns, gap, images }) => {
+  return (
+    <LightBox>{images && <MasonryWidget columns={columns} gap={gap} images={images} />}</LightBox>
   );
 };
 
