@@ -30,9 +30,6 @@ module.exports = {
   plugins: [
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     require('tailwindcss-fluid-type')({
-      // your fluid type settings
-      // works only with unitless numbers
-      // This numbers are the defaults settings
       settings: {
         fontSizeMin: 1.125, // 1.125rem === 18px
         fontSizeMax: 1.25, // 1.25rem === 20px
@@ -43,9 +40,6 @@ module.exports = {
         unit: 'rem', // default is rem but it's also possible to use 'px'
         prefix: '', // set a prefix to use it alongside the default font sizes
       },
-      // Creates the text-xx classes
-      // This are the default settings and analog to the tailwindcss defaults
-      // Each `lineHeight` is set unitless and we think that's the way to go especially in context with fluid type.
       values: {
         xs: [-2, 1.6],
         sm: [-1, 1.6],
@@ -62,5 +56,7 @@ module.exports = {
         '9xl': [10, 1],
       },
     }),
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/line-clamp'),
   ],
 };

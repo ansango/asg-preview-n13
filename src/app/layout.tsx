@@ -1,4 +1,6 @@
 import type { ReactNode } from 'react';
+
+import { Theme } from './components';
 import './styles/index.css';
 
 export const metadata = {
@@ -9,7 +11,9 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Theme>{children}</Theme>
+      </body>
     </html>
   );
 }
