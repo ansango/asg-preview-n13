@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
-import { Theme } from './components';
-import './styles/index.css';
+import '@/styles/index.css';
+import { Theme } from '@/components';
 
 export const metadata = {
   title: 'Create Next App',
