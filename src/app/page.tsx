@@ -1,10 +1,11 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
+import type { NextPage } from 'next';
+import { Inter } from 'next/font/google';
+import Image from 'next/image';
 
-const inter = Inter({ subsets: ['latin'] })
+import styles from './page.module.css';
+const inter = Inter({ subsets: ['latin'] });
 
-export default function Home() {
+const Home: NextPage = () => {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
@@ -87,5 +88,7 @@ export default function Home() {
         </a>
       </div>
     </main>
-  )
-}
+  );
+};
+
+export default Home;
