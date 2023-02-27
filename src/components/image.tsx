@@ -2,21 +2,22 @@ import type { FC } from 'react';
 
 import ImageNext from 'next/image';
 
+type AspectRatio = {
+  '4/3': 'aspect-4/3';
+  '4/5': 'aspect-4/5';
+  '5/4': 'aspect-5/4';
+  '9/16': 'aspect-9/16';
+  '2/3': 'aspect-2/3';
+  '3/2': 'aspect-3/2';
+  square: 'aspect-square';
+  video: 'aspect-video';
+  auto: 'aspect-auto';
+};
+
 export type ImageProps = {
   url?: string;
   alt?: string;
-  parentField?: string;
-  aspectRatio?:
-    | '4/3'
-    | '4/5'
-    | '5/4'
-    | '9/16'
-    | '2/3'
-    | '3/2'
-    | 'square'
-    | 'video'
-    | 'auto:'
-    | string;
+  aspectRatio?: keyof AspectRatio;
   centerImage?:
     | 'top'
     | 'center'
@@ -56,23 +57,6 @@ export const objectPositionCn = {
   'right-bottom': 'object-right-bottom',
 };
 
-export const aspectRatioResponsiveCn = {
-  '4/3': 'aspect-4/5 md:aspect-4/3',
-  '4/5': 'aspect-4/5',
-};
-
-export const centerMobileCn = {
-  top: 'bg-top',
-  bottom: 'bg-bottom',
-  center: 'bg-center',
-  left: 'bg-left',
-  'left-top': 'bg-left-top',
-  'left-bottom': 'bg-left-bottom',
-  right: 'bg-right',
-  'right-top': 'bg-right-top',
-  'right-bottom': 'bg-right-bottom',
-};
-
 const getSize = (aspectRatio: keyof typeof aspectRatioCn | string) => {
   switch (aspectRatio) {
     case '2/3':
@@ -99,7 +83,6 @@ const getSize = (aspectRatio: keyof typeof aspectRatioCn | string) => {
 export const Image: FC<ImageProps> = ({
   alt = '',
   url,
-  parentField = '',
   aspectRatio = 'auto',
   centerImage = 'center',
   loading = 'lazy',
@@ -111,19 +94,15 @@ export const Image: FC<ImageProps> = ({
     <span className="flex flex-col">
       {url ? (
         <ImageNext
-          className={`object-cover ${centerCn} ${
+          className={`object-cover ${centerCn} ${aspectRatioCn[aspectRatio]} ${
             onClick
               ? 'cursor-pointer hover:opacity-80 group-hover:opacity-80 transition-all duration-300'
               : ''
           }`}
           src={url}
-          style={{
-            objectFit: 'cover',
-          }}
           {...getSize(aspectRatio)}
           alt={alt}
           loading={loading}
-          data-tinafield={`${parentField}.image`}
           onClick={onClick}
         />
       ) : null}

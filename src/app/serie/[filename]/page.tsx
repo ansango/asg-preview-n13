@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { Image, type ImageProps, Masonry, type MasonryProps } from '@/components';
+import { MasonryWithLightBox, type MasonryWithLightBoxProps } from '@/components';
 
 import tinaClient from '../../../../.tina/__generated__/client';
 
@@ -32,18 +32,10 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 
 export default async function Page({ params }: { params: Params }) {
   const data = await getSerie({ params });
-  const columns = data && (data.masonry?.columns as unknown as MasonryProps['columns']);
-  const gap = data && (data.masonry?.gap as unknown as MasonryProps['gap']);
-  const images = data && (data?.masonry?.images as unknown as ImageProps[]);
+  const columns = data && (data.masonry?.columns as unknown as MasonryWithLightBoxProps['columns']);
+  const gap = data && (data.masonry?.gap as unknown as MasonryWithLightBoxProps['gap']);
+  const images = data && (data?.masonry?.images as unknown as MasonryWithLightBoxProps['images']);
   return (
-    <main>
-      {columns && gap && (
-        <Masonry {...{ columns, gap }}>
-          {images?.map((image, i) => (
-            <Image {...image} key={`${i}-${image.alt}`} alt={image.alt} />
-          ))}
-        </Masonry>
-      )}
-    </main>
+    <main>{columns && gap && images && <MasonryWithLightBox {...{ columns, gap, images }} />}</main>
   );
 }

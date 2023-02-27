@@ -224,7 +224,7 @@ export const Masonry: FC<MasonryProps> = ({ columns, gap, children }) => {
 
 type Images = { images: ImageProps[] };
 
-type MasonryWithLightBoxProps = Omit<MasonryProps, 'children'> & Images;
+export type MasonryWithLightBoxProps = Omit<MasonryProps, 'children'> & Images;
 
 export const MasonryWidget: FC<MasonryWithLightBoxProps> = ({ columns, gap, images }) => {
   const { setIndex, setSlides } = useLightBox();

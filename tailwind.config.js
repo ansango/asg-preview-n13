@@ -25,6 +25,27 @@ module.exports = {
       borderColor: {
         default: 'var(--color-border)',
       },
+      aspectRatio: {
+        '4/3': '4 / 3',
+        '4/5': '4 / 5',
+        '5/4': '5 / 4',
+        '9/16': '9 / 16',
+        '2/3': '2 / 3',
+        '3/2': '3 / 2',
+      },
+      opacity: {
+        7: '.075',
+        15: '.15',
+      },
+      maxWidth: {
+        '8xl': '86rem',
+      },
+      spacing: {
+        128: '32rem',
+      },
+      zIndex: {
+        '-1': '-1',
+      },
     },
   },
   plugins: [
