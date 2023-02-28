@@ -1,7 +1,7 @@
 import { defineConfig } from "tinacms";
 import { kebabCase } from "../src/lib";
 import { seoSchemaField, metaSchema, defaultMeta, defaultSeo, masonrySchemaField } from "./schemas";
-import { heroBaseTemplate } from "./templates";
+import { heroBaseTemplate, masonryBaseTemplate } from "./templates";
 // Your hosting provider likely exposes this as an environment variable
 const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
 
@@ -125,7 +125,7 @@ export default defineConfig({
             ui: {
               visualSelector: true,
             },
-            templates: [heroBaseTemplate],
+            templates: [heroBaseTemplate, masonryBaseTemplate],
           },
         ],
         ui: {

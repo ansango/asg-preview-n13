@@ -14,8 +14,8 @@ export type HeroBaseProps = {
 export const HeroBase: FC<HeroBaseProps> = ({ headline, tagline, text }) => {
   return (
     <Section>
-      <Container className="h-[75vh] flex items-center">
-        <div>
+      <Container className="h-[65vh] flex items-center">
+        <div className="w-full">
           {tagline && <p className="text-2xl font-sans">{tagline}</p>}
           <h1 className="text-3xl font-sans">{headline}</h1>
           {text && <p className="text-lg font-sans">{text}</p>}
