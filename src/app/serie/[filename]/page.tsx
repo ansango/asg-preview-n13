@@ -15,6 +15,7 @@ async function getSerie({ params }: { params: Params }) {
     const {
       data: { serie },
     } = await tinaClient.queries.serie(args);
+
     return serie;
   } catch (error) {
     console.error(error);

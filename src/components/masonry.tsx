@@ -222,38 +222,6 @@ export const Masonry: FC<MasonryProps> = ({ columns, gap, children }) => {
   );
 };
 
-type Images = { images: ImageProps[] };
-
-export type MasonryWithLightBoxProps = Omit<MasonryProps, 'children'> & Images;
-
-export const MasonryWidget: FC<MasonryWithLightBoxProps> = ({ columns, gap, images }) => {
-  const { setIndex, setSlides } = useLightBox();
-  useEffect(() => {
-    if (images) {
-      const mappedImages = images.map((img, index) => {
-        return {
-          src: img.url || '',
-          index,
-        };
-      });
-      setSlides(mappedImages);
-    }
-  }, [images, setSlides]);
-  return (
-    <Masonry columns={columns} gap={gap}>
-      {images.map((image, index) => (
-        <Image key={index} {...image} alt={image.alt} onClick={() => setIndex(index)} />
-      ))}
-    </Masonry>
-  );
-};
-
-export const MasonryWithLightBox: FC<MasonryWithLightBoxProps> = ({ columns, gap, images }) => {
-  return (
-    <LightBox>{images && <MasonryWidget columns={columns} gap={gap} images={images} />}</LightBox>
-  );
-};
-
 export const columnsDefault = Object.keys(columnsOptionsCn['default']);
 export const columnsSm = Object.keys(columnsOptionsCn['sm']);
 export const columnsMd = Object.keys(columnsOptionsCn['md']);

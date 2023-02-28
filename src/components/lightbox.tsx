@@ -1,13 +1,18 @@
 import type { FC, ReactNode } from 'react';
-import { useContext, createContext, useState } from 'react';
+import { useEffect, useContext, createContext, useState } from 'react';
 
-// import Box from 'yet-another-react-lightbox';
-// import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen';
-// import Slideshow from 'yet-another-react-lightbox/plugins/slideshow';
-// import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
-// import Zoom from 'yet-another-react-lightbox/plugins/zoom';
-// import 'yet-another-react-lightbox/styles.css';
-// import 'yet-another-react-lightbox/plugins/thumbnails.css';
+import Box from 'yet-another-react-lightbox';
+import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen';
+import Slideshow from 'yet-another-react-lightbox/plugins/slideshow';
+import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
+import Zoom from 'yet-another-react-lightbox/plugins/zoom';
+
+import 'yet-another-react-lightbox/styles.css';
+import 'yet-another-react-lightbox/plugins/thumbnails.css';
+import type { ImageProps } from './image';
+import { Image } from './image';
+import type { MasonryProps } from './masonry';
+import { Masonry } from './masonry';
 
 type LightBoxContextType = {
   slides: { src: string; index: number }[];
@@ -42,7 +47,7 @@ export const LightBox: FC<{ children: ReactNode }> = ({ children }) => {
     >
       {children}
 
-      {/* <Box
+      <Box
         index={index}
         open={index >= 0}
         close={() => setIndex(-1)}
@@ -51,7 +56,39 @@ export const LightBox: FC<{ children: ReactNode }> = ({ children }) => {
         thumbnails={{
           position: 'bottom',
         }}
-      /> */}
+      />
     </LightBoxContext.Provider>
+  );
+};
+
+type Images = { images: ImageProps[] };
+
+export type MasonryWithLightBoxProps = Omit<MasonryProps, 'children'> & Images;
+
+export const MasonryWidget: FC<MasonryWithLightBoxProps> = ({ columns, gap, images }) => {
+  const { setIndex, setSlides } = useLightBox();
+  useEffect(() => {
+    if (images) {
+      const mappedImages = images.map((img, index) => {
+        return {
+          src: img.url || '',
+          index,
+        };
+      });
+      setSlides(mappedImages);
+    }
+  }, [images, setSlides]);
+  return (
+    <Masonry columns={columns} gap={gap}>
+      {images.map((image, index) => (
+        <Image key={index} {...image} alt={image.alt} onClick={() => setIndex(index)} />
+      ))}
+    </Masonry>
+  );
+};
+
+export const MasonryWithLightBox: FC<MasonryWithLightBoxProps> = ({ columns, gap, images }) => {
+  return (
+    <LightBox>{images && <MasonryWidget columns={columns} gap={gap} images={images} />}</LightBox>
   );
 };
