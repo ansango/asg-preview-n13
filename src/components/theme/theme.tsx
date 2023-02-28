@@ -1,6 +1,6 @@
-import type { FC, ReactNode } from 'react';
+import type { FC, ReactNode } from "react";
 
-import { Fonts } from './fonts';
+import { Fonts } from "./fonts";
 
 type Props = {
   children: ReactNode;

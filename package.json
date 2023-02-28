@@ -6,6 +6,7 @@
     "dev": "tinacms dev -c \"next dev\"",
     "build": "tinacms build && next build",
     "start": "tinacms build && next start",
+    "pretty": "prettier --write .",
     "lint": "next lint",
     "prepare": "husky install"
   },

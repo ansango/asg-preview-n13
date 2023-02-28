@@ -1,8 +1,8 @@
-import type { FC } from 'react';
+import type { FC } from "react";
 
-import Link from 'next/link';
+import Link from "next/link";
 
-import { Container } from '../container';
+import { Container } from "../container";
 
 type LinkJSON = {
   label: string;

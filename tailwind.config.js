@@ -1,56 +1,56 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const { fontFamily } = require('tailwindcss/defaultTheme');
+const { fontFamily } = require("tailwindcss/defaultTheme");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{js,ts,jsx,tsx}'],
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--sans)', ...fontFamily.sans],
-        serif: ['var(--serif)', ...fontFamily.serif],
+        sans: ["var(--sans)", ...fontFamily.sans],
+        serif: ["var(--serif)", ...fontFamily.serif],
       },
       colors: {
-        primary: 'var(--color-primary)',
-        secondary: 'var(--color-secondary)',
+        primary: "var(--color-primary)",
+        secondary: "var(--color-secondary)",
       },
       textColor: {
-        default: 'var(--color-text)',
-        offset: 'var(--color-text-offset)',
+        default: "var(--color-text)",
+        offset: "var(--color-text-offset)",
       },
       backgroundColor: {
-        default: 'var(--color-background)',
-        offset: 'var(--color-background-offset)',
+        default: "var(--color-background)",
+        offset: "var(--color-background-offset)",
       },
       borderColor: {
-        default: 'var(--color-border)',
+        default: "var(--color-border)",
       },
       aspectRatio: {
-        '4/3': '4 / 3',
-        '4/5': '4 / 5',
-        '5/4': '5 / 4',
-        '9/16': '9 / 16',
-        '2/3': '2 / 3',
-        '3/2': '3 / 2',
+        "4/3": "4 / 3",
+        "4/5": "4 / 5",
+        "5/4": "5 / 4",
+        "9/16": "9 / 16",
+        "2/3": "2 / 3",
+        "3/2": "3 / 2",
       },
       opacity: {
-        7: '.075',
-        15: '.15',
+        7: ".075",
+        15: ".15",
       },
       maxWidth: {
-        '8xl': '86rem',
+        "8xl": "86rem",
       },
       spacing: {
-        128: '32rem',
+        128: "32rem",
       },
       zIndex: {
-        '-1': '-1',
+        "-1": "-1",
       },
     },
   },
   plugins: [
     // eslint-disable-next-line @typescript-eslint/no-var-requires
-    require('tailwindcss-fluid-type')({
+    require("tailwindcss-fluid-type")({
       settings: {
         fontSizeMin: 1.125, // 1.125rem === 18px
         fontSizeMax: 1.25, // 1.25rem === 20px
@@ -58,8 +58,8 @@ module.exports = {
         ratioMax: 1.2, // Multiplicator Max
         screenMin: 20, // 20rem === 320px
         screenMax: 96, // 96rem === 1536px
-        unit: 'rem', // default is rem but it's also possible to use 'px'
-        prefix: '', // set a prefix to use it alongside the default font sizes
+        unit: "rem", // default is rem but it's also possible to use 'px'
+        prefix: "", // set a prefix to use it alongside the default font sizes
       },
       values: {
         xs: [-2, 1.6],
@@ -67,17 +67,17 @@ module.exports = {
         base: [0, 1.6],
         lg: [1, 1.6],
         xl: [2, 1.2],
-        '2xl': [3, 1.2],
-        '3xl': [4, 1.2],
-        '4xl': [5, 1.1],
-        '5xl': [6, 1.1],
-        '6xl': [7, 1.1],
-        '7xl': [8, 1],
-        '8xl': [9, 1],
-        '9xl': [10, 1],
+        "2xl": [3, 1.2],
+        "3xl": [4, 1.2],
+        "4xl": [5, 1.1],
+        "5xl": [6, 1.1],
+        "6xl": [7, 1.1],
+        "7xl": [8, 1],
+        "8xl": [9, 1],
+        "9xl": [10, 1],
       },
     }),
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/line-clamp'),
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/line-clamp"),
   ],
 };

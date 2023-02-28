@@ -1,18 +1,18 @@
-import type { FC, ReactNode } from 'react';
-import { useEffect, useContext, createContext, useState } from 'react';
+import type { FC, ReactNode } from "react";
+import { useEffect, useContext, createContext, useState } from "react";
 
-import Box from 'yet-another-react-lightbox';
-import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen';
-import Slideshow from 'yet-another-react-lightbox/plugins/slideshow';
-import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
-import Zoom from 'yet-another-react-lightbox/plugins/zoom';
+import Box from "yet-another-react-lightbox";
+import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
+import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
 
-import 'yet-another-react-lightbox/styles.css';
-import 'yet-another-react-lightbox/plugins/thumbnails.css';
-import type { ImageProps } from './image';
-import { Image } from './image';
-import type { MasonryProps } from './masonry';
-import { Masonry } from './masonry';
+import "yet-another-react-lightbox/styles.css";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
+import type { ImageProps } from "./image";
+import { Image } from "./image";
+import type { MasonryProps } from "./masonry";
+import { Masonry } from "./masonry";
 
 type LightBoxContextType = {
   slides: { src: string; index: number }[];
@@ -23,9 +23,9 @@ type LightBoxContextType = {
 
 const initialState: LightBoxContextType = {
   slides: [],
-  setSlides: (slides) => console.log('setSlides', slides),
+  setSlides: (slides) => console.log("setSlides", slides),
   index: -1,
-  setIndex: (value) => console.log('setIndex', value),
+  setIndex: (value) => console.log("setIndex", value),
 };
 
 const LightBoxContext = createContext(initialState);
@@ -54,7 +54,7 @@ export const LightBox: FC<{ children: ReactNode }> = ({ children }) => {
         slides={slides}
         plugins={[Thumbnails, Zoom, Slideshow, Fullscreen]}
         thumbnails={{
-          position: 'bottom',
+          position: "bottom",
         }}
       />
     </LightBoxContext.Provider>
@@ -63,7 +63,7 @@ export const LightBox: FC<{ children: ReactNode }> = ({ children }) => {
 
 type Images = { images: ImageProps[] };
 
-export type MasonryWithLightBoxProps = Omit<MasonryProps, 'children'> & Images;
+export type MasonryWithLightBoxProps = Omit<MasonryProps, "children"> & Images;
 
 export const MasonryWidget: FC<MasonryWithLightBoxProps> = ({ columns, gap, images }) => {
   const { setIndex, setSlides } = useLightBox();
@@ -71,7 +71,7 @@ export const MasonryWidget: FC<MasonryWithLightBoxProps> = ({ columns, gap, imag
     if (images) {
       const mappedImages = images.map((img, index) => {
         return {
-          src: img.url || '',
+          src: img.url || "",
           index,
         };
       });

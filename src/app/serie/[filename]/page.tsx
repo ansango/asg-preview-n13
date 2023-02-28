@@ -1,13 +1,13 @@
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
 
 import {
   Container,
   MasonryWithLightBox,
   Section,
   type MasonryWithLightBoxProps,
-} from '@/components';
+} from "@/components";
 
-import tinaClient from '../../../../.tina/__generated__/client';
+import tinaClient from "../../../../.tina/__generated__/client";
 
 type Params = {
   filename: string;
@@ -38,9 +38,9 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 
 export default async function Page({ params }: { params: Params }) {
   const data = await getSerie({ params });
-  const columns = data && (data.masonry?.columns as unknown as MasonryWithLightBoxProps['columns']);
-  const gap = data && (data.masonry?.gap as unknown as MasonryWithLightBoxProps['gap']);
-  const images = data && (data?.masonry?.images as unknown as MasonryWithLightBoxProps['images']);
+  const columns = data && (data.masonry?.columns as unknown as MasonryWithLightBoxProps["columns"]);
+  const gap = data && (data.masonry?.gap as unknown as MasonryWithLightBoxProps["gap"]);
+  const images = data && (data?.masonry?.images as unknown as MasonryWithLightBoxProps["images"]);
   return (
     <Section>
       <Container>

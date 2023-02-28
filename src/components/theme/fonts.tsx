@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import type { FC } from 'react';
+import type { FC } from "react";
 
-import { Inter, PT_Serif } from 'next/font/google';
+import { Inter, PT_Serif } from "next/font/google";
 
 const ptSerif = PT_Serif({
-  weight: ['400', '700'],
-  subsets: ['latin'],
+  weight: ["400", "700"],
+  subsets: ["latin"],
 });
 
 const inter = Inter({
-  subsets: ['latin'],
+  subsets: ["latin"],
 });
 
 export const Fonts: FC = () => {
