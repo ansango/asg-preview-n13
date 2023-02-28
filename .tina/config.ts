@@ -1,44 +1,45 @@
-import { defineConfig } from 'tinacms';
-import { kebabCase } from '../src/lib';
-import { seoSchemaField, metaSchema, defaultMeta, defaultSeo, masonrySchemaField } from './schemas';
+import { defineConfig } from "tinacms";
+import { kebabCase } from "../src/lib";
+import { seoSchemaField, metaSchema, defaultMeta, defaultSeo, masonrySchemaField } from "./schemas";
+import { heroBaseTemplate } from "./templates";
 // Your hosting provider likely exposes this as an environment variable
-const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || 'main';
+const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
 
 export default defineConfig({
   branch,
   clientId: process.env.TINA_CLIENT_ID as string,
   token: process.env.TINA_TOKEN as string,
   build: {
-    outputFolder: 'admin',
-    publicFolder: 'public',
+    outputFolder: "admin",
+    publicFolder: "public",
   },
   media: {
     tina: {
-      mediaRoot: '',
-      publicFolder: 'public',
+      mediaRoot: "",
+      publicFolder: "public",
     },
   },
   schema: {
     collections: [
       {
-        label: 'Series',
-        name: 'serie',
-        path: 'src/content/series',
-        format: 'mdx',
+        label: "Series",
+        name: "serie",
+        path: "src/content/series",
+        format: "mdx",
         ui: {
           defaultItem: {
             sequence: 1,
-            title: 'New serie',
-            description: 'This is a short description',
-            summary: 'This is a long description',
+            title: "New serie",
+            description: "This is a short description",
+            summary: "This is a long description",
             seo: defaultSeo,
             meta: defaultMeta,
-            cover: 'https://picsum.photos/2048/1365',
+            cover: "https://picsum.photos/2048/1365",
             publishedAt: new Date().toISOString(),
             isFeatured: false,
             masonry: {
-              columns: { default: '1', sm: '1', md: '2', lg: '3', xl: '3' },
-              gap: { default: '3', sm: '5', md: '5', lg: '5', xl: '5' },
+              columns: { default: "1", sm: "1", md: "2", lg: "3", xl: "3" },
+              gap: { default: "3", sm: "5", md: "5", lg: "5", xl: "5" },
             },
           },
           filename: {
@@ -50,173 +51,183 @@ export default defineConfig({
 
         fields: [
           {
-            label: 'Sequence',
-            name: 'sequence',
-            type: 'number',
+            label: "Sequence",
+            name: "sequence",
+            type: "number",
             required: true,
             ui: {
               validate: (value: number) =>
-                value < 1 ? 'Sequence must be greater than 0' : undefined,
+                value < 1 ? "Sequence must be greater than 0" : undefined,
             },
           },
           {
-            label: 'Title',
-            name: 'title',
-            type: 'string',
+            label: "Title",
+            name: "title",
+            type: "string",
             required: true,
             isTitle: true,
           },
 
           {
-            label: 'Description',
-            name: 'description',
-            type: 'string',
+            label: "Description",
+            name: "description",
+            type: "string",
           },
           {
-            label: 'Summary',
-            name: 'summary',
-            type: 'string',
+            label: "Summary",
+            name: "summary",
+            type: "string",
             required: true,
             ui: {
-              component: 'textarea',
+              component: "textarea",
             },
           },
           { ...seoSchemaField },
           { ...metaSchema },
           {
-            type: 'image',
-            name: 'cover',
-            label: 'Cover',
+            type: "image",
+            name: "cover",
+            label: "Cover",
             required: true,
           },
           {
-            type: 'datetime',
-            label: 'Published At',
-            name: 'publishedAt',
+            type: "datetime",
+            label: "Published At",
+            name: "publishedAt",
           },
           {
-            type: 'boolean',
-            label: 'Is Featured',
-            name: 'isFeatured',
+            type: "boolean",
+            label: "Is Featured",
+            name: "isFeatured",
           },
           { ...masonrySchemaField },
         ],
       },
       {
-        label: 'Pages',
-        name: 'page',
-        path: 'src/content/pages',
-        format: 'mdx',
+        label: "Pages",
+        name: "page",
+        path: "src/content/pages",
+        format: "mdx",
         fields: [
           {
-            type: 'string',
-            name: 'title',
-            label: 'Title',
+            type: "string",
+            name: "title",
+            label: "Title",
             isTitle: true,
             required: true,
           },
           { ...seoSchemaField },
+          {
+            type: "object",
+            list: true,
+            name: "blocks",
+            label: "Blocks",
+            ui: {
+              visualSelector: true,
+            },
+            templates: [heroBaseTemplate],
+          },
         ],
         ui: {
           router: ({ document }) => `/${document._sys.filename}`,
         },
       },
       {
-        label: 'Global',
-        name: 'global',
-        path: 'src/content/global',
-        format: 'json',
+        label: "Global",
+        name: "global",
+        path: "src/content/global",
+        format: "json",
         fields: [
           {
-            type: 'object',
-            label: 'Header',
-            name: 'header',
+            type: "object",
+            label: "Header",
+            name: "header",
             fields: [
               {
-                type: 'object',
-                label: 'Nav Links',
-                name: 'nav',
+                type: "object",
+                label: "Nav Links",
+                name: "nav",
                 list: true,
                 ui: {
                   itemProps: (item) => {
                     return { label: item?.label };
                   },
                   defaultItem: {
-                    href: 'home',
-                    label: 'Home',
+                    href: "home",
+                    label: "Home",
                   },
                 },
                 fields: [
                   {
-                    type: 'string',
-                    label: 'Link',
-                    name: 'href',
+                    type: "string",
+                    label: "Link",
+                    name: "href",
                   },
                   {
-                    type: 'string',
-                    label: 'Label',
-                    name: 'label',
+                    type: "string",
+                    label: "Label",
+                    name: "label",
                   },
                 ],
               },
             ],
           },
           {
-            type: 'object',
-            label: 'Footer',
-            name: 'footer',
+            type: "object",
+            label: "Footer",
+            name: "footer",
             fields: [
               {
-                type: 'object',
-                label: 'Links',
-                name: 'links',
+                type: "object",
+                label: "Links",
+                name: "links",
                 list: true,
                 ui: {
                   itemProps: (item) => {
                     return { label: item?.label };
                   },
                   defaultItem: {
-                    href: '',
-                    label: 'Home',
+                    href: "",
+                    label: "Home",
                   },
                 },
                 fields: [
                   {
-                    type: 'string',
-                    label: 'Link',
-                    name: 'href',
+                    type: "string",
+                    label: "Link",
+                    name: "href",
                   },
                   {
-                    type: 'string',
-                    label: 'Label',
-                    name: 'label',
+                    type: "string",
+                    label: "Label",
+                    name: "label",
                   },
                 ],
               },
               {
-                type: 'object',
-                label: 'Social Links',
-                name: 'social',
+                type: "object",
+                label: "Social Links",
+                name: "social",
                 list: true,
                 ui: {
                   itemProps: (item) => {
                     return { label: item?.label };
                   },
                   defaultItem: {
-                    href: '/',
-                    label: 'Twitter',
+                    href: "/",
+                    label: "Twitter",
                   },
                 },
                 fields: [
                   {
-                    type: 'string',
-                    label: 'Link',
-                    name: 'href',
+                    type: "string",
+                    label: "Link",
+                    name: "href",
                   },
                   {
-                    type: 'string',
-                    label: 'Label',
-                    name: 'label',
+                    type: "string",
+                    label: "Label",
+                    name: "label",
                   },
                 ],
               },
@@ -227,7 +238,7 @@ export default defineConfig({
     ],
   },
   formifyCallback: ({ formConfig, createForm, createGlobalForm }) => {
-    if (formConfig.id === 'src/content/global/index.json') {
+    if (formConfig.id === "src/content/global/index.json") {
       return createGlobalForm(formConfig);
     }
 

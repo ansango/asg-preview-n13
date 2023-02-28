@@ -1,8 +1,8 @@
-import type { FC } from 'react';
+import type { FC } from "react";
 
-import Link from 'next/link';
+import Link from "next/link";
 
-import { Container } from '../container';
+import { Container } from "../container";
 
 type LinkJSON = {
   label: string;
@@ -17,7 +17,7 @@ export const Header: FC<Props> = ({ nav }) => {
   return (
     <header>
       <Container className="pt-6 sm:py-12">
-        <nav>
+        <nav className="flex space-x-2 justify-end">
           {nav.map((item, i) => {
             return (
               <Link href={`/${item.href}`} key={`${item.label}-${i}`}>

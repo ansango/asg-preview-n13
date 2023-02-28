@@ -1,8 +1,9 @@
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
 
-import { Container, Section } from '@/components';
+import { Container, Section } from "@/components";
+import { Blocks } from "@/components/cms";
 
-import tinaClient from '../../../.tina/__generated__/client';
+import tinaClient from "../../../.tina/__generated__/client";
 
 type Params = {
   filename: string;
@@ -33,11 +34,5 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 export default async function Page({ params }: { params: Params }) {
   const data = await getPage({ params });
 
-  return (
-    <Section>
-      <Container>
-        <h1 className="text-3xl font-sans">{data?.title}</h1>
-      </Container>
-    </Section>
-  );
+  return <Blocks blocks={data?.blocks} />;
 }
