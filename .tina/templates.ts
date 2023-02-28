@@ -1,2 +1,2 @@
-import { heroBaseTemplate } from "../src/components/cms";
-export { heroBaseTemplate };
+import { heroBaseTemplate, masonryBaseTemplate } from "../src/components/cms";
+export { heroBaseTemplate, masonryBaseTemplate };
