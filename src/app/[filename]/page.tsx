@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 
-import { Container, Section } from "@/components";
 import { Blocks } from "@/components/cms";
 
 import tinaClient from "../../../.tina/__generated__/client";
