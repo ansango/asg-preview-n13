@@ -1,11 +1,4 @@
 import type { FC, ReactNode } from 'react';
-import { useEffect } from 'react';
-
-import { Container } from './container';
-import type { ImageProps } from './image';
-import { Image } from './image';
-import { LightBox, useLightBox } from './lightbox';
-import { Section } from './section';
 
 export const gapOptionsCn = {
   default: {
@@ -213,13 +206,7 @@ export const Masonry: FC<MasonryProps> = ({ columns, gap, children }) => {
   const gapClasses = `${gapDefault} ${gapSm} ${gapMd} ${gapLg} ${gapXl}`;
   const columnsClasses = `${columnsDefault} ${columnsSm} ${columnsMd} ${columnsLg} ${columnsXl}`;
 
-  return (
-    <Section>
-      <Container>
-        <div className={`${gapClasses} ${columnsClasses}`}>{children}</div>
-      </Container>
-    </Section>
-  );
+  return <div className={`${gapClasses} ${columnsClasses}`}>{children}</div>;
 };
 
 export const columnsDefault = Object.keys(columnsOptionsCn['default']);

@@ -1,6 +1,11 @@
 import type { Metadata } from 'next';
 
-import { MasonryWithLightBox, type MasonryWithLightBoxProps } from '@/components';
+import {
+  Container,
+  MasonryWithLightBox,
+  Section,
+  type MasonryWithLightBoxProps,
+} from '@/components';
 
 import tinaClient from '../../../../.tina/__generated__/client';
 
@@ -37,6 +42,10 @@ export default async function Page({ params }: { params: Params }) {
   const gap = data && (data.masonry?.gap as unknown as MasonryWithLightBoxProps['gap']);
   const images = data && (data?.masonry?.images as unknown as MasonryWithLightBoxProps['images']);
   return (
-    <main>{columns && gap && images && <MasonryWithLightBox {...{ columns, gap, images }} />}</main>
+    <Section>
+      <Container>
+        {columns && gap && images && <MasonryWithLightBox {...{ columns, gap, images }} />}
+      </Container>
+    </Section>
   );
 }

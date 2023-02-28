@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
 import '@/styles/index.css';
-import { Theme } from '@/components';
+import { Header, Footer, Theme } from '@/components';
 
 export const metadata = {
   title: 'Create Next App',
@@ -11,8 +11,12 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body>
-        <Theme>{children}</Theme>
+      <body className="min-h-screen flex flex-col">
+        <Theme>
+          <Header />
+          <main className="flex-1 flex flex-col">{children}</main>
+          <Footer />
+        </Theme>
       </body>
     </html>
   );

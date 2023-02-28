@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 
+import { Container, Section } from '@/components';
+
 import tinaClient from '../../../.tina/__generated__/client';
 
 type Params = {
@@ -32,8 +34,10 @@ export default async function Page({ params }: { params: Params }) {
   const data = await getPage({ params });
 
   return (
-    <main>
-      <h1 className="text-3xl font-sans">{data?.title}</h1>
-    </main>
+    <Section>
+      <Container>
+        <h1 className="text-3xl font-sans">{data?.title}</h1>
+      </Container>
+    </Section>
   );
 }
