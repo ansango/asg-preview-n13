@@ -1,0 +1,45 @@
+{
+  "header": {
+    "nav": [
+      {
+        "href": "series",
+        "label": "Series"
+      },
+      {
+        "href": "sobremi",
+        "label": "Sobre mi"
+      }
+    ]
+  },
+  "footer": {
+    "links": [
+      {
+        "href": "",
+        "label": "Inicio"
+      },
+      {
+        "href": "series",
+        "label": "Series"
+      },
+      {
+        "href": "sobremi",
+        "label": "Sobre mi"
+      }
+    ],
+    "social": [
+      {
+        "href": "https://www.instagram.com/iamasync/",
+        "label": "Instagram"
+      },
+      {
+        "href": "https://github.com/ansango/",
+        "label": "Github"
+      }
+    ]
+  },
+  "_collection": "global",
+  "_keepTemplateKey": false,
+  "_template": "global",
+  "_relativePath": "index.json",
+  "_id": "src/content/global/index.json"
+}

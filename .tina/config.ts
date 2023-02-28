@@ -121,6 +121,116 @@ export default defineConfig({
           router: ({ document }) => `/${document._sys.filename}`,
         },
       },
+      {
+        label: 'Global',
+        name: 'global',
+        path: 'src/content/global',
+        format: 'json',
+        fields: [
+          {
+            type: 'object',
+            label: 'Header',
+            name: 'header',
+            fields: [
+              {
+                type: 'object',
+                label: 'Nav Links',
+                name: 'nav',
+                list: true,
+                ui: {
+                  itemProps: (item) => {
+                    return { label: item?.label };
+                  },
+                  defaultItem: {
+                    href: 'home',
+                    label: 'Home',
+                  },
+                },
+                fields: [
+                  {
+                    type: 'string',
+                    label: 'Link',
+                    name: 'href',
+                  },
+                  {
+                    type: 'string',
+                    label: 'Label',
+                    name: 'label',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            type: 'object',
+            label: 'Footer',
+            name: 'footer',
+            fields: [
+              {
+                type: 'object',
+                label: 'Links',
+                name: 'links',
+                list: true,
+                ui: {
+                  itemProps: (item) => {
+                    return { label: item?.label };
+                  },
+                  defaultItem: {
+                    href: '',
+                    label: 'Home',
+                  },
+                },
+                fields: [
+                  {
+                    type: 'string',
+                    label: 'Link',
+                    name: 'href',
+                  },
+                  {
+                    type: 'string',
+                    label: 'Label',
+                    name: 'label',
+                  },
+                ],
+              },
+              {
+                type: 'object',
+                label: 'Social Links',
+                name: 'social',
+                list: true,
+                ui: {
+                  itemProps: (item) => {
+                    return { label: item?.label };
+                  },
+                  defaultItem: {
+                    href: '/',
+                    label: 'Twitter',
+                  },
+                },
+                fields: [
+                  {
+                    type: 'string',
+                    label: 'Link',
+                    name: 'href',
+                  },
+                  {
+                    type: 'string',
+                    label: 'Label',
+                    name: 'label',
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
     ],
+  },
+  formifyCallback: ({ formConfig, createForm, createGlobalForm }) => {
+    if (formConfig.id === 'src/content/global/index.json') {
+      return createGlobalForm(formConfig);
+    }
+
+    return createForm(formConfig);
   },
 });
