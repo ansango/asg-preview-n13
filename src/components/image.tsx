@@ -2,7 +2,7 @@ import type { FC } from "react";
 
 import ImageNext from "next/image";
 
-import GlobalData from "@/content/global/index.json";
+import GlobalData from "../content/global/index.json";
 
 type AspectRatio = {
   "4/3": "aspect-4/3";

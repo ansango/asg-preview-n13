@@ -120,9 +120,6 @@ export default defineConfig({
             templates: [heroBaseTemplate, masonryBaseTemplate],
           },
         ],
-        ui: {
-          router: ({ document }) => `/${document._sys.filename}`,
-        },
       },
       {
         label: "Global",

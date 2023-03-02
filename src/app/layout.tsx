@@ -3,7 +3,8 @@ import type { ReactNode } from "react";
 import "@/styles/globals.css";
 
 import { Header, Footer, Theme } from "@/components";
-import GlobalData from "@/content/global/index.json";
+
+import GlobalData from "../content/global/index.json";
 
 export const metadata = {
   title: "Create Next App",
