@@ -20,9 +20,14 @@ import {
 } from "../../masonry";
 import { Section } from "../../section";
 
-export type MasonryBaseProps = MasonryProps;
+export type MasonryBaseProps = MasonryProps & {
+  visible?: boolean;
+};
 
-export const MasonryBase: FC<MasonryBaseProps> = ({ children, columns, gap }) => {
+export const MasonryBase: FC<MasonryBaseProps> = ({ children, columns, gap, visible = false }) => {
+  if (!visible) {
+    return null;
+  }
   return (
     <Section className="flex-none">
       <Container>
@@ -38,6 +43,11 @@ export const masonryBaseTemplate: Template = {
   label: "Masonry Base",
   name: "masonryBase",
   fields: [
+    {
+      name: "visible",
+      label: "Visible",
+      type: "boolean",
+    },
     {
       name: "columns",
       label: "Columns",
@@ -122,7 +132,7 @@ export const masonryBaseTemplate: Template = {
           return { label: item?.alt };
         },
         defaultItem: {
-          url: "https://asg-cms.s3.eu-west-3.amazonaws.com/43-junio-2022-kodak-gold-200-website/11.webp",
+          url: "/43-junio-2022-kodak-gold-200-website/11.webp",
           alt: "Image",
           label: "Image",
           aspectRatio: "square",
@@ -138,7 +148,7 @@ export const masonryBaseTemplate: Template = {
         {
           name: "url",
           label: "URL",
-          type: "image",
+          type: "string",
           required: true,
         },
         {
