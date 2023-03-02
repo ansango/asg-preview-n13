@@ -13,7 +13,6 @@
   "dependencies": {
     "@tinacms/cli": "^1.2.2",
     "next": "13.2.1",
-    "next-tinacms-s3": "^1.1.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tinacms": "^1.2.2",

@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import "@/styles/index.css";
+import "@/styles/globals.css";
 
 import { Header, Footer, Theme } from "@/components";
 import GlobalData from "@/content/global/index.json";

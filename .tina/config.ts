@@ -2,22 +2,16 @@ import { defineConfig } from "tinacms";
 import { kebabCase } from "../src/lib";
 import { seoSchemaField, metaSchema, defaultMeta, defaultSeo, masonrySchemaField } from "./schemas";
 import { heroBaseTemplate, masonryBaseTemplate } from "./templates";
-// Your hosting provider likely exposes this as an environment variable
+
 const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
 
 export default defineConfig({
   branch,
-  clientId: process.env.TINA_CLIENT_ID as string,
+  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID as string,
   token: process.env.TINA_TOKEN as string,
   build: {
     outputFolder: "admin",
     publicFolder: "public",
-  },
-  media: {
-    tina: {
-      mediaRoot: "",
-      publicFolder: "public",
-    },
   },
   schema: {
     collections: [
@@ -34,7 +28,7 @@ export default defineConfig({
             summary: "This is a long description",
             seo: defaultSeo,
             meta: defaultMeta,
-            cover: "https://picsum.photos/2048/1365",
+            cover: "/43-junio-2022-kodak-gold-200-website/11.webp",
             publishedAt: new Date().toISOString(),
             isFeatured: false,
             masonry: {
@@ -67,7 +61,6 @@ export default defineConfig({
             required: true,
             isTitle: true,
           },
-
           {
             label: "Description",
             name: "description",
@@ -85,10 +78,9 @@ export default defineConfig({
           { ...seoSchemaField },
           { ...metaSchema },
           {
-            type: "image",
+            type: "string",
             name: "cover",
-            label: "Cover",
-            required: true,
+            label: "Cover Url",
           },
           {
             type: "datetime",
@@ -138,6 +130,18 @@ export default defineConfig({
         path: "src/content/global",
         format: "json",
         fields: [
+          {
+            type: "object",
+            label: "Default Bucket",
+            name: "defaultBucket",
+            fields: [
+              {
+                type: "string",
+                label: "Base URL",
+                name: "baseUrl",
+              },
+            ],
+          },
           {
             type: "object",
             label: "Header",

@@ -185,7 +185,7 @@ export const masonrySchemaField: SchemaField = {
           return { label: item?.alt };
         },
         defaultItem: {
-          url: "https://asg-cms.s3.eu-west-3.amazonaws.com/43-junio-2022-kodak-gold-200-website/11.webp",
+          url: "/43-junio-2022-kodak-gold-200-website/11.webp",
           alt: "Image",
           label: "Image",
           aspectRatio: "square",
@@ -200,8 +200,8 @@ export const masonrySchemaField: SchemaField = {
         },
         {
           name: "url",
-          label: "URL",
-          type: "image",
+          label: "Image",
+          type: "string",
           required: true,
         },
         {
