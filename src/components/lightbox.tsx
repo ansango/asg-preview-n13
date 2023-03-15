@@ -7,8 +7,6 @@ import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 
-import GlobalData from "../content/global/index.json";
-
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import type { ImageProps } from "./image";
@@ -69,20 +67,18 @@ export type MasonryWithLightBoxProps = Omit<MasonryProps, "children"> & Images;
 
 export const MasonryWidget: FC<MasonryWithLightBoxProps> = ({ columns, gap, images }) => {
   const { setIndex, setSlides } = useLightBox();
-  const {
-    defaultBucket: { baseUrl },
-  } = GlobalData;
+
   useEffect(() => {
     if (images) {
       const mappedImages = images.map((img, index) => {
         return {
-          src: `${baseUrl}${img.url}` || "",
+          src: img.url || "",
           index,
         };
       });
       setSlides(mappedImages);
     }
-  }, [images, setSlides, baseUrl]);
+  }, [images, setSlides]);
   return (
     <Masonry columns={columns} gap={gap}>
       {images.map((image, index) => (

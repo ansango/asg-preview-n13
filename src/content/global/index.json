@@ -36,8 +36,5 @@
         "label": "github"
       }
     ]
-  },
-  "defaultBucket": {
-    "baseUrl": "https://asg-cms.s3.eu-west-3.amazonaws.com"
   }
 }

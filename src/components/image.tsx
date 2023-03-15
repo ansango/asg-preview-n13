@@ -2,8 +2,6 @@ import type { FC } from "react";
 
 import ImageNext from "next/image";
 
-import GlobalData from "../content/global/index.json";
-
 type AspectRatio = {
   "4/3": "aspect-4/3";
   "4/5": "aspect-4/5";
@@ -91,9 +89,7 @@ export const Image: FC<ImageProps> = ({
   onClick,
 }) => {
   const centerCn = objectPositionCn[centerImage] || objectPositionCn["center"];
-  const {
-    defaultBucket: { baseUrl },
-  } = GlobalData;
+
   return (
     <span className="flex flex-col">
       {url ? (
@@ -103,7 +99,7 @@ export const Image: FC<ImageProps> = ({
               ? "cursor-pointer hover:opacity-80 group-hover:opacity-80 transition-all duration-300"
               : ""
           }`}
-          src={`${baseUrl}${url}`}
+          src={url}
           {...getSize(aspectRatio)}
           alt={alt}
           loading={loading}

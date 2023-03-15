@@ -148,7 +148,7 @@ export const masonryBaseTemplate: Template = {
         {
           name: "url",
           label: "URL",
-          type: "string",
+          type: "image",
           required: true,
         },
         {

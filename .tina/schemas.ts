@@ -201,7 +201,7 @@ export const masonrySchemaField: SchemaField = {
         {
           name: "url",
           label: "Image",
-          type: "string",
+          type: "image",
           required: true,
         },
         {

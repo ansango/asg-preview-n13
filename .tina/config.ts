@@ -7,11 +7,18 @@ const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
 
 export default defineConfig({
   branch,
-  clientId: process.env.TINA_CLIENT_ID as string,
+  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID as string,
   token: process.env.TINA_TOKEN as string,
   build: {
     outputFolder: "admin",
     publicFolder: "public",
+  },
+  media: {
+    // @ts-ignore
+    loadCustomStore: async () => {
+      const pack = await import("next-tinacms-s3");
+      return pack.TinaCloudS3MediaStore;
+    },
   },
   schema: {
     collections: [
@@ -21,21 +28,6 @@ export default defineConfig({
         path: "src/content/series",
         format: "mdx",
         ui: {
-          defaultItem: {
-            sequence: 1,
-            title: "New serie",
-            description: "This is a short description",
-            summary: "This is a long description",
-            seo: defaultSeo,
-            meta: defaultMeta,
-            cover: "/43-junio-2022-kodak-gold-200-website/11.webp",
-            publishedAt: new Date().toISOString(),
-            isFeatured: false,
-            masonry: {
-              columns: { default: "1", sm: "1", md: "2", lg: "3", xl: "3" },
-              gap: { default: "3", sm: "5", md: "5", lg: "5", xl: "5" },
-            },
-          },
           filename: {
             readonly: true,
             slugify: ({ title, sequence }) => kebabCase(`${sequence}-${title}`),
@@ -78,7 +70,7 @@ export default defineConfig({
           { ...seoSchemaField },
           { ...metaSchema },
           {
-            type: "string",
+            type: "image",
             name: "cover",
             label: "Cover Url",
           },
@@ -127,18 +119,6 @@ export default defineConfig({
         path: "src/content/global",
         format: "json",
         fields: [
-          {
-            type: "object",
-            label: "Default Bucket",
-            name: "defaultBucket",
-            fields: [
-              {
-                type: "string",
-                label: "Base URL",
-                name: "baseUrl",
-              },
-            ],
-          },
           {
             type: "object",
             label: "Header",
