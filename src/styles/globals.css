@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 [data-theme="light"] {
-  --color-primary: theme("colors.pink.500");
-  --color-secondary: theme("colors.indigo.500");
+  --color-primary: theme("colors.neutral.900");
+  --color-secondary: theme("colors.amber.400");
   --color-text: theme("colors.gray.900");
   --color-text-offset: theme("colors.gray.600");
   --color-background: theme("colors.gray.50");
@@ -13,8 +13,8 @@
 }
 
 [data-theme="dark"] {
-  --color-primary: theme("colors.pink.400");
-  --color-secondary: theme("colors.indigo.400");
+  --color-primary: theme("colors.amber.400");
+  --color-secondary: theme("colors.blue.500");
   --color-text: theme("colors.gray.50");
   --color-text-offset: theme("colors.gray.400");
   --color-background: theme("colors.gray.900");
@@ -33,7 +33,42 @@ body,
 }
 
 h1,
-h2,
+h2 {
+  @apply font-display;
+}
+
 h3 {
-  @apply font-serif text-primary;
+  @apply font-serif;
+}
+
+h1 {
+  @apply text-8xl text-primary leading-relaxed tracking-widest;
+}
+
+h2 {
+  @apply text-6xl text-primary;
+}
+
+h3 {
+  @apply text-4xl text-primary;
+}
+
+h4 {
+  @apply text-2xl text-primary;
+}
+
+h5 {
+  @apply text-xl text-primary;
+}
+
+h6 {
+  @apply text-lg text-primary;
+}
+
+p {
+  @apply text-base text-offset;
+}
+
+a {
+  @apply hover:underline hover:underline-offset-4 transition-all duration-300;
 }

@@ -8,17 +8,15 @@ import { Section } from "../../section";
 export type HeroBaseProps = {
   headline: string;
   tagline?: string;
-  text?: string;
 };
 
-export const HeroBase: FC<HeroBaseProps> = ({ headline, tagline, text }) => {
+export const HeroBase: FC<HeroBaseProps> = ({ headline, tagline }) => {
   return (
     <Section>
-      <Container className="h-[65vh] flex items-center">
-        <div className="w-full">
-          {tagline && <p className="text-2xl font-sans">{tagline}</p>}
-          <h1 className="text-3xl font-sans">{headline}</h1>
-          {text && <p className="text-lg font-sans">{text}</p>}
+      <Container className="h-[65vh] flex items-center justify-center">
+        <div className="text-center">
+          {tagline && <span>{tagline}</span>}
+          <h1 className="rotate-[1.5deg]">{headline}</h1>
         </div>
       </Container>
     </Section>
@@ -30,23 +28,15 @@ export const heroBaseTemplate: Template = {
   label: "Hero Base",
   fields: [
     {
-      name: "tagline",
-      label: "Tagline",
       type: "string",
+      label: "Tagline",
+      name: "tagline",
     },
     {
       type: "string",
       label: "Headline",
       name: "headline",
       required: true,
-    },
-    {
-      type: "string",
-      label: "Text",
-      name: "text",
-      ui: {
-        component: "textarea",
-      },
     },
   ],
 };

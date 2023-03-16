@@ -1,6 +1,7 @@
 import type { FC } from "react";
 
 import Link from "next/link";
+import { useSelectedLayoutSegment } from "next/navigation";
 
 import { Container } from "../container";
 
@@ -14,17 +15,31 @@ type Props = {
 };
 
 export const Header: FC<Props> = ({ nav }) => {
+  const segment = useSelectedLayoutSegment();
+  const active = segment === "home" ? "" : segment || "";
   return (
     <header>
-      <Container className="pt-6 sm:py-12">
-        <nav className="flex space-x-2 justify-end">
-          {nav.map((item, i) => {
-            return (
-              <Link href={`/${item.href}`} key={`${item.label}-${i}`}>
-                {item.label}
-              </Link>
-            );
-          })}
+      <Container>
+        <nav>
+          <ul className="flex flex-col space-y-2 items-end">
+            {nav.map((item, i) => {
+              const isPair = i % 2 === 0;
+              return (
+                <li key={`${item.label}-${i}`}>
+                  <Link
+                    href={`/${item.href}`}
+                    className={
+                      active === item.href
+                        ? `underline underline-offset-4 block ${isPair ? "-rotate-3" : "rotate-3"} `
+                        : ""
+                    }
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
         </nav>
       </Container>
     </header>

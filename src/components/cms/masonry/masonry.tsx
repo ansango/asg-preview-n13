@@ -42,7 +42,17 @@ export const MasonryBase: FC<MasonryBaseProps> = ({ children, columns, gap, visi
 export const masonryBaseTemplate: Template = {
   label: "Masonry Base",
   name: "masonryBase",
+  ui: {
+    itemProps: (item) => {
+      return { label: item?.label };
+    },
+  },
   fields: [
+    {
+      name: "label",
+      label: "Label",
+      type: "string",
+    },
     {
       name: "visible",
       label: "Visible",
@@ -132,7 +142,7 @@ export const masonryBaseTemplate: Template = {
           return { label: item?.alt };
         },
         defaultItem: {
-          url: "/43-junio-2022-kodak-gold-200-website/11.webp",
+          url: "https://asg-cms.s3.eu-west-3.amazonaws.com/43-junio-2022-kodak-gold-200-website/11.webp",
           alt: "Image",
           label: "Image",
           aspectRatio: "square",

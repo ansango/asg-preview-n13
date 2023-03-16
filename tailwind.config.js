@@ -9,6 +9,7 @@ module.exports = {
       fontFamily: {
         sans: ["var(--sans)", ...fontFamily.sans],
         serif: ["var(--serif)", ...fontFamily.serif],
+        display: ["var(--display)", ...fontFamily.sans],
       },
       colors: {
         primary: "var(--color-primary)",
