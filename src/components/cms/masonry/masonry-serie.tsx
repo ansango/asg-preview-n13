@@ -2,7 +2,6 @@ import type { FC } from "react";
 
 import type { Template } from "tinacms";
 
-import { Container } from "../../container";
 import { aspectRatio, centerImage } from "../../image";
 import {
   columnsDefault,
@@ -18,7 +17,6 @@ import {
   Masonry,
   type MasonryProps,
 } from "../../masonry";
-import { Section } from "../../section";
 
 export type MasonrySerieProps = MasonryProps & {
   visible?: boolean;
@@ -34,13 +32,9 @@ export const MasonrySerie: FC<MasonrySerieProps> = ({
     return null;
   }
   return (
-    <Section className="flex-none">
-      <Container className="!py-2 !sm:py-2 !md:py-6">
-        <Masonry columns={columns} gap={gap}>
-          {children}
-        </Masonry>
-      </Container>
-    </Section>
+    <Masonry columns={columns} gap={gap}>
+      {children}
+    </Masonry>
   );
 };
 

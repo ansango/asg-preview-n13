@@ -25,33 +25,39 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   res.status(200).json(
     data &&
-      data.map((serie) => {
-        if (serie) {
-          const {
-            id,
-            sequence,
-            summary,
-            title,
-            cover,
-            description,
-            isFeatured,
-            masonry,
-            meta,
-            publishedAt,
-          } = serie;
-          return {
-            id,
-            sequence,
-            summary,
-            title,
-            cover,
-            description,
-            isFeatured,
-            masonry,
-            meta,
-            publishedAt,
-          };
-        }
-      })
+      data
+        .map((serie) => {
+          if (serie) {
+            const {
+              id,
+              sequence,
+              summary,
+              title,
+              cover,
+              description,
+              isFeatured,
+              masonry,
+              meta,
+              publishedAt,
+              visible,
+              gallerySerie,
+            } = serie;
+            return {
+              id,
+              sequence,
+              summary,
+              title,
+              cover,
+              description,
+              isFeatured,
+              masonry,
+              meta,
+              publishedAt,
+              visible,
+              gallerySerie,
+            };
+          }
+        })
+        .filter((serie) => serie?.visible)
   );
 }

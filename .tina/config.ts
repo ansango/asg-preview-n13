@@ -37,10 +37,14 @@ export default defineConfig({
             readonly: true,
             slugify: ({ title, sequence }) => kebabCase(`${sequence}-${title}`),
           },
-          router: ({ document }) => `/serie/${document._sys.filename}`,
         },
 
         fields: [
+          {
+            name: "visible",
+            label: "Visible",
+            type: "boolean",
+          },
           {
             type: "boolean",
             label: "Is Featured",
