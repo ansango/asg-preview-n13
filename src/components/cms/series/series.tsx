@@ -19,16 +19,14 @@ export const Series: FC = () => {
     <Section className="flex-none">
       <Container className="!py-2 !sm:py-2 !md:py-6">
         <ul className="space-y-12">
-          {data?.map(({ id, title, description, sequence }, index) => {
-            const isPair = index % 2 === 0;
+          {data?.map(({ id, title, description, sequence }) => {
             return (
-              <li key={id}>
-                <Link href={`/serie/${kebabCase(`${sequence}-${title}`)}`}>
-                  <h3 className={`${isPair ? "-rotate-[0.5deg]" : "rotate-[0.5deg]"}`}>{title}</h3>
-                </Link>
-                <p className={`${isPair ? "-rotate-[0.5deg]" : "rotate-[0.5deg]"}`}>
-                  {description}
-                </p>
+              <li key={id} className="odd:-rotate-[0.5deg] even:rotate-[0.5deg] group">
+                <h3 className="text-xl">
+                  <Link href={`/serie/${kebabCase(`${sequence}-${title}`)}`}>{title} </Link>
+                </h3>
+
+                <p className="text-sm">{description}</p>
               </li>
             );
           })}

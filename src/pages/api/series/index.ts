@@ -38,7 +38,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             masonry,
             meta,
             publishedAt,
-            seo,
           } = serie;
           return {
             id,
@@ -51,7 +50,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             masonry,
             meta,
             publishedAt,
-            seo,
           };
         }
       })

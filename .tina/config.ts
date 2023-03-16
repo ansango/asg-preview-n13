@@ -1,6 +1,6 @@
 import { defineConfig } from "tinacms";
 import { kebabCase } from "../src/lib";
-import { seoSchemaField, metaSchema, masonrySchemaField } from "./schemas";
+import { metaSchema, masonrySchemaField, gallerySerieSchemaField } from "./schemas";
 import {
   heroBaseTemplate,
   masonryBaseTemplate,
@@ -42,6 +42,16 @@ export default defineConfig({
 
         fields: [
           {
+            type: "boolean",
+            label: "Is Featured",
+            name: "isFeatured",
+          },
+          {
+            type: "image",
+            name: "cover",
+            label: "Cover Url",
+          },
+          {
             label: "Sequence",
             name: "sequence",
             type: "number",
@@ -72,22 +82,16 @@ export default defineConfig({
               component: "textarea",
             },
           },
-          { ...seoSchemaField },
-          { ...metaSchema },
-          {
-            type: "image",
-            name: "cover",
-            label: "Cover Url",
-          },
+
           {
             type: "datetime",
             label: "Published At",
             name: "publishedAt",
           },
+
+          { ...metaSchema },
           {
-            type: "boolean",
-            label: "Is Featured",
-            name: "isFeatured",
+            ...gallerySerieSchemaField,
           },
           { ...masonrySchemaField },
         ],
@@ -105,7 +109,6 @@ export default defineConfig({
             isTitle: true,
             required: true,
           },
-          { ...seoSchemaField },
           {
             type: "object",
             list: true,

@@ -34,7 +34,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   const { footer, header } = GlobalData;
   const cnBody = `min-h-screen flex flex-col ${serif.variable} ${sans.variable} ${display.variable}`;
   return (
-    <html lang="en">
+    <html lang="en" data-theme="light">
       <body className={cnBody}>
         <Theme>
           <Header {...header} />
