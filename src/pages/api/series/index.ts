@@ -19,8 +19,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       .filter((node) => node)
       .sort(
         (a, b) =>
-          new Date(a?.publishedAt as unknown as Date).getTime() -
-          new Date(b?.publishedAt as unknown as Date).getTime()
+          new Date(b?.publishedAt as unknown as Date).getTime() -
+          new Date(a?.publishedAt as unknown as Date).getTime()
       );
 
   res.status(200).json(

@@ -26,7 +26,7 @@ export const Series: FC = () => {
           {data?.map(({ id, title, description, sequence, gallerySerie }) => {
             return (
               <li key={id}>
-                <article>
+                <article className="group">
                   <MasonrySerie {...(gallerySerie as MasonrySerieProps)}>
                     {gallerySerie?.images?.map((image, i) => (
                       <Image
@@ -37,12 +37,22 @@ export const Series: FC = () => {
                       />
                     ))}
                   </MasonrySerie>
-
-                  <h3 className="text-xl">{title}</h3>
-
-                  <p className="text-sm">{description}</p>
+                  <div className="flex justify-between">
+                    <div>
+                      <h3 className="text-2xl font-semibold tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em]">
+                        {title}
+                      </h3>
+                      <p className="text-sm">{description}</p>
+                      <Link
+                        className="text-sm"
+                        href={`/serie/${kebabCase(`${sequence}-${title}`)}`}
+                      >
+                        ver más
+                      </Link>
+                    </div>
+                    <span className="text-xs"># {sequence}</span>
+                  </div>
                 </article>
-                <Link href={`/serie/${kebabCase(`${sequence}-${title}`)}`}>ver más</Link>
               </li>
             );
           })}

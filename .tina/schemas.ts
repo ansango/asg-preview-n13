@@ -217,11 +217,6 @@ export const gallerySerieSchemaField: TinaField = {
   },
   fields: [
     {
-      name: "label",
-      label: "Label",
-      type: "string",
-    },
-    {
       name: "visible",
       label: "Visible",
       type: "boolean",

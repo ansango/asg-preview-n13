@@ -28,17 +28,14 @@ html {
 
 body,
 #__next {
-  @apply font-sans h-full bg-default text-default text-base selection:bg-secondary selection:text-white;
+  @apply font-serif h-full bg-default text-default text-base selection:bg-secondary selection:text-white;
   scroll-behavior: smooth;
 }
 
 h1,
-h2 {
-  @apply font-display;
-}
-
+h2,
 h3 {
-  @apply font-serif;
+  @apply font-display leading-relaxed tracking-widest;
 }
 
 h1 {

@@ -32,5 +32,6 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 
 export default async function Page({ params }: { params: Params }) {
   const data = await getPage({ params });
+
   return <Blocks blocks={data?.blocks} />;
 }
