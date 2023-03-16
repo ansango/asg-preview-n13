@@ -7,11 +7,11 @@ import useSWR from "swr";
 import type { Template } from "tinacms";
 
 import type { Serie } from ".tina/__generated__/types";
-import type { ImageProps } from "@/components/image";
-import { Image } from "@/components/image";
 
 import { fetcher, kebabCase } from "../../../lib";
 import { Container } from "../../container";
+import type { ImageProps } from "../../image";
+import { Image } from "../../image";
 import { Section } from "../../section";
 import type { MasonrySerieProps } from "../masonry";
 import { MasonrySerie } from "../masonry";
