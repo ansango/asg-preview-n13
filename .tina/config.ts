@@ -1,7 +1,12 @@
 import { defineConfig } from "tinacms";
 import { kebabCase } from "../src/lib";
-import { seoSchemaField, metaSchema, defaultMeta, defaultSeo, masonrySchemaField } from "./schemas";
-import { heroBaseTemplate, masonryBaseTemplate } from "./templates";
+import { seoSchemaField, metaSchema, masonrySchemaField } from "./schemas";
+import {
+  heroBaseTemplate,
+  masonryBaseTemplate,
+  masonrySerieTemplate,
+  allSeriesTemplate,
+} from "./templates";
 
 const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
 
@@ -109,7 +114,12 @@ export default defineConfig({
             ui: {
               visualSelector: true,
             },
-            templates: [heroBaseTemplate, masonryBaseTemplate],
+            templates: [
+              heroBaseTemplate,
+              masonryBaseTemplate,
+              masonrySerieTemplate,
+              allSeriesTemplate,
+            ],
           },
         ],
       },

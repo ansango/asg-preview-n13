@@ -6,7 +6,9 @@ import type { ImageProps } from "../image";
 import { Image } from "../image";
 
 import { HeroBase, type HeroBaseProps } from "./hero";
-import { MasonryBase, type MasonryBaseProps } from "./masonry";
+import { MasonryBase } from "./masonry";
+import type { MasonryBaseProps } from "./masonry";
+import { Series } from "./series";
 
 type Props = Pick<Page, "blocks">;
 
@@ -27,7 +29,9 @@ export const Blocks: FC<Props> = ({ blocks }) => {
               </MasonryBase>
             );
           }
-
+          case "PageBlocksAllSeries": {
+            return <Series key={i} />;
+          }
           default:
             return null;
         }

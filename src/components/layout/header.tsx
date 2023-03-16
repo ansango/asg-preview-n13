@@ -30,7 +30,9 @@ export const Header: FC<Props> = ({ nav }) => {
                     href={`/${item.href}`}
                     className={
                       active === item.href
-                        ? `underline underline-offset-4 block ${isPair ? "-rotate-3" : "rotate-3"} `
+                        ? `underline underline-offset-4 block ${
+                            isPair ? "-rotate-[1.5deg]" : "rotate-[1.5deg]"
+                          } `
                         : ""
                     }
                   >
