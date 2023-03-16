@@ -12,6 +12,8 @@ export default createMediaHandler({
     region: process.env.NEXT_PUBLIC_S3_REGION,
   },
   bucket: process.env.NEXT_PUBLIC_S3_BUCKET || "",
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   authorized: async (req) => {
     if (process.env.NODE_ENV === "development") {
       return true;
