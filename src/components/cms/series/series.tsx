@@ -24,7 +24,6 @@ export const Series: FC = () => {
       <Container className="!py-2 !sm:py-2 !md:py-6">
         <ul className="space-y-12">
           {data?.map(({ id, title, description, sequence, gallerySerie }) => {
-            console.log(gallerySerie);
             return (
               <li key={id}>
                 <article>
