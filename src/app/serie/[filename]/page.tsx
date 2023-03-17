@@ -14,13 +14,15 @@ type Params = {
 
 export async function generateStaticParams() {
   const series = await getSerieConnection();
-  return (
-    series?.map((serie) => ({
-      params: {
-        filename: serie?._sys.filename,
-      },
-    })) || []
-  );
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  //@ts-ignore
+  return series.map((serie) => ({
+    params: {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //@ts-ignore
+      filename: serie._sys.filename,
+    },
+  }));
 }
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {

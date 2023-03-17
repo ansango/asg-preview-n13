@@ -9,13 +9,15 @@ type Params = {
 
 export async function generateStaticParams() {
   const pages = await getPageConnection();
-  return (
-    pages?.map((page) => ({
-      params: {
-        filename: page?._sys.filename,
-      },
-    })) || []
-  );
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  //@ts-ignore
+  return pages.map((page) => ({
+    params: {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //@ts-ignore
+      filename: page._sys.filename,
+    },
+  }));
 }
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
