@@ -28,7 +28,7 @@ export type ImageProps = {
     | "right"
     | "right-top"
     | "right-bottom";
-
+  blurDataURL?: string;
   loading?: "lazy" | "eager";
   onClick?: () => void;
 };
@@ -87,6 +87,7 @@ export const Image: FC<ImageProps> = ({
   centerImage = "center",
   loading = "lazy",
   onClick,
+  blurDataURL,
 }) => {
   const centerCn = objectPositionCn[centerImage] || objectPositionCn["center"];
 
@@ -106,6 +107,8 @@ export const Image: FC<ImageProps> = ({
           onClick={onClick}
           style={{ transform: "translate3d(0, 0, 0)" }}
           priority={loading === "eager" ? true : false}
+          placeholder={blurDataURL ? "blur" : "empty"}
+          blurDataURL={blurDataURL}
         />
       ) : null}
     </span>
