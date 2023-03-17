@@ -30,7 +30,7 @@ const ThemeChanger = () => {
             width="1em"
             height="1em"
             viewBox="0 0 48 48"
-            className="w-7 h-7 link"
+            className="w-5 h-5 md:w-7 md:h-7 link"
           >
             <g fill="none" fillRule="evenodd">
               {mounted && (
