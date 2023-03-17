@@ -14,11 +14,13 @@ type Params = {
 
 export async function generateStaticParams() {
   const series = await getSerieConnection();
-  return series?.map((serie) => ({
-    params: {
-      filename: serie?._sys.filename,
-    },
-  }));
+  return (
+    series?.map((serie) => ({
+      params: {
+        filename: serie?._sys.filename,
+      },
+    })) || []
+  );
 }
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
