@@ -87,7 +87,7 @@ export const MasonryWidget: FC<MasonryWithLightBoxProps> = ({ columns, gap, imag
           {...image}
           alt={image.alt}
           onClick={() => setIndex(index)}
-          loading={index === 0 ? "eager" : "lazy"}
+          loading={index < 4 ? "eager" : "lazy"}
         />
       ))}
     </Masonry>

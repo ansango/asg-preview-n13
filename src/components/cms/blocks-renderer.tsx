@@ -15,22 +15,27 @@ type Props = Pick<Page, "blocks">;
 export const Blocks: FC<Props> = ({ blocks }) => {
   return (
     <>
-      {blocks?.map((block, i) => {
+      {blocks?.map((block, iBlock) => {
         switch (block?.__typename) {
           case "PageBlocksHeroBase": {
-            return <HeroBase key={i} {...(block as HeroBaseProps)} />;
+            return <HeroBase key={iBlock} {...(block as HeroBaseProps)} />;
           }
           case "PageBlocksMasonryBase": {
             return (
-              <MasonryBase key={i} {...(block as MasonryBaseProps)}>
-                {block.images?.map((image, i) => (
-                  <Image key={i} {...(image as ImageProps)} alt={image?.alt} />
+              <MasonryBase key={iBlock} {...(block as MasonryBaseProps)}>
+                {block.images?.map((image, iGallery) => (
+                  <Image
+                    key={iGallery}
+                    {...(image as ImageProps)}
+                    alt={image?.alt}
+                    loading={iBlock < 2 && iGallery < 2 ? "eager" : "lazy"}
+                  />
                 ))}
               </MasonryBase>
             );
           }
           case "PageBlocksAllSeries": {
-            return <Series key={i} />;
+            return <Series key={iBlock} />;
           }
           default:
             return null;

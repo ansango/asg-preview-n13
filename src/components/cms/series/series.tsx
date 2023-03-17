@@ -23,17 +23,17 @@ export const Series: FC = () => {
     <Section className="flex-none">
       <Container className="!py-2 !sm:py-2 !md:py-6">
         <ul className="space-y-12">
-          {data?.map(({ id, title, description, sequence, gallerySerie }) => {
+          {data?.map(({ id, title, description, sequence, gallerySerie }, iBlock) => {
             return (
               <li key={id}>
                 <article className="group">
                   <MasonrySerie {...(gallerySerie as MasonrySerieProps)}>
-                    {gallerySerie?.images?.map((image, i) => (
+                    {gallerySerie?.images?.map((image, iGallery) => (
                       <Image
-                        key={i}
+                        key={iGallery}
                         {...(image as ImageProps)}
                         alt={image?.alt}
-                        loading={i === 0 ? "eager" : "lazy"}
+                        loading={iBlock < 2 && iGallery < 2 ? "eager" : "lazy"}
                       />
                     ))}
                   </MasonrySerie>
