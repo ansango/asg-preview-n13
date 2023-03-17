@@ -6,31 +6,14 @@ import {
   Section,
   type MasonryWithLightBoxProps,
 } from "@/components";
-
-import tinaClient from "../../../../.tina/__generated__/client";
+import { getSerie } from "@/lib";
 
 type Params = {
   filename: string;
 };
 
-async function getSerie({ params }: { params: Params }) {
-  const args = { relativePath: `${params.filename}.mdx` };
-
-  try {
-    const {
-      data: { serie },
-    } = await tinaClient.queries.serie(args);
-
-    return serie;
-  } catch (error) {
-    console.error(error);
-    return null;
-  }
-}
-
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const data = await getSerie({ params });
-
   return {
     title: data?.title,
   };

@@ -1,6 +1,6 @@
 import type { FC } from "react";
 
-import type { Page } from ".tina/__generated__/types";
+import type { Page, Serie } from ".tina/__generated__/types";
 
 import type { ImageProps } from "../image";
 import { Image } from "../image";
@@ -10,9 +10,11 @@ import { MasonryBase } from "./masonry";
 import type { MasonryBaseProps } from "./masonry";
 import { Series } from "./series";
 
-type Props = Pick<Page, "blocks">;
+type Props = Pick<Page, "blocks"> & {
+  data?: any;
+};
 
-export const Blocks: FC<Props> = ({ blocks }) => {
+export const Blocks: FC<Props> = ({ blocks, data }) => {
   return (
     <>
       {blocks?.map((block, iBlock) => {
@@ -35,7 +37,7 @@ export const Blocks: FC<Props> = ({ blocks }) => {
             );
           }
           case "PageBlocksAllSeries": {
-            return <Series key={iBlock} />;
+            return <Series key={iBlock} data={data.series as Serie[]} />;
           }
           default:
             return null;

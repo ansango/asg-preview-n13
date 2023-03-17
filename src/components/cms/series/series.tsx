@@ -1,14 +1,11 @@
-"use client";
-
 import type { FC } from "react";
 
 import Link from "next/link";
-import useSWR from "swr";
 import type { Template } from "tinacms";
 
 import type { Serie } from ".tina/__generated__/types";
 
-import { fetcher, kebabCase } from "../../../lib";
+import { kebabCase } from "../../../lib";
 import { Container } from "../../container";
 import type { ImageProps } from "../../image";
 import { Image } from "../../image";
@@ -16,9 +13,11 @@ import { Section } from "../../section";
 import type { MasonrySerieProps } from "../masonry";
 import { MasonrySerie } from "../masonry";
 
-export const Series: FC = () => {
-  const { data } = useSWR<Serie[]>("/api/series", fetcher);
+type Props = {
+  data?: Serie[];
+};
 
+export const Series: FC<Props> = ({ data }) => {
   return (
     <Section className="flex-none">
       <Container className="!py-2 !sm:py-2 !md:py-6">

@@ -104,6 +104,11 @@ export const Image: FC<ImageProps> = ({
           alt={alt}
           loading={loading}
           onClick={onClick}
+          style={{ transform: "translate3d(0, 0, 0)" }}
+          priority={loading === "eager" ? true : false}
+          sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
         />
       ) : null}
     </span>
