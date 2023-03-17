@@ -3,6 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: ["asg-cms.s3.eu-west-3.amazonaws.com"],
+    formats: ["image/webp"],
   },
   async rewrites() {
     return [

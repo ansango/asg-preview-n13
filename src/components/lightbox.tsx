@@ -10,6 +10,7 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import { getBlurUrl } from "@/lib";
+import { getImgUrl } from "@/lib/image";
 
 import type { ImageProps } from "./image";
 import { Image } from "./image";
@@ -69,10 +70,14 @@ export type MasonryWithLightBoxProps = Omit<MasonryProps, "children"> & Images;
 
 export const MasonryWidget: FC<MasonryWithLightBoxProps> = ({ columns, gap, images }) => {
   const { setIndex, setSlides } = useLightBox();
+  const _images =
+    images.map((image) => {
+      return { ...image, url: getImgUrl(image) || image.url };
+    }) || [];
 
   useEffect(() => {
     if (images) {
-      const mappedImages = images.map((img, index) => {
+      const mappedImages = _images.map((img, index) => {
         return {
           src: img.url || "",
           index,
@@ -81,9 +86,10 @@ export const MasonryWidget: FC<MasonryWithLightBoxProps> = ({ columns, gap, imag
       setSlides(mappedImages);
     }
   }, [images, setSlides]);
+
   return (
     <Masonry columns={columns} gap={gap}>
-      {images.map((image, index) => (
+      {_images.map((image, index) => (
         <Image
           key={index}
           {...image}

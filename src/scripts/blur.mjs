@@ -5,18 +5,14 @@ import fetch from "cross-fetch";
 import matter from "gray-matter";
 import sharp from "sharp";
 
+import { createFolder } from "./lib/index.mjs";
+
 const getBase64FromUrl = async (url) => {
   const response = await fetch(url);
   const buffer = await response.arrayBuffer();
   const minified = await sharp(Buffer.from(buffer)).resize(8).webp({ quality: 50 }).toBuffer();
   const image = `data:image/webp;base64,${Buffer.from(minified).toString("base64")}`;
   return image;
-};
-
-const createFolder = (path) => {
-  if (!fs.existsSync(path)) {
-    fs.mkdirSync(path);
-  }
 };
 
 const createFolders = () => {
