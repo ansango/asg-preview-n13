@@ -28,6 +28,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 }
 
 export default async function Page({ params }: { params: Params }) {
+  console.log(params);
   const series = params.filename === "series" ? await getSeries() : null;
   const data = await getPage({ params });
 
