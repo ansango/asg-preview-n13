@@ -5,7 +5,7 @@ import type { Template } from "tinacms";
 
 import type { Serie } from ".tina/__generated__/types";
 
-import { kebabCase } from "../../../lib";
+import { getBlurUrl, kebabCase } from "../../../lib";
 import { Container } from "../../container";
 import type { ImageProps } from "../../image";
 import { Image } from "../../image";
@@ -33,6 +33,7 @@ export const Series: FC<Props> = ({ data }) => {
                         {...(image as ImageProps)}
                         alt={image?.alt}
                         loading={iBlock < 2 && iGallery < 2 ? "eager" : "lazy"}
+                        blurDataURL={getBlurUrl(image as ImageProps)}
                       />
                     ))}
                   </MasonrySerie>

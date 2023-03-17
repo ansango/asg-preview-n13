@@ -2,6 +2,7 @@ import type { FC } from "react";
 
 import type { Page, Serie } from ".tina/__generated__/types";
 
+import { getBlurUrl } from "../../lib";
 import type { ImageProps } from "../image";
 import { Image } from "../image";
 
@@ -27,10 +28,11 @@ export const Blocks: FC<Props> = ({ blocks, data }) => {
               <MasonryBase key={iBlock} {...(block as MasonryBaseProps)}>
                 {block.images?.map((image, iGallery) => (
                   <Image
-                    key={iGallery}
                     {...(image as ImageProps)}
+                    key={iGallery}
                     alt={image?.alt}
                     loading={iBlock < 2 && iGallery < 2 ? "eager" : "lazy"}
+                    blurDataURL={getBlurUrl(image as ImageProps)}
                   />
                 ))}
               </MasonryBase>

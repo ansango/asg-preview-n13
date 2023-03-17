@@ -9,6 +9,8 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
+import { getBlurUrl } from "@/lib";
+
 import type { ImageProps } from "./image";
 import { Image } from "./image";
 import type { MasonryProps } from "./masonry";
@@ -88,6 +90,7 @@ export const MasonryWidget: FC<MasonryWithLightBoxProps> = ({ columns, gap, imag
           alt={image.alt}
           onClick={() => setIndex(index)}
           loading={index < 4 ? "eager" : "lazy"}
+          blurDataURL={getBlurUrl(image as ImageProps)}
         />
       ))}
     </Masonry>

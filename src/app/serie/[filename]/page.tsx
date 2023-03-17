@@ -7,7 +7,6 @@ import {
   type MasonryWithLightBoxProps,
 } from "@/components";
 import { getSerie, getSerieConnection } from "@/lib";
-import { getJsonsFromPublicDir } from "@/lib/blur";
 
 type Params = {
   filename: string;
@@ -38,7 +37,6 @@ export default async function Page({ params }: { params: Params }) {
   const columns = data && (data.masonry?.columns as unknown as MasonryWithLightBoxProps["columns"]);
   const gap = data && (data.masonry?.gap as unknown as MasonryWithLightBoxProps["gap"]);
   const images = data && (data?.masonry?.images as unknown as MasonryWithLightBoxProps["images"]);
-  const blurdata = await getJsonsFromPublicDir();
 
   return (
     <Section>
@@ -48,16 +46,7 @@ export default async function Page({ params }: { params: Params }) {
             {...{
               columns,
               gap,
-              images: images?.map((image) => {
-                return {
-                  ...image,
-                  blurDataURL: blurdata.filter(
-                    (blur) =>
-                      blur.folder + "/" + blur.file ===
-                      image.url?.split("/").reverse().slice(0, 2).reverse().join("/")
-                  )[0]?.base64,
-                };
-              }),
+              images,
             }}
           />
         )}
