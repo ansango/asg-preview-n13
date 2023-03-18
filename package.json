@@ -22,6 +22,7 @@
     "next-tinacms-s3": "^1.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-wrap-balancer": "^0.4.0",
     "tinacms": "^1.3.3",
     "yet-another-react-lightbox": "^2.6.2"
   },

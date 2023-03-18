@@ -1,5 +1,7 @@
 import type { FC } from "react";
+import { cloneElement } from "react";
 
+import Balancer from "react-wrap-balancer";
 import type { Template } from "tinacms";
 import type { TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
@@ -45,26 +47,46 @@ export const HeroBase: FC<HeroBaseProps> = ({
   const cnContainer = align && alignCnContainer[align];
   const cnText = align && algignCnText[align];
   const cnRotationTitle = rotationTitle && rotationTitleCn[rotationTitle];
-  console.log(parragraph);
+
   return (
     <>
       <Section>
         <Container className={`h-[65vh] flex items-center ${cnContainer}`}>
           <div className={`space-y-5 ${cnText}`}>
-            {tagline && <span>{tagline}</span>}
+            {tagline && (
+              <span>
+                <Balancer>{tagline}</Balancer>
+              </span>
+            )}
             <h1 className={`${cnRotationTitle} max-w-screen-lg`}>{headline}</h1>
-            {text && <span>{text}</span>}
+            {text && (
+              <span>
+                <Balancer>{text}</Balancer>
+              </span>
+            )}
           </div>
         </Container>
       </Section>
       {parragraph && parragraph.children.length > 0 && (
-        <Section className="flex-none">
-          <Container>
-            <article className="pb-20 md:pb-40 lg:pb-72 prose prose-lg lg:prose-xl xl:prose-2xl">
-              <TinaMarkdown content={parragraph} />
-            </article>
-          </Container>
-        </Section>
+        <>
+          <Section className="flex-none">
+            <Container>
+              <article className="pb-20 md:pb-40 lg:pb-72 prose prose-lg lg:prose-xl xl:prose-2xl">
+                <TinaMarkdown content={parragraph} />
+              </article>
+            </Container>
+          </Section>
+          ---
+          <Section className="flex-none">
+            <Container>
+              <article className="pb-20 md:pb-40 lg:pb-72 prose prose-lg lg:prose-xl xl:prose-2xl">
+                <Balancer>
+                  <TinaMarkdown content={parragraph} />
+                </Balancer>
+              </article>
+            </Container>
+          </Section>
+        </>
       )}
     </>
   );

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Balancer from "react-wrap-balancer";
 
 import type { Serie } from ".tina/__generated__/types";
 import {
@@ -9,7 +10,6 @@ import {
   type MasonryWithLightBoxProps,
 } from "@/components";
 import { formatDate, getSerie, getSerieConnection, getSeries } from "@/lib";
-
 type Params = {
   filename: string;
 };
@@ -91,26 +91,35 @@ export default async function Page({ params }: { params: Params }) {
     <>
       <Section className="flex-none py-20">
         <Container className="space-y-5">
-          <h1>{data?.title}</h1>
+          <h1>
+            <Balancer>{data?.title}</Balancer>
+          </h1>
+
           <time className="text-xs font-serif italic">
             publicado el {formatDate(data?.publishedAt as string)}
           </time>
 
           <article className="space-y-5 prose prose-lg lg:prose-xl xl:prose-2xl">
-            <p>{data?.summary}</p>
+            <p>
+              <Balancer>{data?.summary}</Balancer>
+            </p>
             <p>
               <span className="block">
-                {data?.meta?.camera} - {data?.meta?.film}
+                <Balancer>
+                  {data?.meta?.camera} - {data?.meta?.film}
+                </Balancer>
               </span>
               <span>
-                {formatDate(data?.meta?.shot?.start as string)} /{" "}
-                {formatDate(data?.meta?.shot?.end as string)}
+                <Balancer>
+                  {formatDate(data?.meta?.shot?.start as string)} /{" "}
+                  {formatDate(data?.meta?.shot?.end as string)}
+                </Balancer>
               </span>
             </p>
 
-            <p className="space-x-2 pb-5">
+            <p className="pb-5 flex flex-wrap">
               {data?.meta?.tags?.map((tag, i) => (
-                <span className="text-sm" key={`${i}-${tag}`}>
+                <span className="text-sm mr-1.5" key={`${i}-${tag}`}>
                   #{tag}
                 </span>
               ))}
