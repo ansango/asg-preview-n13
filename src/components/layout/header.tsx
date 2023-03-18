@@ -21,10 +21,15 @@ const ThemeChanger = () => {
   const { theme, setTheme } = useTheme();
   const mounted = useMounted();
 
+  const handleThemeChange = () => {
+    const themeCondition = theme === "dark" ? "light" : "dark";
+    setTheme(themeCondition);
+  };
+
   return (
     <>
       <>
-        <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+        <button onClick={handleThemeChange}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="1em"

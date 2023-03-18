@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-[data-theme="light"] {
+html.light {
   --color-primary: theme("colors.neutral.900");
   --color-secondary: theme("colors.amber.500");
   --color-text: theme("colors.neutral.600");
@@ -14,7 +14,7 @@
   --color-border-offset: theme("colors.neutral.900" / 40%);
 }
 
-[data-theme="dark"] {
+html.dark {
   --color-primary: theme("colors.amber.400");
   --color-secondary: theme("colors.blue.500");
   --color-text: theme("colors.neutral.400");
@@ -25,7 +25,6 @@
   --color-border: theme("colors.neutral.50" / 10%);
   --color-border-offset: theme("colors.neutral.50" / 40%);
 }
-
 html {
   @apply h-full motion-safe:scroll-smooth;
 }

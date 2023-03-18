@@ -7,6 +7,7 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 import { Container } from "../../container";
 import { Section } from "../../section";
+import { optionsDark, optionsLight } from "../backgrounds";
 
 export type HeroBaseProps = {
   headline: string;
@@ -15,6 +16,8 @@ export type HeroBaseProps = {
   align: "left" | "center" | "right" | null;
   rotationTitle: "left" | "center" | "right" | null;
   parragraph?: TinaMarkdownContent;
+  backgroundLight?: string;
+  backgroundDark?: string;
 };
 
 const algignCnText = {
@@ -42,6 +45,8 @@ export const HeroBase: FC<HeroBaseProps> = ({
   align = "center",
   rotationTitle = "center",
   parragraph,
+  backgroundLight,
+  backgroundDark,
 }) => {
   const cnContainer = align && alignCnContainer[align];
   const cnText = align && algignCnText[align];
@@ -49,7 +54,7 @@ export const HeroBase: FC<HeroBaseProps> = ({
 
   return (
     <>
-      <Section>
+      <Section className={`${backgroundLight} ${backgroundDark}`}>
         <Container className={`h-[65vh] flex items-center ${cnContainer}`}>
           <div className={`space-y-5 ${cnText}`}>
             {tagline && (
@@ -144,6 +149,19 @@ export const heroBaseTemplate: Template = {
         },
       ],
     },
+    {
+      type: "string",
+      label: "Background Light",
+      name: "backgroundLight",
+      options: optionsLight,
+    },
+    {
+      type: "string",
+      label: "Background Dark",
+      name: "backgroundDark",
+      options: optionsDark,
+    },
+
     {
       type: "rich-text",
       label: "Parragraph",

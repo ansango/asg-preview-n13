@@ -5,6 +5,7 @@ const { fontFamily } = require("tailwindcss/defaultTheme");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
   theme: {
     extend: {
       fontFamily: {
@@ -82,6 +83,29 @@ module.exports = {
         "7xl": [8, 1],
         "8xl": [9, 1],
         "9xl": [10, 1],
+      },
+    }),
+    require("tailwind-heropatterns")({
+      variants: [],
+
+      patterns: ["graph-paper", "pie-factory", "topography"],
+      colors: {
+        "primary-light": "#171717",
+        "secondary-light": "#f59e0b",
+        "default-light": "#525252",
+        "offset-light": "#a3a3a3",
+
+        "primary-dark": "#fbbf24",
+        "secondary-dark": "#3b82f6",
+        "default-dark": "#a3a3a3",
+        "offset-dark": "#525252",
+      },
+
+      opacity: {
+        10: "0.1",
+        15: "0.15",
+        20: "0.2",
+        100: "1.0",
       },
     }),
   ],

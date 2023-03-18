@@ -60,7 +60,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   const debugCn = process.env.NODE_ENV === "development" ? "debug-screens" : "";
   const cnBody = `min-h-screen flex flex-col ${serif.variable} ${sans.variable} ${display.variable} ${debugCn}`;
   return (
-    <html lang="es" data-theme="light">
+    <html lang="es">
       <body className={cnBody}>
         <link href="/site.webmanifest" rel="manifest" />
         <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />

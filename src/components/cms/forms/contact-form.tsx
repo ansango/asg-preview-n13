@@ -13,6 +13,7 @@ import { z } from "zod";
 import { onPostContactForm } from "../../../lib/api/services";
 import { Container } from "../../container";
 import { Section } from "../../section";
+import { optionsDark, optionsLight } from "../backgrounds";
 
 const validationSchema = z.object({
   firstName: z
@@ -49,7 +50,18 @@ const validationSchema = z.object({
 
 export type ValidationSchema = z.infer<typeof validationSchema>;
 
-export const ContactForm: FC = () => {
+export type ContactFormProps = {
+  backgroundLight?: string;
+  backgroundDark?: string;
+  offset?: boolean;
+};
+
+export const ContactForm: FC<ContactFormProps> = ({
+  backgroundDark,
+  backgroundLight,
+  offset = false,
+}) => {
+  const cnOffset = offset ? "bg-offset" : "bg-default";
   const [isSubmitting, setIsSubmitting] = useState(false);
   const {
     register,
@@ -84,7 +96,7 @@ export const ContactForm: FC = () => {
   return (
     <>
       <Toaster />
-      <Section className="flex-none !py-20 bg-offset">
+      <Section className={`flex-none !py-20 ${cnOffset} ${backgroundLight} ${backgroundDark}`}>
         <Container>
           <form
             className="grid max-w-screen-lg grid-cols-12 gap-6 mx-auto"
@@ -92,14 +104,24 @@ export const ContactForm: FC = () => {
           >
             <label className="col-span-12 md:col-span-6">
               <span>Nombre</span>
-              <input className="offset" type="text" placeholder="" {...register("firstName")} />
+              <input
+                className={offset ? "offset" : ""}
+                type="text"
+                placeholder=""
+                {...register("firstName")}
+              />
               <span className={`${errors.firstName?.message ? "error-text" : "helper-text"}`}>
                 {errors.firstName?.message ?? ""}
               </span>
             </label>
             <label className="col-span-12 md:col-span-6">
               <span>Apellidos</span>
-              <input className="offset" type="text" placeholder="" {...register("lastName")} />
+              <input
+                className={offset ? "offset" : ""}
+                type="text"
+                placeholder=""
+                {...register("lastName")}
+              />
               <span className={`${errors.lastName?.message ? "error-text" : "helper-text"}`}>
                 {errors.lastName?.message ?? ""}
               </span>
@@ -107,7 +129,7 @@ export const ContactForm: FC = () => {
             <label className="col-span-12">
               <span>Email</span>
               <input
-                className="offset"
+                className={offset ? "offset" : ""}
                 type="email"
                 placeholder="john@example.com"
                 {...register("email")}
@@ -119,7 +141,7 @@ export const ContactForm: FC = () => {
             <label className="col-span-12">
               <span>Asunto</span>
               <textarea
-                className="offset"
+                className={offset ? "offset" : ""}
                 rows={4}
                 placeholder="¿Cómo puedo ayudarte?"
                 {...register("subject")}
@@ -132,7 +154,11 @@ export const ContactForm: FC = () => {
               <div className="mt-2">
                 <div>
                   <label className="items-center">
-                    <input type="checkbox" className="offset" {...register("privacy")} />
+                    <input
+                      type="checkbox"
+                      className={offset ? "offset" : ""}
+                      {...register("privacy")}
+                    />
                     <span className="ml-2 text-sm">Acepto la política de privacidad</span>
                     <span className={`block ${errors.privacy?.message ? "error-text" : ""}`}>
                       {errors.privacy?.message ?? ""}
@@ -159,6 +185,23 @@ export const contactFormTemplate: Template = {
       name: "visible",
       label: "Visible",
       type: "boolean",
+    },
+    {
+      name: "offset",
+      label: "Offset",
+      type: "boolean",
+    },
+    {
+      type: "string",
+      label: "Background Light",
+      name: "backgroundLight",
+      options: optionsLight,
+    },
+    {
+      type: "string",
+      label: "Background Dark",
+      name: "backgroundDark",
+      options: optionsDark,
     },
   ],
 };

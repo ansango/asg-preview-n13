@@ -6,6 +6,7 @@ import { getBlurUrl } from "../../lib";
 import type { ImageProps } from "../image";
 import { Image } from "../image";
 
+import type { ContactFormProps } from "./forms";
 import { ContactForm } from "./forms";
 import { HeroBase, type HeroBaseProps } from "./hero";
 import { MasonryBase } from "./masonry";
@@ -48,7 +49,7 @@ export const Blocks: FC<Props> = ({ blocks, data }) => {
           }
           case "PageBlocksContactForm": {
             if (!block.visible) return null;
-            return <ContactForm key={key} />;
+            return <ContactForm key={key} {...(block as ContactFormProps)} />;
           }
           default:
             return null;

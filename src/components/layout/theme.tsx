@@ -9,5 +9,9 @@ type Props = {
 };
 
 export const Theme: FC<Props> = ({ children }) => {
-  return <ThemeProvider>{children}</ThemeProvider>;
+  return (
+    <ThemeProvider attribute="class" themes={["light", "dark"]} enableSystem={false}>
+      {children}
+    </ThemeProvider>
+  );
 };
