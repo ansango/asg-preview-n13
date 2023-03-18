@@ -39,6 +39,7 @@ export async function getSeries() {
             publishedAt,
             visible,
             gallerySerie,
+            _sys,
           } = serie;
           return {
             id,
@@ -53,6 +54,7 @@ export async function getSeries() {
             publishedAt,
             visible,
             gallerySerie,
+            _sys: { ..._sys, filename: _sys.filename.replace(/\.md$/, "") },
           };
         }
       })
