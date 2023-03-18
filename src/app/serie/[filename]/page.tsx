@@ -28,12 +28,16 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const data = await getSerie({ params });
   const url = `${process.env.NEXT_PUBLIC_WEB_URI}/serie/${params.filename}`;
+  const tags = data?.meta?.tags as unknown as string[];
+  const firstTag = tags[0]?.charAt(0).toUpperCase() + tags[0]?.slice(1);
+  const secondTag = tags[1]?.charAt(0).toUpperCase() + tags[1]?.slice(1);
+  const thirdTag = tags[2]?.charAt(0).toUpperCase() + tags[2]?.slice(1);
   return {
-    title: data?.title,
-    description: "a description",
+    title: `${data?.title} | Serie | ${firstTag} ${secondTag} ${thirdTag}`,
+    description: data?.summary,
     openGraph: {
       title: data?.title,
-      description: "a description",
+      description: data?.summary,
       url,
       images: [
         {
@@ -44,7 +48,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
         },
       ],
 
-      tags: data && (data?.meta?.tags as unknown as string[]),
+      tags,
       publishedTime: (data && data?.publishedAt) || undefined,
       section: "series",
     },
