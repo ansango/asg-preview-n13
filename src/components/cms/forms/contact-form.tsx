@@ -1,4 +1,7 @@
+"use client";
+
 import type { FC } from "react";
+import { useCallback, useState } from "react";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import type { SubmitHandler } from "react-hook-form";
@@ -45,6 +48,7 @@ const validationSchema = z.object({
 type ValidationSchema = z.infer<typeof validationSchema>;
 
 export const ContactForm: FC = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const {
     register,
     handleSubmit,
@@ -54,45 +58,60 @@ export const ContactForm: FC = () => {
     resolver: zodResolver(validationSchema),
     mode: "all",
   });
-  const onSubmit: SubmitHandler<ValidationSchema> = (data) => {
-    reset();
-    console.log(data);
-  };
+  const areErrors = Object.keys(errors).length > 0;
+  const disabled = isSubmitting || areErrors;
+  const onSubmit: SubmitHandler<ValidationSchema> = useCallback(
+    async (data) => {
+      setIsSubmitting(true);
+      try {
+        console.log(data);
+        reset();
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setIsSubmitting(false);
+      }
+    },
+    [reset]
+  );
 
   return (
     <>
       <Section className="flex-none">
         <Container>
-          <form className="grid grid-cols-1 gap-6" onSubmit={handleSubmit(onSubmit)}>
-            <label>
+          <form
+            className="grid max-w-screen-lg grid-cols-12 gap-6 mx-auto"
+            onSubmit={handleSubmit(onSubmit)}
+          >
+            <label className="col-span-12 md:col-span-6">
               <span>Nombre</span>
               <input type="text" placeholder="" {...register("firstName")} />
               <span className={`${errors.firstName?.message ? "error-text" : "helper-text"}`}>
-                {errors.firstName?.message ?? "Introduce tu nombre"}
+                {errors.firstName?.message ?? ""}
               </span>
             </label>
-            <label>
+            <label className="col-span-12 md:col-span-6">
               <span>Apellidos</span>
               <input type="text" placeholder="" {...register("lastName")} />
               <span className={`${errors.lastName?.message ? "error-text" : "helper-text"}`}>
-                {errors.lastName?.message ?? "Introduce tus apellidos"}
+                {errors.lastName?.message ?? ""}
               </span>
             </label>
-            <label>
+            <label className="col-span-12">
               <span>Email</span>
               <input type="email" placeholder="john@example.com" {...register("email")} />
               <span className={`${errors.email?.message ? "error-text" : "helper-text"}`}>
-                {errors.email?.message ?? "Introduce tu email"}
+                {errors.email?.message ?? ""}
               </span>
             </label>
-            <label>
+            <label className="col-span-12">
               <span>Asunto</span>
               <textarea rows={4} placeholder="¿Cómo puedo ayudarte?" {...register("subject")} />
               <span className={`${errors.subject?.message ? "error-text" : "helper-text"}`}>
-                {errors.subject?.message ?? "Introduce el asunto"}
+                {errors.subject?.message ?? ""}
               </span>
             </label>
-            <div>
+            <div className="col-span-12">
               <div className="mt-2">
                 <div>
                   <label className="items-center">
@@ -105,7 +124,9 @@ export const ContactForm: FC = () => {
                 </div>
               </div>
             </div>
-            <button className="btn btn-primary">Enviar</button>
+            <button className="col-span-12 md:max-w-xs btn btn-primary" disabled={disabled}>
+              Enviar
+            </button>
           </form>
         </Container>
       </Section>

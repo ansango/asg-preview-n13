@@ -141,6 +141,10 @@ button.btn-primary {
   @apply text-base font-medium transition-all duration-200 border border-transparent rounded-sm shadow-sm text-button bg-primary hover:bg-secondary focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-primary;
 }
 
+button.btn-primary[disabled] {
+  @apply cursor-not-allowed opacity-30;
+}
+
 button.btn-secondary {
   @apply text-base font-medium transition-all duration-200 bg-transparent border rounded-sm shadow-sm text-primary border-primary hover:bg-offset focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-primary;
 }
