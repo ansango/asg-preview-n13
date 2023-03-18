@@ -1,5 +1,4 @@
 import type { FC } from "react";
-import { cloneElement } from "react";
 
 import Balancer from "react-wrap-balancer";
 import type { Template } from "tinacms";
