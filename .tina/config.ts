@@ -6,6 +6,7 @@ import {
   masonryBaseTemplate,
   allSeriesTemplate,
   contactFormTemplate,
+  bodySimpleTemplate,
 } from "./templates";
 
 const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
@@ -126,6 +127,7 @@ export default defineConfig({
               masonryBaseTemplate,
               allSeriesTemplate,
               contactFormTemplate,
+              bodySimpleTemplate,
             ],
           },
         ],
