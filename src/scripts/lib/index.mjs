@@ -24,7 +24,10 @@ export const getSeries = () => {
       const { data } = matter(source);
       if (data.visible === false) return null;
       if (!data.masonry) return null;
+      console.log(data);
       return {
+        title: data.title,
+        description: data.description,
         filename,
         images: data.masonry.images.map((image) => {
           return { src: image.url, file: image.url.split("/")[4] };
@@ -32,6 +35,7 @@ export const getSeries = () => {
         cover: data.cover,
         route: data.masonry.images.map((image) => image.url)[0].split("/")[3],
         publishedAt: data.publishedAt,
+        tags: data.meta.tags,
       };
     })
     .sort((a, b) => b.publishedAt - a.publishedAt);
