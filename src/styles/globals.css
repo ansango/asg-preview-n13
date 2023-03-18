@@ -82,3 +82,37 @@ a,
 .link {
   @apply font-serif transition-all duration-300 text-primary hover:text-secondary hover:underline hover:underline-offset-4 group-hover:underline-offset-4 group-hover:underline group-hover:text-secondary;
 }
+
+label {
+  @apply block text-base text-default;
+}
+
+label > span {
+  @apply text-default;
+}
+
+label > input::placeholder {
+  @apply text-offset;
+}
+
+label > [type="text"],
+[type="email"],
+[type="url"],
+[type="password"],
+[type="number"],
+[type="date"],
+[type="datetime-local"],
+[type="month"],
+[type="search"],
+[type="tel"],
+[type="time"],
+[type="week"],
+[multiple],
+textarea,
+select {
+  @apply block w-full mt-1 border-default bg-offset focus:border-primary focus:ring-[0.03rem] focus:ring-primary;
+}
+
+label > [type="checkbox"] {
+  @apply border-default bg-offset text-secondary focus:border-primary focus:ring-[0.03rem] focus:ring-primary;
+}
