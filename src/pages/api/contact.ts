@@ -2,14 +2,8 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { createRouter } from "next-connect";
 
 import type { ValidationSchema } from "@/components/cms";
-import {
-  sendMail,
-  CONFIG as MAIL_CONFIG,
-  clientHtml,
-  submission,
-  corsMiddleware,
-  customErrors,
-} from "@/lib";
+import { corsMiddleware, customErrors } from "@/lib";
+import { CONFIG as MAIL_CONFIG, clientHtml, submission, sendMail } from "@/lib/mail";
 
 const router = createRouter<NextApiRequest, NextApiResponse>();
 

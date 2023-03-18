@@ -6,9 +6,11 @@ import { useCallback, useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import type { SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
+import { Toaster, toast } from "sonner";
 import type { Template } from "tinacms";
 import { z } from "zod";
 
+import { onPostContactForm } from "../../../lib/api/services";
 import { Container } from "../../container";
 import { Section } from "../../section";
 
@@ -61,22 +63,27 @@ export const ContactForm: FC = () => {
   const areErrors = Object.keys(errors).length > 0;
   const disabled = isSubmitting || areErrors;
   const onSubmit: SubmitHandler<ValidationSchema> = useCallback(
-    async (data) => {
+    (data) => {
       setIsSubmitting(true);
-      try {
-        console.log(data);
-        reset();
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setIsSubmitting(false);
-      }
+      toast.promise(onPostContactForm(data), {
+        loading: "Enviando mensaje...",
+        success: () => {
+          reset();
+          setIsSubmitting(false);
+          return "Mensaje enviado correctamente";
+        },
+        error: () => {
+          setIsSubmitting(false);
+          return "Error al enviar el mensaje";
+        },
+      });
     },
     [reset]
   );
 
   return (
     <>
+      <Toaster />
       <Section className="flex-none">
         <Container>
           <form
