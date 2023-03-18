@@ -90,24 +90,25 @@ export default async function Page({ params }: { params: Params }) {
   return (
     <>
       <Section className="flex-none py-20">
-        <Container className="space-y-5 max-w-screen-lg !mx-0">
+        <Container className="space-y-5">
           <h1>{data?.title}</h1>
           <time className="text-xs font-serif italic">
             publicado el {formatDate(data?.publishedAt as string)}
           </time>
-          <p className="max-w-screen-md">{data?.summary}</p>
 
-          <article>
+          <article className="space-y-5 prose prose-lg lg:prose-xl xl:prose-2xl">
+            <p>{data?.summary}</p>
             <p>
-              {data?.meta?.camera} - {data?.meta?.film}
-            </p>
-            <p></p>
-            <p>
-              {formatDate(data?.meta?.shot?.start as string)} /{" "}
-              {formatDate(data?.meta?.shot?.end as string)}
+              <span className="block">
+                {data?.meta?.camera} - {data?.meta?.film}
+              </span>
+              <span>
+                {formatDate(data?.meta?.shot?.start as string)} /{" "}
+                {formatDate(data?.meta?.shot?.end as string)}
+              </span>
             </p>
 
-            <p className="space-x-2 py-5">
+            <p className="space-x-2 pb-5">
               {data?.meta?.tags?.map((tag, i) => (
                 <span className="text-sm" key={`${i}-${tag}`}>
                   #{tag}
