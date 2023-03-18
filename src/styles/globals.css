@@ -7,6 +7,7 @@
   --color-secondary: theme("colors.amber.500");
   --color-text: theme("colors.neutral.600");
   --color-text-offset: theme("colors.neutral.400");
+  --color-text-button: theme("colors.neutral.50");
   --color-background: theme("colors.neutral.50");
   --color-background-offset: theme("colors.neutral.100");
   --color-border: theme("colors.neutral.900" / 10%);
@@ -17,6 +18,7 @@
   --color-secondary: theme("colors.blue.500");
   --color-text: theme("colors.neutral.400");
   --color-text-offset: theme("colors.neutral.600");
+  --color-text-button: theme("colors.neutral.900");
   --color-background: theme("colors.neutral.900");
   --color-background-offset: theme("colors.neutral.800");
   --color-border: theme("colors.neutral.50" / 10%);
@@ -91,7 +93,21 @@ label > span {
   @apply text-default;
 }
 
-label > input::placeholder {
+label > [type="text"]::placeholder,
+[type="email"]::placeholder,
+[type="url"]::placeholder,
+[type="password"]::placeholder,
+[type="number"]::placeholder,
+[type="date"]::placeholder,
+[type="datetime-local"]::placeholder,
+[type="month"]::placeholder,
+[type="search"]::placeholder,
+[type="tel"]::placeholder,
+[type="time"]::placeholder,
+[type="week"]::placeholder,
+[multiple]::placeholder,
+textarea::placeholder,
+select::placeholder {
   @apply text-offset;
 }
 
@@ -110,9 +126,21 @@ label > [type="text"],
 [multiple],
 textarea,
 select {
-  @apply block w-full mt-1 border-default bg-offset focus:border-primary focus:ring-[0.03rem] focus:ring-primary;
+  @apply block w-full mt-1 transition-all duration-200 border-default bg-offset focus:border-primary focus:ring-1 focus:ring-offset-2 focus:ring-primary;
 }
 
 label > [type="checkbox"] {
-  @apply border-default bg-offset text-secondary focus:border-primary focus:ring-[0.03rem] focus:ring-primary;
+  @apply transition-all duration-200 border-default bg-offset text-secondary focus:border-primary focus:ring-1 focus:ring-offset-2 focus:ring-primary;
+}
+
+button.btn {
+  @apply inline-flex items-center justify-center px-4 py-2;
+}
+
+button.btn-primary {
+  @apply text-base font-medium transition-all duration-200 border border-transparent rounded-sm shadow-sm text-button bg-primary hover:bg-secondary focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-primary;
+}
+
+button.btn-secondary {
+  @apply text-base font-medium transition-all duration-200 bg-transparent border rounded-sm shadow-sm text-primary border-primary hover:bg-offset focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-primary;
 }

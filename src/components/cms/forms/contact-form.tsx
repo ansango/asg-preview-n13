@@ -12,40 +12,32 @@ export const ContactForm: FC = () => {
         <Container>
           <div className="grid grid-cols-1 gap-6">
             <label>
-              <span>Full name</span>
+              <span>Nombre</span>
               <input type="text" placeholder="" />
             </label>
             <label>
-              <span>Email address</span>
+              <span>Apellidos</span>
+              <input type="text" placeholder="" />
+            </label>
+            <label>
+              <span>Email</span>
               <input type="email" placeholder="john@example.com" />
             </label>
             <label>
-              <span>When is your event?</span>
-              <input type="date" />
-            </label>
-            <label>
-              <span>What type of event is it?</span>
-              <select>
-                <option>Corporate event</option>
-                <option>Wedding</option>
-                <option>Birthday</option>
-                <option>Other</option>
-              </select>
-            </label>
-            <label>
-              <span>Additional details</span>
-              <textarea rows={3} />
+              <span>Asunto</span>
+              <textarea rows={4} placeholder="¿Cómo puedo ayudarte?" />
             </label>
             <div>
               <div className="mt-2">
                 <div>
                   <label className="inline-flex items-center">
                     <input type="checkbox" />
-                    <span className="ml-2">Email me news and special offers</span>
+                    <span className="ml-2">Acepto la política de privacidad</span>
                   </label>
                 </div>
               </div>
             </div>
+            <button className="btn btn-primary">Enviar</button>
           </div>
         </Container>
       </Section>

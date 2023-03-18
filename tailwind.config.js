@@ -19,6 +19,7 @@ module.exports = {
       textColor: {
         default: "var(--color-text)",
         offset: "var(--color-text-offset)",
+        button: "var(--color-text-button)",
       },
       backgroundColor: {
         default: "var(--color-background)",
