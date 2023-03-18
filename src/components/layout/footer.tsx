@@ -19,14 +19,14 @@ export const Footer: FC<Props> = ({ links, social }) => {
     <footer>
       <Container>
         <nav className="space-y-2">
-          <ul className="space-y-2 flex flex-col items-end">
+          <ul className="flex flex-col items-end space-y-2">
             {links.map((item, i) => (
               <li key={`${item.label}-${i}`}>
                 <Link href={`/${item.href}`}>{item.label}</Link>
               </li>
             ))}
           </ul>
-          <ul className="space-y-2 flex flex-col items-end">
+          <ul className="flex flex-col items-end space-y-2">
             {social.map((item, i) => (
               <li key={`${item.label}-${i}-external`}>
                 <a href={item.href} target="_blank" rel="noopener noreferrer">

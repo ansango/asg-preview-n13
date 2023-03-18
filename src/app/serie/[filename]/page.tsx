@@ -95,11 +95,11 @@ export default async function Page({ params }: { params: Params }) {
             <Balancer>{data?.title}</Balancer>
           </h1>
 
-          <time className="text-xs font-serif italic">
+          <time className="font-serif text-xs italic">
             publicado el {formatDate(data?.publishedAt as string)}
           </time>
 
-          <article className="space-y-5 prose prose-lg lg:prose-xl xl:prose-2xl">
+          <article className="space-y-5 prose prose-lg lg:prose-xl xl:prose-2xl ">
             <p>
               <Balancer>{data?.summary}</Balancer>
             </p>
@@ -117,7 +117,7 @@ export default async function Page({ params }: { params: Params }) {
               </span>
             </p>
 
-            <p className="pb-5 flex flex-wrap">
+            <p className="flex flex-wrap pb-5">
               {data?.meta?.tags?.map((tag, i) => (
                 <span className="text-sm mr-1.5" key={`${i}-${tag}`}>
                   #{tag}

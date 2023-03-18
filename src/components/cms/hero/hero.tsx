@@ -69,7 +69,7 @@ export const HeroBase: FC<HeroBaseProps> = ({
       {parragraph && parragraph.children.length > 0 && (
         <Section className="flex-none">
           <Container>
-            <article className="pb-20 md:pb-40 lg:pb-72 prose prose-lg lg:prose-xl xl:prose-2xl">
+            <article className="pb-20 prose prose-lg md:pb-40 lg:pb-72 lg:prose-xl xl:prose-2xl">
               <Balancer>
                 <TinaMarkdown content={parragraph} />
               </Balancer>

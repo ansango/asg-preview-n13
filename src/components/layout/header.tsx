@@ -63,10 +63,10 @@ export const Header: FC<Props> = ({ nav }) => {
   const active = segment === "home" ? "" : segment || "";
   return (
     <header>
-      <Container className="flex justify-between items-start">
+      <Container className="flex items-start justify-between">
         <ThemeChanger />
         <nav>
-          <ul className="flex flex-col space-y-2 items-end">
+          <ul className="flex flex-col items-end space-y-2">
             {nav.map((item, i) => {
               return (
                 <li key={`${item.label}-${i}`}>

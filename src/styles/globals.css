@@ -28,18 +28,18 @@ html {
 
 body,
 #__next {
-  @apply font-serif h-full bg-default text-default text-base selection:bg-secondary selection:text-white;
+  @apply h-full font-serif text-base bg-default text-default selection:bg-secondary selection:text-white;
   scroll-behavior: smooth;
 }
 
 h1,
 h2,
 h3 {
-  @apply font-display leading-relaxed tracking-widest;
+  @apply leading-relaxed tracking-widest font-display;
 }
 
 h1 {
-  @apply text-8xl text-primary leading-relaxed tracking-widest;
+  @apply leading-relaxed tracking-widest text-8xl text-primary;
 }
 
 h2 {
@@ -80,5 +80,5 @@ strong {
 
 a,
 .link {
-  @apply transition-all duration-300 font-serif text-primary hover:text-secondary hover:underline hover:underline-offset-4 group-hover:underline-offset-4 group-hover:underline group-hover:text-secondary;
+  @apply font-serif transition-all duration-300 text-primary hover:text-secondary hover:underline hover:underline-offset-4 group-hover:underline-offset-4 group-hover:underline group-hover:text-secondary;
 }
