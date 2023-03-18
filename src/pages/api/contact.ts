@@ -14,17 +14,8 @@ import {
 const router = createRouter<NextApiRequest, NextApiResponse>();
 
 router.use(corsMiddleware).post(async (req, res) => {
-  const {
-    email,
-    firstName,
-    lastName,
-    privacy,
-    subject: message,
-    token,
-  } = req.body as ValidationSchema & {
-    token: string | undefined;
-  };
-  if (!req.body || !firstName || !lastName || !email || !privacy || !message || !token) {
+  const { email, firstName, lastName, privacy, subject: message } = req.body as ValidationSchema;
+  if (!req.body || !firstName || !lastName || !email || !privacy || !message) {
     return res.status(400).json({ message: "Invalid request" });
   } else {
     try {
