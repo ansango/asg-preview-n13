@@ -13,7 +13,7 @@ export type HeroBaseProps = {
   text?: string;
   align: "left" | "center" | "right" | null;
   rotationTitle: "left" | "center" | "right" | null;
-  parragraph?: TinaMarkdownContent | TinaMarkdownContent[];
+  parragraph?: TinaMarkdownContent;
 };
 
 const algignCnText = {
@@ -45,6 +45,7 @@ export const HeroBase: FC<HeroBaseProps> = ({
   const cnContainer = align && alignCnContainer[align];
   const cnText = align && algignCnText[align];
   const cnRotationTitle = rotationTitle && rotationTitleCn[rotationTitle];
+  console.log(parragraph);
   return (
     <>
       <Section>
@@ -56,7 +57,7 @@ export const HeroBase: FC<HeroBaseProps> = ({
           </div>
         </Container>
       </Section>
-      {parragraph && (
+      {parragraph && parragraph.children.length > 0 && (
         <Section className="flex-none">
           <Container>
             <article className="pb-20 md:pb-40 lg:pb-72 prose prose-lg lg:prose-xl xl:prose-2xl">

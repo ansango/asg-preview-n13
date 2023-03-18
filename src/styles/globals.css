@@ -47,7 +47,7 @@ h2 {
 }
 
 h3 {
-  @apply text-4xl text-primary;
+  @apply text-4xl !text-primary;
 }
 
 h4 {
@@ -64,6 +64,18 @@ h6 {
 
 p {
   @apply text-base text-default;
+}
+
+li {
+  @apply text-base text-default;
+}
+
+ul > li::marker {
+  @apply !text-primary;
+}
+
+strong {
+  @apply !font-semibold !text-primary;
 }
 
 a,
