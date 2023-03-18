@@ -44,5 +44,9 @@
         "label": "github"
       }
     ]
+  },
+  "background": {
+    "light": "bg-hero-topography-offset-light-10",
+    "dark": "dark:bg-hero-topography-offset-dark-10"
   }
 }

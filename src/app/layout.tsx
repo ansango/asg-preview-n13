@@ -56,9 +56,11 @@ const sans = Inter({
 });
 
 export default function RootLayout({ children }: { children: ReactNode }) {
-  const { footer, header } = GlobalData;
+  const { footer, header, background } = GlobalData;
   const debugCn = process.env.NODE_ENV === "development" ? "debug-screens" : "";
-  const cnBody = `min-h-screen flex flex-col ${serif.variable} ${sans.variable} ${display.variable} ${debugCn}`;
+  const fonts = `${display.variable} ${serif.variable} ${sans.variable}`;
+  const bg = `${background.light} ${background.dark}`;
+  const cnBody = `min-h-screen flex flex-col ${fonts} ${bg} ${debugCn}`;
   return (
     <html lang="es">
       <body className={cnBody}>
@@ -72,7 +74,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <meta content="/browserconfig.xml" name="msapplication-config" />
         <Theme>
           <Header {...header} />
-          <main className="flex flex-col flex-1">{children}</main>
+          {children}
           <Footer {...footer} />
         </Theme>
       </body>

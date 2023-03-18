@@ -1,4 +1,5 @@
 import { defineConfig } from "tinacms";
+import { optionsDark, optionsLight } from "../src/components/cms/backgrounds";
 import { kebabCase } from "../src/lib";
 import { metaSchema, masonrySchemaField, gallerySerieSchemaField } from "./schemas";
 import {
@@ -230,6 +231,25 @@ export default defineConfig({
                     name: "label",
                   },
                 ],
+              },
+            ],
+          },
+          {
+            type: "object",
+            label: "Background",
+            name: "background",
+            fields: [
+              {
+                type: "string",
+                label: "Light",
+                name: "light",
+                options: optionsLight,
+              },
+              {
+                type: "string",
+                label: "Dark",
+                name: "dark",
+                options: optionsDark,
               },
             ],
           },
