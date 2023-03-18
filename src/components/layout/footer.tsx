@@ -10,8 +10,8 @@ type LinkJSON = {
 };
 
 type Props = {
-  links: LinkJSON[];
-  social: LinkJSON[];
+  links: Array<LinkJSON>;
+  social: Array<LinkJSON>;
 };
 
 export const Footer: FC<Props> = ({ links, social }) => {

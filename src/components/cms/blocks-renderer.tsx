@@ -18,7 +18,7 @@ import type { MasonryBaseProps } from "./masonry";
 import { Series } from "./series";
 
 type Props = Pick<Page, "blocks"> & {
-  data?: any;
+  data?: unknown;
 };
 
 export const Blocks: FC<Props> = ({ blocks, data }) => {
@@ -49,7 +49,8 @@ export const Blocks: FC<Props> = ({ blocks, data }) => {
           }
           case "PageBlocksAllSeries": {
             if (!block.visible) return null;
-            return <Series key={key} data={data.series as Serie[]} />;
+            const raw = data as Array<Serie>;
+            return <Series key={key} data={raw} />;
           }
           case "PageBlocksContactForm": {
             if (!block.visible) return null;

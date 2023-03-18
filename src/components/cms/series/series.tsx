@@ -15,7 +15,7 @@ import type { MasonrySerieProps } from "../masonry";
 import { MasonrySerie } from "../masonry";
 
 type Props = {
-  data?: Serie[];
+  data?: Array<Serie>;
 };
 
 export const Series: FC<Props> = ({ data }) => {

@@ -14,7 +14,7 @@ type LinkJSON = {
 };
 
 type Props = {
-  nav: LinkJSON[];
+  nav: Array<LinkJSON>;
 };
 
 const ThemeChanger = () => {
