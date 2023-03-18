@@ -86,6 +86,11 @@ export const heroBaseTemplate: Template = {
   label: "Hero Base",
   fields: [
     {
+      type: "boolean",
+      label: "Visible",
+      name: "visible",
+    },
+    {
       type: "string",
       label: "Tagline",
       name: "tagline",

@@ -20,14 +20,9 @@ import {
 } from "../../masonry";
 import { Section } from "../../section";
 
-export type MasonryBaseProps = MasonryProps & {
-  visible?: boolean;
-};
+export type MasonryBaseProps = MasonryProps;
 
-export const MasonryBase: FC<MasonryBaseProps> = ({ children, columns, gap, visible = false }) => {
-  if (!visible) {
-    return null;
-  }
+export const MasonryBase: FC<MasonryBaseProps> = ({ children, columns, gap }) => {
   return (
     <Section className="flex-none">
       <Container>

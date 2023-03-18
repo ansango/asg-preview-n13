@@ -23,9 +23,11 @@ export const Blocks: FC<Props> = ({ blocks, data }) => {
         const key = `${block?.__typename}-${iBlock}`;
         switch (block?.__typename) {
           case "PageBlocksHeroBase": {
+            if (!block.visible) return null;
             return <HeroBase key={key} {...(block as HeroBaseProps)} />;
           }
           case "PageBlocksMasonryBase": {
+            if (!block.visible) return null;
             return (
               <MasonryBase key={key} {...(block as MasonryBaseProps)}>
                 {block.images?.map((image, iGallery) => (
@@ -41,9 +43,11 @@ export const Blocks: FC<Props> = ({ blocks, data }) => {
             );
           }
           case "PageBlocksAllSeries": {
-            return <>{block.visible && <Series key={key} data={data.series as Serie[]} />}</>;
+            if (!block.visible) return null;
+            return <Series key={key} data={data.series as Serie[]} />;
           }
           case "PageBlocksContactForm": {
+            if (!block.visible) return null;
             return <ContactForm key={key} />;
           }
           default:
