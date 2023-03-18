@@ -11,6 +11,7 @@
   --color-background: theme("colors.neutral.50");
   --color-background-offset: theme("colors.neutral.100");
   --color-border: theme("colors.neutral.900" / 10%);
+  --color-border-offset: theme("colors.neutral.900" / 40%);
 }
 
 [data-theme="dark"] {
@@ -22,6 +23,7 @@
   --color-background: theme("colors.neutral.900");
   --color-background-offset: theme("colors.neutral.800");
   --color-border: theme("colors.neutral.50" / 10%);
+  --color-border-offset: theme("colors.neutral.50" / 40%);
 }
 
 html {
@@ -131,6 +133,28 @@ select {
 
 label > [type="checkbox"] {
   @apply transition-all duration-200 border-default bg-offset text-secondary focus:border-primary focus:ring-1 focus:ring-offset-2 focus:ring-primary;
+}
+
+label > [type="text"].offset,
+[type="email"].offset,
+[type="url"].offset,
+[type="password"].offset,
+[type="number"].offset,
+[type="date"],
+[type="datetime-local"].offset,
+[type="month"].offset,
+[type="search"].offset,
+[type="tel"].offset,
+[type="time"].offset,
+[type="week"].offset,
+[multiple].offset,
+textarea.offset,
+select.offset {
+  @apply block w-full mt-1 transition-all duration-200 border-offset bg-default focus:border-primary focus:ring-1 focus:ring-offset-2 focus:ring-primary;
+}
+
+label > [type="checkbox"].offset {
+  @apply transition-all duration-200 border-offset bg-default text-secondary focus:border-primary focus:ring-1 focus:ring-offset-2 focus:ring-primary;
 }
 
 button.btn {

@@ -27,6 +27,7 @@ module.exports = {
       },
       borderColor: {
         default: "var(--color-border)",
+        offset: "var(--color-border-offset)",
       },
       aspectRatio: {
         "4/3": "4 / 3",

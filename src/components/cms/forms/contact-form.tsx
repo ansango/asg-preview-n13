@@ -84,7 +84,7 @@ export const ContactForm: FC = () => {
   return (
     <>
       <Toaster />
-      <Section className="flex-none">
+      <Section className="flex-none !py-20 bg-offset">
         <Container>
           <form
             className="grid max-w-screen-lg grid-cols-12 gap-6 mx-auto"
@@ -92,28 +92,38 @@ export const ContactForm: FC = () => {
           >
             <label className="col-span-12 md:col-span-6">
               <span>Nombre</span>
-              <input type="text" placeholder="" {...register("firstName")} />
+              <input className="offset" type="text" placeholder="" {...register("firstName")} />
               <span className={`${errors.firstName?.message ? "error-text" : "helper-text"}`}>
                 {errors.firstName?.message ?? ""}
               </span>
             </label>
             <label className="col-span-12 md:col-span-6">
               <span>Apellidos</span>
-              <input type="text" placeholder="" {...register("lastName")} />
+              <input className="offset" type="text" placeholder="" {...register("lastName")} />
               <span className={`${errors.lastName?.message ? "error-text" : "helper-text"}`}>
                 {errors.lastName?.message ?? ""}
               </span>
             </label>
             <label className="col-span-12">
               <span>Email</span>
-              <input type="email" placeholder="john@example.com" {...register("email")} />
+              <input
+                className="offset"
+                type="email"
+                placeholder="john@example.com"
+                {...register("email")}
+              />
               <span className={`${errors.email?.message ? "error-text" : "helper-text"}`}>
                 {errors.email?.message ?? ""}
               </span>
             </label>
             <label className="col-span-12">
               <span>Asunto</span>
-              <textarea rows={4} placeholder="¿Cómo puedo ayudarte?" {...register("subject")} />
+              <textarea
+                className="offset"
+                rows={4}
+                placeholder="¿Cómo puedo ayudarte?"
+                {...register("subject")}
+              />
               <span className={`${errors.subject?.message ? "error-text" : "helper-text"}`}>
                 {errors.subject?.message ?? ""}
               </span>
@@ -122,7 +132,7 @@ export const ContactForm: FC = () => {
               <div className="mt-2">
                 <div>
                   <label className="items-center">
-                    <input type="checkbox" {...register("privacy")} />
+                    <input type="checkbox" className="offset" {...register("privacy")} />
                     <span className="ml-2 text-sm">Acepto la política de privacidad</span>
                     <span className={`block ${errors.privacy?.message ? "error-text" : ""}`}>
                       {errors.privacy?.message ?? ""}
