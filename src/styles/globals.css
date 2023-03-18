@@ -144,3 +144,11 @@ button.btn-primary {
 button.btn-secondary {
   @apply text-base font-medium transition-all duration-200 bg-transparent border rounded-sm shadow-sm text-primary border-primary hover:bg-offset focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-primary;
 }
+
+label > span.helper-text {
+  @apply text-xs text-offset;
+}
+
+label > span.error-text {
+  @apply text-xs text-red-500;
+}
