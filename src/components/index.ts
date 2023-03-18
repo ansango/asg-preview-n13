@@ -6,3 +6,4 @@ export * from "./lightbox";
 export * from "./masonry";
 export * from "./section";
 export * from "./layout";
+export * from "./pagination";
