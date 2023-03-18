@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["asg-cms.s3.eu-west-3.amazonaws.com"],
+    domains: [`${process.env.BUCKET_URL.replace("https://", "")}`],
     formats: ["image/webp"],
   },
   async rewrites() {

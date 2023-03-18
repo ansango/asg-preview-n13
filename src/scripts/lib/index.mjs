@@ -16,21 +16,25 @@ export const route = (nameFolder) => path.join(process.cwd(), nameFolder);
 export const getSeries = () => {
   const SERIES_DIR = route("src/content/series");
   console.log(SERIES_DIR);
-  const series = fs.readdirSync(SERIES_DIR).map((file) => {
-    const source = fs.readFileSync(path.join(SERIES_DIR, file));
-    const filename = file.replace(".mdx", "");
-    const { data } = matter(source);
-    if (data.visible === false) return null;
-    if (!data.masonry) return null;
-    return {
-      filename,
-      images: data.masonry.images.map((image) => {
-        return { src: image.url, file: image.url.split("/")[4] };
-      }),
-      cover: data.cover,
-      route: data.masonry.images.map((image) => image.url)[0].split("/")[3],
-    };
-  });
+  const series = fs
+    .readdirSync(SERIES_DIR)
+    .map((file) => {
+      const source = fs.readFileSync(path.join(SERIES_DIR, file));
+      const filename = file.replace(".mdx", "");
+      const { data } = matter(source);
+      if (data.visible === false) return null;
+      if (!data.masonry) return null;
+      return {
+        filename,
+        images: data.masonry.images.map((image) => {
+          return { src: image.url, file: image.url.split("/")[4] };
+        }),
+        cover: data.cover,
+        route: data.masonry.images.map((image) => image.url)[0].split("/")[3],
+        publishedAt: data.publishedAt,
+      };
+    })
+    .sort((a, b) => b.publishedAt - a.publishedAt);
   return {
     series: series.filter((item) => item !== null),
   };

@@ -4,6 +4,8 @@ import path from "path";
 import { createFolder, route, getSeries, getBase64FromUrl } from "./lib/index.mjs";
 
 const makeBlur = async () => {
+  console.log("Generating blur images");
+
   const blurDir = route("public/blur");
   createFolder(blurDir);
 
@@ -19,7 +21,8 @@ const makeBlur = async () => {
     }
   }
   fs.writeFileSync(path.join(blurDir, "data.json"), `[${jsondata.join(",")}]`);
-  console.log("Done");
+
+  console.log("Blur images generated");
 };
 
 makeBlur();
