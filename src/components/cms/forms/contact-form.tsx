@@ -45,7 +45,7 @@ const validationSchema = z.object({
   }),
 });
 
-type ValidationSchema = z.infer<typeof validationSchema>;
+export type ValidationSchema = z.infer<typeof validationSchema>;
 
 export const ContactForm: FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);

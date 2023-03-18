@@ -1,3 +1,5 @@
+export * from "./middlewares";
+
 /**
  * Fetches data from an API, and throws an error if the request failed.
  * fetcher is a generic function with one type parameter T.
