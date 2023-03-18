@@ -9,12 +9,12 @@ const makeCover = async () => {
   const seriesStaticDir = route("public/static/series");
   createFolder(seriesStaticDir);
   const { series } = getSeries();
-
+  console.log(series);
   for (const serie of series) {
     console.log(`Processing ${serie.cover}`);
     const filename = serie.filename.split("-")[0];
     console.log(`Processing ${filename}`);
-    const output = getImageFromUrl({
+    const output = await getImageFromUrl({
       url: serie.cover,
       width: 400,
       height: 400,

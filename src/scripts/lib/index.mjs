@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 
+import fetch from "cross-fetch";
 import matter from "gray-matter";
 import sharp from "sharp";
 
@@ -48,6 +49,7 @@ export const getImageFromUrl = async (
 ) => {
   const response = await fetch(url);
   const buffer = await response.arrayBuffer();
+
   const image = await sharp(Buffer.from(buffer)).resize(width, height).webp({ quality }).toBuffer();
   return image;
 };
