@@ -1,6 +1,7 @@
 import type { FC } from "react";
 
 import Link from "next/link";
+import Balancer from "react-wrap-balancer";
 import type { Template } from "tinacms";
 
 import type { Serie } from ".tina/__generated__/types";
@@ -41,7 +42,7 @@ export const Series: FC<Props> = ({ data }) => {
                     <div className="flex justify-between">
                       <div>
                         <h3 className="text-2xl font-semibold tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em]">
-                          {title}
+                          <Balancer>{title}</Balancer>
                         </h3>
                         <p className="text-sm">{description}</p>
                         <Link className="text-sm" href={`/serie/${filename}`}>
@@ -66,9 +67,9 @@ export const allSeriesTemplate: Template = {
   name: "allSeries",
   fields: [
     {
-      name: "title",
-      label: "Title",
-      type: "string",
+      label: "Visible",
+      name: "visible",
+      type: "boolean",
     },
   ],
 };
