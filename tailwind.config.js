@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { fontFamily } = require("tailwindcss/defaultTheme");
 
@@ -18,6 +19,7 @@ module.exports = {
       textColor: {
         default: "var(--color-text)",
         offset: "var(--color-text-offset)",
+        button: "var(--color-text-button)",
       },
       backgroundColor: {
         default: "var(--color-background)",
@@ -50,7 +52,10 @@ module.exports = {
     },
   },
   plugins: [
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    require("tailwindcss-debug-screens"),
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/line-clamp"),
     require("tailwindcss-fluid-type")({
       settings: {
         fontSizeMin: 1.125, // 1.125rem === 18px
@@ -78,7 +83,5 @@ module.exports = {
         "9xl": [10, 1],
       },
     }),
-    require("@tailwindcss/typography"),
-    require("@tailwindcss/line-clamp"),
   ],
 };

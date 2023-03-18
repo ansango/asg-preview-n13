@@ -6,6 +6,7 @@ import { getBlurUrl } from "../../lib";
 import type { ImageProps } from "../image";
 import { Image } from "../image";
 
+import { ContactForm } from "./forms";
 import { HeroBase, type HeroBaseProps } from "./hero";
 import { MasonryBase } from "./masonry";
 import type { MasonryBaseProps } from "./masonry";
@@ -19,13 +20,16 @@ export const Blocks: FC<Props> = ({ blocks, data }) => {
   return (
     <>
       {blocks?.map((block, iBlock) => {
+        const key = `${block?.__typename}-${iBlock}`;
         switch (block?.__typename) {
           case "PageBlocksHeroBase": {
-            return <HeroBase key={iBlock} {...(block as HeroBaseProps)} />;
+            if (!block.visible) return null;
+            return <HeroBase key={key} {...(block as HeroBaseProps)} />;
           }
           case "PageBlocksMasonryBase": {
+            if (!block.visible) return null;
             return (
-              <MasonryBase key={iBlock} {...(block as MasonryBaseProps)}>
+              <MasonryBase key={key} {...(block as MasonryBaseProps)}>
                 {block.images?.map((image, iGallery) => (
                   <Image
                     {...(image as ImageProps)}
@@ -39,7 +43,12 @@ export const Blocks: FC<Props> = ({ blocks, data }) => {
             );
           }
           case "PageBlocksAllSeries": {
-            return <Series key={iBlock} data={data.series as Serie[]} />;
+            if (!block.visible) return null;
+            return <Series key={key} data={data.series as Serie[]} />;
+          }
+          case "PageBlocksContactForm": {
+            if (!block.visible) return null;
+            return <ContactForm key={key} />;
           }
           default:
             return null;

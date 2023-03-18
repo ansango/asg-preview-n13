@@ -12,6 +12,10 @@
       {
         "href": "sobremi",
         "label": "sobre mi"
+      },
+      {
+        "href": "contacto",
+        "label": "contacto"
       }
     ]
   },
