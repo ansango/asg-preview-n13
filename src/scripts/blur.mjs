@@ -20,7 +20,10 @@ const makeBlur = async () => {
       jsondata.push(jsonobj);
     }
   }
-  fs.writeFileSync(path.join(blurDir, "data.json"), `[${jsondata.join(",")}]`);
+  fs.writeFileSync(
+    path.join(blurDir, "data.js"),
+    `const data = [${jsondata.join(",")}]; export default data;`
+  );
 
   console.log("Blur images generated");
 };

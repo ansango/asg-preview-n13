@@ -105,7 +105,6 @@ export const Image: FC<ImageProps> = ({
           alt={alt}
           loading={loading}
           onClick={onClick}
-          style={{ transform: "translate3d(0, 0, 0)" }}
           priority={loading === "eager" ? true : false}
           placeholder={blurDataURL ? "blur" : "empty"}
           blurDataURL={blurDataURL}

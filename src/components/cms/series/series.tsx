@@ -24,7 +24,6 @@ export const Series: FC<Props> = ({ data }) => {
         <ul className="space-y-12">
           {data?.map(
             ({ id, title, description, sequence, gallerySerie, _sys: { filename } }, iBlock) => {
-              console.log("gallerySerie", filename);
               return (
                 <li key={id}>
                   <article className="group">
