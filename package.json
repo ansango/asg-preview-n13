@@ -9,7 +9,7 @@
     "sitemap": "NODE_OPTIONS='--experimental-json-modules' node ./src/scripts/sitemap.mjs",
     "rss": "NODE_OPTIONS='--experimental-json-modules' node ./src/scripts/rss.mjs",
     "build": "tinacms build && next build",
-    "postbuild": "npm run cover && npm run sitemap && npm run rss",
+    "postbuild": "npm run sitemap && npm run rss && npm run cover",
     "start": "tinacms build && next start",
     "pretty": "prettier --write .",
     "lint": "next lint",

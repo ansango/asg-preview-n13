@@ -24,6 +24,7 @@ export const Series: FC<Props> = ({ data }) => {
         <ul className="space-y-12">
           {data?.map(
             ({ id, title, description, sequence, gallerySerie, _sys: { filename } }, iBlock) => {
+              console.log("gallerySerie", filename);
               return (
                 <li key={id}>
                   <article className="group">
@@ -44,7 +45,7 @@ export const Series: FC<Props> = ({ data }) => {
                           {title}
                         </h3>
                         <p className="text-sm">{description}</p>
-                        <Link className="text-sm" href={`/serie/${filename})}`}>
+                        <Link className="text-sm" href={`/serie/${filename}`}>
                           ver más
                         </Link>
                       </div>

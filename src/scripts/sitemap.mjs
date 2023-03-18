@@ -46,7 +46,7 @@ const makeSitemap = async () => {
            .map((route) => {
              return `
                <url>
-                   <loc>${`https://www.anibalsantosgomez.com/${route}`}</loc>
+                   <loc>${`https://anibalsantosgomez.com/${route}`}</loc>
                </url>
              `;
            })

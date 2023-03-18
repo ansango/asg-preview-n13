@@ -24,7 +24,7 @@ export const getSeries = () => {
       const { data } = matter(source);
       if (data.visible === false) return null;
       if (!data.masonry) return null;
-      console.log(data);
+
       return {
         title: data.title,
         description: data.description,

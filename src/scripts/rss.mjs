@@ -12,14 +12,14 @@ const makeRSS = () => {
 
   const feed = new RSS({
     title: "Anibal Santos",
-    site_url: "https://www.anibalsantosgomez.com",
-    feed_url: "https://www.anibalsantosgomez.com/feed.xml",
+    site_url: "https://anibalsantosgomez.com",
+    feed_url: "https://anibalsantosgomez.com/feed.xml",
   });
 
   series.map((serie) =>
     feed.item({
       title: serie.title,
-      url: `https://www.anibalsantosgomez.com/serie/${serie.filename}`,
+      url: `https://anibalsantosgomez.com/serie/${serie.filename}`,
       date: serie.publishedAt,
       description: serie.description,
       author: "Anibal Santos",
