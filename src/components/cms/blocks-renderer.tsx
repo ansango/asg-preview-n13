@@ -48,9 +48,10 @@ export const Blocks: FC<Props> = ({ blocks, data }) => {
             );
           }
           case "PageBlocksAllSeries": {
-            if (!block.visible) return null;
-            const raw = data as Array<Serie>;
-            return <Series key={key} data={raw} />;
+            const raw = data as { series: Array<Serie> } | undefined;
+            if (!block.visible || !raw) return null;
+
+            return <Series key={key} data={raw.series} />;
           }
           case "PageBlocksContactForm": {
             if (!block.visible) return null;

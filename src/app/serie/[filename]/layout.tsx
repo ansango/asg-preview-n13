@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import { Container, Pagination, Section } from "@/components";
+import { Container, Pagination, Section, Theme } from "@/components";
 import { getSeries } from "@/lib";
 
 type Params = {
@@ -37,22 +37,24 @@ export default async function SerieLayout({
 }) {
   const pagination = await getPagination({ params });
   return (
-    <main>
-      {children}
-      <Section className="flex-none py-20">
-        <Container className="grid grid-cols-2 gap-5 py-20">
-          <Pagination
-            next={{
-              title: pagination.next?.title,
-              route: pagination.next?.route,
-            }}
-            prev={{
-              title: pagination.prev?.title,
-              route: pagination.prev?.route,
-            }}
-          />
-        </Container>
-      </Section>
-    </main>
+    <Theme>
+      <main>
+        {children}
+        <Section className="flex-none py-20">
+          <Container className="grid grid-cols-2 gap-5 py-20">
+            <Pagination
+              next={{
+                title: pagination.next?.title,
+                route: pagination.next?.route,
+              }}
+              prev={{
+                title: pagination.prev?.title,
+                route: pagination.prev?.route,
+              }}
+            />
+          </Container>
+        </Section>
+      </main>
+    </Theme>
   );
 }
