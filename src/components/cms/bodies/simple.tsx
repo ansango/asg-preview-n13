@@ -8,15 +8,39 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Container } from "../../container";
 import { Section } from "../../section";
 
+const sizeOptions = {
+  md: "prose-md lg:prose-lg xl:prose-xl",
+  lg: "prose-lg lg:prose-xl xl:prose-2xl",
+  xl: "prose-xl lg:prose-2xl",
+};
+
+const centerOptions = {
+  left: "justify-start",
+  center: "justify-center",
+  right: "justify-end",
+};
+
+const alignOptions = {
+  left: "text-left",
+  center: "text-center",
+  right: "text-right",
+};
+
 export type BodySimpleProps = {
+  size?: keyof typeof sizeOptions;
+  center?: keyof typeof centerOptions;
+  align?: keyof typeof alignOptions;
   content: TinaMarkdownContent;
 };
 
-export const BodySimple: FC<BodySimpleProps> = ({ content }) => {
+export const BodySimple: FC<BodySimpleProps> = ({ content, size, center, align }) => {
+  const cnSize = sizeOptions[size || "md"];
+  const cnCenter = centerOptions[center || "left"];
+  const cnAlign = alignOptions[align || "left"];
   return (
-    <Section className="flex-none">
-      <Container>
-        <article className="pb-20 prose prose-lg md:pb-40 lg:pb-72 lg:prose-xl xl:prose-2xl">
+    <Section className="flex-none pb-20 md:pb-40 lg:pb-72">
+      <Container className={`flex ${cnCenter} ${cnAlign}`}>
+        <article className={`prose ${cnSize}`}>
           <Balancer>
             <TinaMarkdown content={content} />
           </Balancer>
@@ -39,6 +63,24 @@ export const bodySimpleTemplate: Template = {
       type: "rich-text",
       label: "Content",
       name: "content",
+    },
+    {
+      type: "string",
+      label: "Size",
+      name: "size",
+      options: ["md", "lg", "xl"],
+    },
+    {
+      type: "string",
+      label: "Center",
+      name: "center",
+      options: ["left", "center", "right"],
+    },
+    {
+      type: "string",
+      label: "Align",
+      name: "align",
+      options: ["left", "center", "right"],
     },
   ],
 };
