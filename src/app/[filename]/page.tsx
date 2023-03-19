@@ -48,8 +48,9 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 }
 
 export default async function Page({ params }: { params: Params }) {
+  const _params = !params.filename ? { filename: "home" } : params;
   const series = params.filename === "series" ? await getSeries() : null;
-  const data = await getPage({ params });
+  const data = await getPage({ params: _params });
 
   return (
     <Blocks
