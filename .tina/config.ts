@@ -8,6 +8,7 @@ import {
   allSeriesTemplate,
   contactFormTemplate,
   bodySimpleTemplate,
+  masonryLightBoxTemplate,
 } from "./templates";
 
 const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
@@ -96,10 +97,14 @@ export default defineConfig({
           },
 
           { ...metaSchema },
+          { ...gallerySerieSchemaField },
           {
-            ...gallerySerieSchemaField,
+            type: "object",
+            list: true,
+            name: "blocks",
+            label: "Sections",
+            templates: [bodySimpleTemplate, masonryLightBoxTemplate],
           },
-          { ...masonrySchemaField },
         ],
       },
       {

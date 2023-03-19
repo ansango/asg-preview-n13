@@ -3,13 +3,10 @@ import { useEffect, useContext, createContext, useState } from "react";
 
 import Box from "yet-another-react-lightbox";
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
-import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
-import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
-import Zoom from "yet-another-react-lightbox/plugins/zoom";
 
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
-import { getBlurUrl } from "@/lib";
+import { getBlurUrl } from "../lib";
 
 import type { ImageProps } from "./image";
 import { Image } from "./image";
@@ -59,9 +56,10 @@ export const LightBox: FC<{ children: ReactNode }> = ({ children }) => {
         open={index >= 0}
         close={() => setIndex(-1)}
         slides={slides}
-        plugins={[Thumbnails, Zoom, Slideshow, Fullscreen]}
-        thumbnails={{
-          position: "bottom",
+        plugins={[Fullscreen]}
+        render={{
+          buttonNext: () => null,
+          buttonPrev: () => null,
         }}
       />
     </LightBoxContext.Provider>

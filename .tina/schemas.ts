@@ -79,6 +79,11 @@ export const masonrySchemaField: TinaField = {
   type: "object",
   fields: [
     {
+      name: "visible",
+      label: "Visible",
+      type: "boolean",
+    },
+    {
       name: "columns",
       label: "Columns",
       type: "object",
@@ -207,7 +212,7 @@ export const masonrySchemaField: TinaField = {
 };
 
 export const gallerySerieSchemaField: TinaField = {
-  label: "Gallery",
+  label: "Gallery Serie",
   name: "gallerySerie",
   type: "object",
   ui: {

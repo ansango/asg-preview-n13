@@ -1,13 +1,10 @@
 import type { Metadata } from "next";
-import Balancer from "react-wrap-balancer";
 
-import {
-  Container,
-  MasonryWithLightBox,
-  Section,
-  type MasonryWithLightBoxProps,
-} from "@/components";
-import { formatDate, getSerie, getSerieConnection } from "@/lib";
+import { Container, MasonryWithLightBox, Section } from "@/components";
+import type { MasonryWithLightBoxProps } from "@/components";
+import type { HeroSerieProps } from "@/components/cms";
+import { HeroSerie } from "@/components/cms";
+import { getSerie, getSerieConnection } from "@/lib";
 
 type Params = {
   filename: string;
@@ -65,63 +62,41 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 
 export default async function Page({ params }: { params: Params }) {
   const data = await getSerie({ params });
-  const columns = data && (data.masonry?.columns as unknown as MasonryWithLightBoxProps["columns"]);
-  const gap = data && (data.masonry?.gap as unknown as MasonryWithLightBoxProps["gap"]);
-  const images = data && (data?.masonry?.images as unknown as MasonryWithLightBoxProps["images"]);
 
   return (
     <>
-      <Section className="flex-none py-20">
-        <Container className="space-y-5">
-          <h1>
-            <Balancer>{data?.title}</Balancer>
-          </h1>
-
-          <time className="font-serif text-xs italic">
-            publicado el {formatDate(data?.publishedAt as string)}
-          </time>
-
-          <article className="space-y-5 prose prose-lg lg:prose-xl xl:prose-2xl ">
-            <p>
-              <Balancer>{data?.summary}</Balancer>
-            </p>
-            <p>
-              <span className="block">
-                <Balancer>
-                  {data?.meta?.camera} - {data?.meta?.film}
-                </Balancer>
-              </span>
-              <span>
-                <Balancer>
-                  {formatDate(data?.meta?.shot?.start as string)} /{" "}
-                  {formatDate(data?.meta?.shot?.end as string)}
-                </Balancer>
-              </span>
-            </p>
-
-            <p className="flex flex-wrap pb-5">
-              {data?.meta?.tags?.map((tag, i) => (
-                <span className="text-sm mr-1.5" key={`${i}-${tag}`}>
-                  #{tag}
-                </span>
-              ))}
-            </p>
-          </article>
-        </Container>
-      </Section>
-      <Section>
-        <Container>
-          {columns && gap && images && (
-            <MasonryWithLightBox
-              {...{
-                columns,
-                gap,
-                images,
-              }}
-            />
-          )}
-        </Container>
-      </Section>
+      <HeroSerie
+        {...{
+          meta: data?.meta as unknown as HeroSerieProps["meta"],
+          publishedAt: data?.publishedAt as unknown as HeroSerieProps["publishedAt"],
+          summary: data?.summary as unknown as HeroSerieProps["summary"],
+          title: data?.title as unknown as HeroSerieProps["title"],
+        }}
+      />
+      {data?.blocks &&
+        data.blocks.map((block, i) => {
+          switch (block?.__typename) {
+            case "SerieBlocksMasonryLightBox": {
+              if (!block.images) return null;
+              return (
+                <Section key={i}>
+                  <Container>
+                    <MasonryWithLightBox
+                      {...{
+                        columns: block.columns as unknown as MasonryWithLightBoxProps["columns"],
+                        gap: block.gap as unknown as MasonryWithLightBoxProps["gap"],
+                        images: block.images as unknown as MasonryWithLightBoxProps["images"],
+                      }}
+                    />
+                  </Container>
+                </Section>
+              );
+            }
+            default: {
+              return null;
+            }
+          }
+        })}
     </>
   );
 }
