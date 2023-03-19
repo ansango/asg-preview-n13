@@ -22,23 +22,20 @@ export const getSeries = () => {
       const source = fs.readFileSync(path.join(SERIES_DIR, file));
       const filename = file.replace(".mdx", "");
       const { data } = matter(source);
-      if (data.visible === false) return null;
-      if (!data.masonry) return null;
+
+      if (data?.visible === false) return null;
+      if (!data?.blocks) return null;
 
       return {
-        title: data.title,
-        description: data.description,
+        title: data?.title,
+        description: data?.meta?.description,
         filename,
-        images: data.masonry.images.map((image) => {
-          return { src: image.url, file: image.url.split("/")[4] };
-        }),
-        cover: data.cover,
-        route: data.masonry.images.map((image) => image.url)[0].split("/")[3],
-        publishedAt: data.publishedAt,
-        tags: data.meta.tags,
+        cover: data?.meta?.cover,
+        publishedAt: data?.meta?.publishedAt,
+        tags: data?.meta?.tags,
       };
     })
-    .sort((a, b) => b.publishedAt - a.publishedAt);
+    .sort((a, b) => b?.meta?.publishedAt - a?.meta?.publishedAt);
   return {
     series: series.filter((item) => item !== null),
   };

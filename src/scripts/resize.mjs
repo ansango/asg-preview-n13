@@ -7,19 +7,6 @@ import { createFolder } from "./lib/index.mjs";
 
 const imageExtensions = [".jpg", ".jpeg", ".png", ".gif"];
 
-// async function generateBase64Image(
-//   inputPath,
-//   outputPath,
-//   width = 800,
-//   format = "webp",
-//   quality = 50
-// ) {
-//   const image = sharp(inputPath);
-//   const buffer = await image.resize(width).toFormat(format, { quality }).toBuffer();
-//   const base64Image = `export default 'data:image/${format};base64,${buffer.toString("base64")}'`;
-//   fs.writeFileSync(outputPath, base64Image);
-// }
-
 function getImagesFromFolder(folderPath) {
   let images = [];
   fs.readdirSync(folderPath).forEach((file) => {

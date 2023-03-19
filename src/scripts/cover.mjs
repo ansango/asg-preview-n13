@@ -5,12 +5,10 @@ import { createFolder, route, getSeries, getImageFromUrl } from "./lib/index.mjs
 
 const makeCover = async () => {
   console.log("Generating covers");
-  const staticDir = route("public/static");
-  createFolder(staticDir);
-  const seriesStaticDir = route("public/static/series");
+  const seriesStaticDir = route("public/covers");
   createFolder(seriesStaticDir);
   const { series } = getSeries();
-
+  console.log(series);
   for (const serie of series) {
     console.log(`Processing ${serie.cover}`);
     const filename = serie.filename.split("-")[0];
