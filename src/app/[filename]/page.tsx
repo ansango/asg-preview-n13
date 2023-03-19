@@ -13,12 +13,12 @@ type PageTina = {
 
 export async function generateStaticParams() {
   const pages = (await getPageConnection()) as Array<PageTina>;
-
-  return pages.map((serie) => ({
+  const map = pages.map((page) => ({
     params: {
-      filename: serie._sys.filename,
+      filename: page._sys.filename,
     },
   }));
+  return map;
 }
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
@@ -31,16 +31,16 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
       title: data?.title,
       description: "a description",
       url: `https://anibalsantosgomez.com${
-        params.filename === "home" ? "" : `/${params.filename}`
+        params.filename === "index" ? "" : `/${params.filename}`
       }`,
     },
     alternates: {
       canonical: `https://anibalsantosgomez.com${
-        params.filename === "home" ? "" : `/${params.filename}`
+        params.filename === "index" ? "" : `/${params.filename}`
       }`,
       languages: {
         es: `https://anibalsantosgomez.com${
-          params.filename === "home" ? "" : `/${params.filename}`
+          params.filename === "index" ? "" : `/${params.filename}`
         }`,
       },
     },
@@ -48,9 +48,8 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 }
 
 export default async function Page({ params }: { params: Params }) {
-  const _params = !params.filename ? { filename: "home" } : params;
   const series = params.filename === "series" ? await getSeries() : null;
-  const data = await getPage({ params: _params });
+  const data = await getPage({ params });
 
   return (
     <Blocks

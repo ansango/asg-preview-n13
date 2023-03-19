@@ -13,7 +13,7 @@ const nextConfig = {
       },
       {
         source: "/",
-        destination: "/home",
+        destination: "/index",
       },
     ];
   },
