@@ -16,7 +16,7 @@ type Props = {
 
 export const Footer: FC<Props> = ({ navigation, social }) => {
   return (
-    <footer>
+    <footer className="pt-20">
       <Container>
         <nav className="space-y-2">
           <ul className="flex flex-col items-end space-y-2">

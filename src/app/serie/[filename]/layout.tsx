@@ -3,6 +3,8 @@ import type { ReactNode } from "react";
 import { Container, Pagination, Section, Theme } from "@/components";
 import { getSeries } from "@/lib";
 
+import SeriesConfig from "../../../content/global/series.json";
+
 type Params = {
   filename: string;
 };
@@ -35,26 +37,29 @@ export default async function SerieLayout({
   children: ReactNode;
   params: { filename: string };
 }) {
+  const { background } = SeriesConfig;
   const pagination = await getPagination({ params });
   return (
-    <Theme>
-      <main>
-        {children}
-        <Section className="flex-none py-20">
-          <Container className="grid grid-cols-2 gap-5 py-20">
-            <Pagination
-              next={{
-                title: pagination.next?.title,
-                route: pagination.next?.route,
-              }}
-              prev={{
-                title: pagination.prev?.title,
-                route: pagination.prev?.route,
-              }}
-            />
-          </Container>
-        </Section>
-      </main>
-    </Theme>
+    <div className={`${background.light} ${background.dark}`}>
+      <Theme>
+        <main>
+          {children}
+          <Section className="flex-none py-20">
+            <Container className="grid grid-cols-2 gap-5 py-20">
+              <Pagination
+                next={{
+                  title: pagination.next?.title,
+                  route: pagination.next?.route,
+                }}
+                prev={{
+                  title: pagination.prev?.title,
+                  route: pagination.prev?.route,
+                }}
+              />
+            </Container>
+          </Section>
+        </main>
+      </Theme>
+    </div>
   );
 }
