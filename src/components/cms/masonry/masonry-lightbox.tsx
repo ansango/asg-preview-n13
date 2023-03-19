@@ -14,9 +14,9 @@ import {
   gapXl,
 } from "../../masonry";
 
-export const masonryLightBoxTemplate: Template = {
-  label: "Masonry LightBox",
-  name: "masonryLightBox",
+export const masonryFSTemplate: Template = {
+  label: "Masonry Fullscreen",
+  name: "masonryFS",
   ui: {
     itemProps: (item) => {
       return { label: item?.label };

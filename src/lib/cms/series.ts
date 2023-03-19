@@ -14,11 +14,11 @@ export async function getSeries() {
           return edge.node;
         }
       })
-      .filter((node) => node)
+      .filter((node) => node?.visible)
       .sort(
         (a, b) =>
-          new Date(b?.publishedAt as unknown as Date).getTime() -
-          new Date(a?.publishedAt as unknown as Date).getTime()
+          new Date(b?.meta?.publishedAt as unknown as Date).getTime() -
+          new Date(a?.meta?.publishedAt as unknown as Date).getTime()
       );
 
   return (
@@ -26,34 +26,14 @@ export async function getSeries() {
     data
       .map((serie) => {
         if (serie) {
-          const {
-            id,
-            sequence,
-            summary,
-            title,
-            cover,
-            description,
-            isFeatured,
-            masonry,
-            meta,
-            publishedAt,
-            visible,
-            gallerySerie,
-            _sys,
-          } = serie;
+          const { id, sequence, title, meta, visible, _sys, thumbnails } = serie;
           return {
             id,
             sequence,
-            summary,
             title,
-            cover,
-            description,
-            isFeatured,
-            masonry,
             meta,
-            publishedAt,
             visible,
-            gallerySerie,
+            thumbnails,
             _sys: { ..._sys, filename: _sys.filename.replace(/\.md$/, "") },
           };
         }

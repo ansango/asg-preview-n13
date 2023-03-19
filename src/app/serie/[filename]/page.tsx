@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import type { TinaMarkdownContent } from "tinacms/dist/rich-text";
 
+import type { SerieBlocks } from ".tina/__generated__/types";
 import { Container, MasonryWithLightBox, Section } from "@/components";
 import type { MasonryWithLightBoxProps } from "@/components";
-import type { HeroSerieProps } from "@/components/cms";
-import { HeroSerie } from "@/components/cms";
-import { getSerie, getSerieConnection } from "@/lib";
+import type { BodySimpleProps, HeroSerieProps } from "@/components/cms";
+import { BodySimple, HeroSerie, PaginationBase } from "@/components/cms";
+import { getSerie, getSerieConnection, getPagination } from "@/lib";
 
 type Params = {
   filename: string;
@@ -12,10 +15,12 @@ type Params = {
 
 type SerieTina = {
   _sys: Params;
+  publishedAt: string;
+  title: string;
 };
 
 export async function generateStaticParams() {
-  const series = (await getSerieConnection()) as Array<SerieTina>;
+  const series = (await getSerieConnection()) as unknown as Array<SerieTina>;
 
   return series.map((serie) => ({
     params: {
@@ -27,16 +32,13 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const data = await getSerie({ params });
   const url = `${process.env.NEXT_PUBLIC_WEB_URI}/serie/${params.filename}`;
-  const tags = data?.meta?.tags as unknown as Array<string>;
-  const firstTag = tags[0]?.charAt(0).toUpperCase() + tags[0]?.slice(1);
-  const secondTag = tags[1]?.charAt(0).toUpperCase() + tags[1]?.slice(1);
-  const thirdTag = tags[2]?.charAt(0).toUpperCase() + tags[2]?.slice(1);
+  const tags = (data?.meta?.tags as unknown as Array<string>) || ["serie"];
   return {
-    title: `${data?.title} | Serie | ${firstTag} ${secondTag} ${thirdTag}`,
-    description: data?.summary,
+    title: `${data?.title} | Serie `,
+    description: data?.meta?.summary,
     openGraph: {
       title: data?.title,
-      description: data?.summary,
+      description: data?.meta?.summary || "",
       url,
       images: [
         {
@@ -46,9 +48,8 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
           alt: data?.title,
         },
       ],
-
       tags,
-      publishedTime: (data && data?.publishedAt) || undefined,
+      publishedTime: (data && data?.meta?.publishedAt) || undefined,
       section: "series",
     },
     alternates: {
@@ -62,41 +63,68 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 
 export default async function Page({ params }: { params: Params }) {
   const data = await getSerie({ params });
+  const blocks = data?.blocks as Array<SerieBlocks>;
+  if (!data || !data.visible || !blocks) notFound();
+  const pagination = await getPagination({ params });
 
   return (
     <>
-      <HeroSerie
-        {...{
-          meta: data?.meta as unknown as HeroSerieProps["meta"],
-          publishedAt: data?.publishedAt as unknown as HeroSerieProps["publishedAt"],
-          summary: data?.summary as unknown as HeroSerieProps["summary"],
-          title: data?.title as unknown as HeroSerieProps["title"],
-        }}
-      />
-      {data?.blocks &&
-        data.blocks.map((block, i) => {
-          switch (block?.__typename) {
-            case "SerieBlocksMasonryLightBox": {
-              if (!block.images) return null;
-              return (
-                <Section key={i}>
-                  <Container>
-                    <MasonryWithLightBox
-                      {...{
-                        columns: block.columns as unknown as MasonryWithLightBoxProps["columns"],
-                        gap: block.gap as unknown as MasonryWithLightBoxProps["gap"],
-                        images: block.images as unknown as MasonryWithLightBoxProps["images"],
-                      }}
-                    />
-                  </Container>
-                </Section>
-              );
-            }
-            default: {
-              return null;
-            }
+      {blocks?.map((block, iBlock) => {
+        const key = `${block?.__typename}-${iBlock}`;
+        switch (block?.__typename) {
+          case "SerieBlocksMasonryFS": {
+            if (!block.images) return null;
+            return (
+              <Section key={key}>
+                <Container>
+                  <MasonryWithLightBox
+                    {...{
+                      columns: block.columns as unknown as MasonryWithLightBoxProps["columns"],
+                      gap: block.gap as unknown as MasonryWithLightBoxProps["gap"],
+                      images: block.images as unknown as MasonryWithLightBoxProps["images"],
+                    }}
+                  />
+                </Container>
+              </Section>
+            );
           }
-        })}
+          case "SerieBlocksBodySimple": {
+            const content = block.content as TinaMarkdownContent;
+            if (!block.visible || content.children.length === 0) return null;
+            return <BodySimple key={key} {...(block as BodySimpleProps)} />;
+          }
+          case "SerieBlocksHeroSerie": {
+            if (!block.visible) return null;
+            return (
+              <HeroSerie
+                key={key}
+                {...{
+                  meta: (data?.meta as unknown as HeroSerieProps["meta"]) || {},
+                  title: (data?.title as unknown as HeroSerieProps["title"]) || "",
+                }}
+              />
+            );
+          }
+          case "SerieBlocksPagination": {
+            if (!block.visible || !pagination) return null;
+            return (
+              <PaginationBase
+                next={{
+                  title: pagination.next?.title,
+                  route: pagination.next?.route,
+                }}
+                prev={{
+                  title: pagination.prev?.title,
+                  route: pagination.prev?.route,
+                }}
+              />
+            );
+          }
+          default: {
+            return <>Not found</>;
+          }
+        }
+      })}
     </>
   );
 }

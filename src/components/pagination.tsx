@@ -7,12 +7,12 @@ type Pagination = {
   route: string;
 };
 
-type Props = {
+export type PaginationProps = {
   prev?: Pagination | null;
   next?: Pagination | null;
 };
 
-export const Pagination: FC<Props> = ({ next, prev }) => {
+export const Pagination: FC<PaginationProps> = ({ next, prev }) => {
   return (
     <>
       <div className="text-left group">

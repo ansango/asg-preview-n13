@@ -98,7 +98,7 @@ export const Image: FC<ImageProps> = ({
           className={`object-cover ${centerCn} ${aspectRatioCn[aspectRatio]} ${
             onClick
               ? `duration-300 transform transition-all cursor-pointer hover:opacity-[0.89] group-hover:opacity-[0.89]`
-              : ""
+              : "max-w-s"
           }`}
           src={url}
           {...getSize(aspectRatio)}

@@ -38,39 +38,39 @@ body,
 h1,
 h2,
 h3 {
-  @apply leading-relaxed tracking-widest font-display;
+  @apply !leading-relaxed !tracking-widest !font-display;
 }
 
 h1 {
-  @apply leading-relaxed tracking-widest text-8xl text-primary;
+  @apply !leading-relaxed !tracking-widest !text-8xl !text-primary;
 }
 
 h2 {
-  @apply text-6xl text-primary;
+  @apply !text-6xl !text-primary;
 }
 
 h3 {
-  @apply text-4xl !text-primary;
+  @apply !text-4xl !text-primary;
 }
 
 h4 {
-  @apply text-2xl text-primary;
+  @apply !text-2xl !text-primary;
 }
 
 h5 {
-  @apply text-xl text-primary;
+  @apply !text-xl !text-primary;
 }
 
 h6 {
-  @apply text-lg text-primary;
+  @apply !text-lg !text-primary;
 }
 
 p {
-  @apply text-base text-default;
+  @apply !text-base !text-default;
 }
 
 li {
-  @apply text-base text-default;
+  @apply !text-base !text-default;
 }
 
 ul > li::marker {
@@ -156,19 +156,23 @@ label > [type="checkbox"].offset {
   @apply transition-all duration-200 border-offset bg-default text-secondary focus:border-primary focus:ring-1 focus:ring-offset-2 focus:ring-primary;
 }
 
-button.btn {
+button.btn,
+a.btn {
   @apply inline-flex items-center justify-center px-4 py-2;
 }
 
-button.btn-primary {
+button.btn-primary,
+a.btn-primary {
   @apply text-base font-medium transition-all duration-200 border border-transparent rounded-sm shadow-sm text-button bg-primary hover:bg-secondary focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-primary;
 }
 
-button.btn-primary[disabled] {
+button.btn-primary[disabled],
+a.btn-primary[disabled] {
   @apply cursor-not-allowed opacity-30;
 }
 
-button.btn-secondary {
+button.btn-secondary,
+a.btn-secondary {
   @apply text-base font-medium transition-all duration-200 bg-transparent border rounded-sm shadow-sm text-primary border-primary hover:bg-offset focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-primary;
 }
 

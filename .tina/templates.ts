@@ -1,16 +1,20 @@
 import {
   heroBaseTemplate,
+  heroSerieTemplate,
   masonryBaseTemplate,
-  masonryLightBoxTemplate,
+  masonryFSTemplate,
   allSeriesTemplate,
   contactFormTemplate,
   bodySimpleTemplate,
+  paginationBaseTemplate,
 } from "../src/components/cms";
 export {
   heroBaseTemplate,
+  heroSerieTemplate,
   masonryBaseTemplate,
-  masonryLightBoxTemplate,
+  masonryFSTemplate,
   allSeriesTemplate,
   contactFormTemplate,
   bodySimpleTemplate,
+  paginationBaseTemplate,
 };

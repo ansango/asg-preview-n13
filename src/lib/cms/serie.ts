@@ -14,7 +14,7 @@ export async function getSerie({ params }: { params: Params }) {
 
     return serie;
   } catch (error) {
-    console.error(error);
+    console.error("Error while getting serie", error);
     return null;
   }
 }

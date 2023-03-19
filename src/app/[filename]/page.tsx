@@ -1,7 +1,18 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import type { TinaMarkdownContent } from "tinacms/dist/rich-text";
 
-import { Blocks } from "@/components/cms";
-import { getPage, getPageConnection, getSeries } from "@/lib";
+import type { PageBlocks, Serie } from ".tina/__generated__/types";
+import type { ImageProps } from "@/components";
+import { Image } from "@/components";
+import type {
+  BodySimpleProps,
+  ContactFormProps,
+  HeroBaseProps,
+  MasonryBaseProps,
+} from "@/components/cms";
+import { BodySimple, ContactForm, Series, HeroBase, MasonryBase } from "@/components/cms";
+import { getBlurUrl, getPage, getPageConnection, getSeries } from "@/lib";
 
 type Params = {
   filename: string;
@@ -48,15 +59,55 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 }
 
 export default async function Page({ params }: { params: Params }) {
-  const series = params.filename === "series" ? await getSeries() : null;
   const data = await getPage({ params });
+  const blocks = data?.blocks as Array<PageBlocks>;
+  if (!data || !data.visible || !blocks) notFound();
+
+  const series = params.filename === "series" ? await getSeries() : null;
 
   return (
-    <Blocks
-      blocks={data?.blocks}
-      data={{
-        series,
-      }}
-    />
+    <>
+      {blocks?.map((block, iBlock) => {
+        const key = `${block?.__typename}-${iBlock}`;
+        switch (block?.__typename) {
+          case "PageBlocksHeroBase": {
+            if (!block.visible) return null;
+            return <HeroBase key={key} {...(block as HeroBaseProps)} />;
+          }
+          case "PageBlocksMasonryBase": {
+            if (!block.visible) return null;
+            return (
+              <MasonryBase key={key} {...(block as MasonryBaseProps)}>
+                {block.images?.map((image, iGallery) => (
+                  <Image
+                    {...(image as ImageProps)}
+                    key={iGallery}
+                    alt={image?.alt}
+                    loading={iBlock < 2 && iGallery < 2 ? "eager" : "lazy"}
+                    blurDataURL={getBlurUrl(image as ImageProps)}
+                  />
+                ))}
+              </MasonryBase>
+            );
+          }
+          case "PageBlocksAllSeries": {
+            if (!block.visible || !series) return null;
+
+            return <Series key={key} data={series as unknown as Array<Serie>} />;
+          }
+          case "PageBlocksContactForm": {
+            if (!block.visible) return null;
+            return <ContactForm key={key} {...(block as ContactFormProps)} />;
+          }
+          case "PageBlocksBodySimple": {
+            const content = block.content as TinaMarkdownContent;
+            if (!block.visible || content.children.length === 0) return null;
+            return <BodySimple key={key} {...(block as BodySimpleProps)} />;
+          }
+          default:
+            return null;
+        }
+      })}
+    </>
   );
 }

@@ -14,7 +14,7 @@ export async function getPage({ params }: { params: Params }) {
 
     return page;
   } catch (error) {
-    console.error(error);
+    console.error("Error while getting page", error);
     return null;
   }
 }

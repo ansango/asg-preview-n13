@@ -26,19 +26,45 @@ const alignOptions = {
   right: "text-right",
 };
 
+const paddingTopCn = {
+  none: "",
+  md: "pt-5 md:pt-10 lg:pt-20",
+  lg: "pt-10 md:pt-20 lg:pt-36",
+  xl: "pt-20 md:pt-36 lg:pt-48",
+};
+
+const paddingBottomCn = {
+  none: "",
+  md: "pb-5 md:pb-10 lg:pb-20",
+  lg: "pb-10 md:pb-20 lg:pb-36",
+  xl: "pb-20 md:pb-36 lg:pb-48",
+};
+
 export type BodySimpleProps = {
   size?: keyof typeof sizeOptions;
   center?: keyof typeof centerOptions;
   align?: keyof typeof alignOptions;
+  paddingTop?: keyof typeof paddingTopCn;
+  paddingBottom?: keyof typeof paddingBottomCn;
   content: TinaMarkdownContent;
 };
 
-export const BodySimple: FC<BodySimpleProps> = ({ content, size, center, align }) => {
+export const BodySimple: FC<BodySimpleProps> = ({
+  content,
+  size,
+  center,
+  align,
+  paddingBottom,
+  paddingTop,
+}) => {
   const cnSize = sizeOptions[size || "md"];
   const cnCenter = centerOptions[center || "left"];
   const cnAlign = alignOptions[align || "left"];
+  const cnPaddingTop = paddingTopCn[paddingTop || "none"];
+  const cnPaddingBottom = paddingBottomCn[paddingBottom || "none"];
+  const cnPadding = `${cnPaddingTop} ${cnPaddingBottom}`;
   return (
-    <Section className="flex-none pb-20 md:pb-40 lg:pb-72">
+    <Section className={`!flex-none ${cnPadding}`}>
       <Container className={`flex ${cnCenter} ${cnAlign}`}>
         <article className={`prose ${cnSize}`}>
           <Balancer>
@@ -81,6 +107,18 @@ export const bodySimpleTemplate: Template = {
       label: "Align",
       name: "align",
       options: ["left", "center", "right"],
+    },
+    {
+      type: "string",
+      label: "Padding Top",
+      name: "paddingTop",
+      options: ["none", "md", "lg", "xl"],
+    },
+    {
+      type: "string",
+      label: "Padding Bottom",
+      name: "paddingBottom",
+      options: ["none", "md", "lg", "xl"],
     },
   ],
 };

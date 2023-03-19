@@ -1,14 +1,16 @@
 import { defineConfig } from "tinacms";
 import { optionsDark, optionsLight } from "../src/components/cms/backgrounds";
 import { kebabCase } from "../src/lib";
-import { metaSchema, gallerySerieSchemaField } from "./schemas";
+import { metaSchema, thumbnailsSchemaField } from "./schemas";
 import {
   heroBaseTemplate,
+  heroSerieTemplate,
   masonryBaseTemplate,
+  masonryFSTemplate,
   allSeriesTemplate,
   contactFormTemplate,
   bodySimpleTemplate,
-  masonryLightBoxTemplate,
+  paginationBaseTemplate,
 } from "./templates";
 
 const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
@@ -38,7 +40,13 @@ export default defineConfig({
         ui: {
           filename: {
             readonly: true,
-            slugify: ({ title, sequence }) => kebabCase(`${sequence}-${title}`),
+            slugify: ({ title, sequence }) => {
+              if (title && sequence) {
+                return kebabCase(`${sequence}-${title}`);
+              } else {
+                return "";
+              }
+            },
           },
         },
 
@@ -47,16 +55,6 @@ export default defineConfig({
             name: "visible",
             label: "Visible",
             type: "boolean",
-          },
-          {
-            type: "boolean",
-            label: "Is Featured",
-            name: "isFeatured",
-          },
-          {
-            type: "image",
-            name: "cover",
-            label: "Cover Url",
           },
           {
             label: "Sequence",
@@ -75,35 +73,20 @@ export default defineConfig({
             required: true,
             isTitle: true,
           },
-          {
-            label: "Description",
-            name: "description",
-            type: "string",
-          },
-          {
-            label: "Summary",
-            name: "summary",
-            type: "string",
-            required: true,
-            ui: {
-              component: "textarea",
-            },
-          },
-
-          {
-            type: "datetime",
-            label: "Published At",
-            name: "publishedAt",
-          },
 
           { ...metaSchema },
-          { ...gallerySerieSchemaField },
+          { ...thumbnailsSchemaField },
           {
             type: "object",
             list: true,
             name: "blocks",
-            label: "Sections",
-            templates: [bodySimpleTemplate, masonryLightBoxTemplate],
+            label: "Blocks",
+            templates: [
+              heroSerieTemplate,
+              bodySimpleTemplate,
+              masonryFSTemplate,
+              paginationBaseTemplate,
+            ],
           },
         ],
       },
@@ -113,6 +96,11 @@ export default defineConfig({
         path: "src/content/pages",
         format: "mdx",
         fields: [
+          {
+            name: "visible",
+            label: "Visible",
+            type: "boolean",
+          },
           {
             type: "string",
             name: "title",

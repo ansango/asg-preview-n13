@@ -1,17 +1,5 @@
 import { cameras, films, tags } from "../src/constants";
-import {
-  columnsDefault,
-  columnsLg,
-  columnsMd,
-  columnsSm,
-  columnsXl,
-  gapDefault,
-  gapLg,
-  gapMd,
-  gapSm,
-  gapXl,
-} from "../src/components/masonry";
-import { aspectRatio, centerImage } from "../src/components/image";
+import { centerImage } from "../src/components/image";
 import { TinaField } from "tinacms";
 
 export const metaSchema: TinaField = {
@@ -20,17 +8,44 @@ export const metaSchema: TinaField = {
   label: "Meta",
   fields: [
     {
+      type: "boolean",
+      label: "Is Featured",
+      name: "isFeatured",
+    },
+    {
+      type: "image",
+      name: "cover",
+      label: "Cover Url",
+    },
+    {
+      label: "Description",
+      name: "description",
+      type: "string",
+    },
+    {
+      label: "Summary",
+      name: "summary",
+      type: "string",
+      ui: {
+        component: "textarea",
+      },
+    },
+
+    {
+      type: "datetime",
+      label: "Published At",
+      name: "publishedAt",
+    },
+    {
       label: "Camera",
       name: "camera",
       type: "string",
-      required: true,
       options: cameras,
     },
     {
       label: "Film",
       name: "film",
       type: "string",
-      required: true,
       options: films,
     },
 
@@ -43,13 +58,11 @@ export const metaSchema: TinaField = {
           label: "Start",
           name: "start",
           type: "datetime",
-          required: true,
         },
         {
           label: "End",
           name: "end",
           type: "datetime",
-          required: true,
         },
       ],
     },
@@ -57,163 +70,15 @@ export const metaSchema: TinaField = {
       label: "Tags",
       name: "tags",
       type: "string",
-      list: true,
       options: tags,
-    },
-  ],
-};
-
-export const defaultMeta = {
-  camera: cameras[1],
-  film: films[1],
-  shot: {
-    start: new Date().toISOString(),
-    end: new Date().toISOString(),
-  },
-  tags: [tags[0], tags[6]],
-};
-
-export const masonrySchemaField: TinaField = {
-  label: "Masonry",
-  name: "masonry",
-  type: "object",
-  fields: [
-    {
-      name: "visible",
-      label: "Visible",
-      type: "boolean",
-    },
-    {
-      name: "columns",
-      label: "Columns",
-      type: "object",
-      fields: [
-        {
-          name: "default",
-          label: "Default",
-          type: "string",
-          options: columnsDefault,
-        },
-        {
-          name: "sm",
-          label: "Small",
-          type: "string",
-          options: columnsSm,
-        },
-        {
-          name: "md",
-          label: "Medium",
-          type: "string",
-          options: columnsMd,
-        },
-        {
-          name: "lg",
-          label: "Large",
-          type: "string",
-          options: columnsLg,
-        },
-        {
-          name: "xl",
-          label: "Extra Large",
-          type: "string",
-          options: columnsXl,
-        },
-      ],
-    },
-    {
-      name: "gap",
-      label: "Gap",
-      type: "object",
-      fields: [
-        {
-          name: "default",
-          label: "Default",
-          type: "string",
-          options: gapDefault,
-        },
-        {
-          name: "sm",
-          label: "Small",
-          type: "string",
-          options: gapSm,
-        },
-        {
-          name: "md",
-          label: "Medium",
-          type: "string",
-          options: gapMd,
-        },
-        {
-          name: "lg",
-          label: "Large",
-          type: "string",
-          options: gapLg,
-        },
-        {
-          name: "xl",
-          label: "Extra Large",
-          type: "string",
-          options: gapXl,
-        },
-      ],
-    },
-    {
-      type: "object",
-      label: "Images",
-      name: "images",
       list: true,
-      ui: {
-        itemProps: (item) => {
-          return { label: item?.alt };
-        },
-        defaultItem: {
-          url: "/43-junio-2022-kodak-gold-200-website/11.webp",
-          alt: "Image",
-          label: "Image",
-          aspectRatio: "square",
-          centerImage: "center",
-        },
-      },
-      fields: [
-        {
-          type: "string",
-          label: "Label",
-          name: "label",
-        },
-        {
-          name: "url",
-          label: "Image",
-          type: "image",
-          required: true,
-        },
-        {
-          name: "alt",
-          label: "Alt Text",
-          type: "string",
-          required: true,
-        },
-        {
-          name: "aspectRatio",
-          label: "Aspect Ratio",
-          type: "string",
-          options: aspectRatio,
-          required: true,
-        },
-        {
-          name: "centerImage",
-          label: "Center Image",
-          type: "string",
-          options: centerImage,
-          required: true,
-        },
-      ],
     },
   ],
 };
 
-export const gallerySerieSchemaField: TinaField = {
-  label: "Gallery Serie",
-  name: "gallerySerie",
+export const thumbnailsSchemaField: TinaField = {
+  label: "Thumbnails",
+  name: "thumbnails",
   type: "object",
   ui: {
     itemProps: (item) => {
@@ -222,132 +87,71 @@ export const gallerySerieSchemaField: TinaField = {
   },
   fields: [
     {
-      name: "visible",
-      label: "Visible",
-      type: "boolean",
-    },
-    {
-      name: "columns",
-      label: "Columns",
       type: "object",
+      label: "First Thumbnail",
+      name: "firstThumbnail",
       fields: [
-        {
-          name: "default",
-          label: "Default",
-          type: "string",
-          options: columnsDefault,
-        },
-        {
-          name: "sm",
-          label: "Small",
-          type: "string",
-          options: columnsSm,
-        },
-        {
-          name: "md",
-          label: "Medium",
-          type: "string",
-          options: columnsMd,
-        },
-        {
-          name: "lg",
-          label: "Large",
-          type: "string",
-          options: columnsLg,
-        },
-        {
-          name: "xl",
-          label: "Extra Large",
-          type: "string",
-          options: columnsXl,
-        },
-      ],
-    },
-    {
-      name: "gap",
-      label: "Gap",
-      type: "object",
-      fields: [
-        {
-          name: "default",
-          label: "Default",
-          type: "string",
-          options: gapDefault,
-        },
-        {
-          name: "sm",
-          label: "Small",
-          type: "string",
-          options: gapSm,
-        },
-        {
-          name: "md",
-          label: "Medium",
-          type: "string",
-          options: gapMd,
-        },
-        {
-          name: "lg",
-          label: "Large",
-          type: "string",
-          options: gapLg,
-        },
-        {
-          name: "xl",
-          label: "Extra Large",
-          type: "string",
-          options: gapXl,
-        },
-      ],
-    },
-    {
-      type: "object",
-      label: "Images",
-      name: "images",
-      list: true,
-      ui: {
-        itemProps: (item) => {
-          return { label: item?.alt };
-        },
-        defaultItem: {
-          url: "https://asg-cms.s3.eu-west-3.amazonaws.com/43-junio-2022-kodak-gold-200-website/11.webp",
-          alt: "Image",
-          label: "Image",
-          aspectRatio: "square",
-          centerImage: "center",
-        },
-      },
-      fields: [
-        {
-          type: "string",
-          label: "Label",
-          name: "label",
-        },
         {
           name: "url",
           label: "URL",
           type: "image",
-          required: true,
         },
         {
           name: "alt",
           label: "Alt Text",
           type: "string",
-          required: true,
-        },
-        {
-          name: "aspectRatio",
-          label: "Aspect Ratio",
-          type: "string",
-          options: aspectRatio,
-          required: true,
         },
         {
           name: "centerImage",
           label: "Center Image",
           type: "string",
           options: centerImage,
-          required: true,
+        },
+      ],
+    },
+    {
+      type: "object",
+      label: "Second Thumbnail",
+      name: "secondThumbnail",
+      fields: [
+        {
+          name: "url",
+          label: "URL",
+          type: "image",
+        },
+        {
+          name: "alt",
+          label: "Alt Text",
+          type: "string",
+        },
+        {
+          name: "centerImage",
+          label: "Center Image",
+          type: "string",
+          options: centerImage,
+        },
+      ],
+    },
+    {
+      type: "object",
+      label: "Third Thumbnail",
+      name: "thirdThumbnail",
+      fields: [
+        {
+          name: "url",
+          label: "URL",
+          type: "image",
+        },
+        {
+          name: "alt",
+          label: "Alt Text",
+          type: "string",
+        },
+        {
+          name: "centerImage",
+          label: "Center Image",
+          type: "string",
+          options: centerImage,
         },
       ],
     },
