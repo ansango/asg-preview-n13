@@ -1,4 +1,5 @@
 import { defineConfig } from "tinacms";
+import { optionsDark, optionsLight } from "../src/components/cms/backgrounds";
 import { kebabCase } from "../src/lib";
 import { metaSchema, masonrySchemaField, gallerySerieSchemaField } from "./schemas";
 import {
@@ -6,6 +7,7 @@ import {
   masonryBaseTemplate,
   allSeriesTemplate,
   contactFormTemplate,
+  bodySimpleTemplate,
 } from "./templates";
 
 const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
@@ -126,108 +128,89 @@ export default defineConfig({
               masonryBaseTemplate,
               allSeriesTemplate,
               contactFormTemplate,
+              bodySimpleTemplate,
             ],
           },
         ],
       },
       {
-        label: "Global",
+        label: "Layout",
         name: "global",
         path: "src/content/global",
         format: "json",
         fields: [
           {
             type: "object",
-            label: "Header",
-            name: "header",
+            label: "Navigation",
+            name: "navigation",
+            list: true,
+            ui: {
+              itemProps: (item) => {
+                return { label: item?.label };
+              },
+              defaultItem: {
+                href: "home",
+                label: "Home",
+              },
+            },
+
             fields: [
               {
-                type: "object",
-                label: "Nav Links",
-                name: "nav",
-                list: true,
-                ui: {
-                  itemProps: (item) => {
-                    return { label: item?.label };
-                  },
-                  defaultItem: {
-                    href: "home",
-                    label: "Home",
-                  },
-                },
-                fields: [
-                  {
-                    type: "string",
-                    label: "Link",
-                    name: "href",
-                  },
-                  {
-                    type: "string",
-                    label: "Label",
-                    name: "label",
-                  },
-                ],
+                type: "string",
+                label: "Link",
+                name: "href",
+              },
+              {
+                type: "string",
+                label: "Label",
+                name: "label",
               },
             ],
           },
           {
             type: "object",
-            label: "Footer",
-            name: "footer",
+            label: "Social Links",
+            name: "social",
+            list: true,
+            ui: {
+              itemProps: (item) => {
+                return { label: item?.label };
+              },
+              defaultItem: {
+                href: "home",
+                label: "Home",
+              },
+            },
+
             fields: [
               {
-                type: "object",
-                label: "Links",
-                name: "links",
-                list: true,
-                ui: {
-                  itemProps: (item) => {
-                    return { label: item?.label };
-                  },
-                  defaultItem: {
-                    href: "",
-                    label: "Home",
-                  },
-                },
-                fields: [
-                  {
-                    type: "string",
-                    label: "Link",
-                    name: "href",
-                  },
-                  {
-                    type: "string",
-                    label: "Label",
-                    name: "label",
-                  },
-                ],
+                type: "string",
+                label: "Link",
+                name: "href",
               },
               {
-                type: "object",
-                label: "Social Links",
-                name: "social",
-                list: true,
-                ui: {
-                  itemProps: (item) => {
-                    return { label: item?.label };
-                  },
-                  defaultItem: {
-                    href: "/",
-                    label: "Twitter",
-                  },
-                },
-                fields: [
-                  {
-                    type: "string",
-                    label: "Link",
-                    name: "href",
-                  },
-                  {
-                    type: "string",
-                    label: "Label",
-                    name: "label",
-                  },
-                ],
+                type: "string",
+                label: "Label",
+                name: "label",
+              },
+            ],
+          },
+          {
+            type: "object",
+            label: "Background",
+            name: "background",
+            fields: [
+              {
+                type: "string",
+                label: "Light",
+                name: "light",
+                options: optionsLight,
+              },
+              {
+                type: "string",
+                label: "Dark",
+                name: "dark",
+                options: optionsDark,
               },
             ],
           },

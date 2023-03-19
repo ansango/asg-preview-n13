@@ -1,48 +1,34 @@
 {
-  "header": {
-    "nav": [
-      {
-        "href": "",
-        "label": "inicio"
-      },
-      {
-        "href": "series",
-        "label": "series"
-      },
-      {
-        "href": "sobremi",
-        "label": "sobre mi"
-      },
-      {
-        "href": "contacto",
-        "label": "contacto"
-      }
-    ]
-  },
-  "footer": {
-    "links": [
-      {
-        "href": "",
-        "label": "inicio"
-      },
-      {
-        "href": "series",
-        "label": "series"
-      },
-      {
-        "href": "sobremi",
-        "label": "sobre mi"
-      }
-    ],
-    "social": [
-      {
-        "href": "https://www.instagram.com/iamasync/",
-        "label": "instagram"
-      },
-      {
-        "href": "https://github.com/ansango/",
-        "label": "github"
-      }
-    ]
+  "navigation": [
+    {
+      "href": "",
+      "label": "inicio"
+    },
+    {
+      "href": "series",
+      "label": "series"
+    },
+    {
+      "href": "sobremi",
+      "label": "sobre mi"
+    },
+    {
+      "href": "contacto",
+      "label": "contacto"
+    }
+  ],
+  "social": [
+    {
+      "href": "https://www.instagram.com/iamasync/",
+      "label": "instagram"
+    },
+    {
+      "href": "https://github.com/ansango/",
+      "label": "github"
+    }
+  ],
+  "background": {
+    "light": "",
+    "dark": ""
   }
 }

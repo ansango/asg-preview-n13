@@ -4,6 +4,7 @@ import {
   masonrySerieTemplate,
   allSeriesTemplate,
   contactFormTemplate,
+  bodySimpleTemplate,
 } from "../src/components/cms";
 export {
   heroBaseTemplate,
@@ -11,4 +12,5 @@ export {
   masonrySerieTemplate,
   allSeriesTemplate,
   contactFormTemplate,
+  bodySimpleTemplate,
 };

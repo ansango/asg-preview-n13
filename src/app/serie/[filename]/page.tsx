@@ -1,53 +1,36 @@
 import type { Metadata } from "next";
 import Balancer from "react-wrap-balancer";
 
-import type { Serie } from ".tina/__generated__/types";
 import {
   Container,
   MasonryWithLightBox,
   Section,
-  Pagination,
   type MasonryWithLightBoxProps,
 } from "@/components";
-import { formatDate, getSerie, getSerieConnection, getSeries } from "@/lib";
+import { formatDate, getSerie, getSerieConnection } from "@/lib";
+
 type Params = {
   filename: string;
 };
 
+type SerieTina = {
+  _sys: Params;
+};
+
 export async function generateStaticParams() {
-  const series = await getSerieConnection();
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  //@ts-ignore
+  const series = (await getSerieConnection()) as Array<SerieTina>;
+
   return series.map((serie) => ({
     params: {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      //@ts-ignore
       filename: serie._sys.filename,
     },
   }));
 }
 
-const getPagination = async ({ params }: { params: Params }) => {
-  const series = (await getSeries()) as Serie[];
-  const index = series
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    //@ts-ignore
-    ?.sort((a, b) => (a.publishedAt > b.publishedAt ? -1 : 1))
-    .findIndex((serie) => serie?._sys.filename === params.filename);
-
-  const prevSerie = series[index - 1] || null;
-  const nextSerie = series[index + 1] || null;
-  const prev =
-    (prevSerie && { title: prevSerie.title, route: `/serie/${prevSerie._sys.filename}` }) || null;
-  const next =
-    (nextSerie && { title: nextSerie.title, route: `/serie/${nextSerie._sys.filename}` }) || null;
-  return { prev, next };
-};
-
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const data = await getSerie({ params });
   const url = `${process.env.NEXT_PUBLIC_WEB_URI}/serie/${params.filename}`;
-  const tags = data?.meta?.tags as unknown as string[];
+  const tags = data?.meta?.tags as unknown as Array<string>;
   const firstTag = tags[0]?.charAt(0).toUpperCase() + tags[0]?.slice(1);
   const secondTag = tags[1]?.charAt(0).toUpperCase() + tags[1]?.slice(1);
   const thirdTag = tags[2]?.charAt(0).toUpperCase() + tags[2]?.slice(1);
@@ -82,7 +65,6 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 
 export default async function Page({ params }: { params: Params }) {
   const data = await getSerie({ params });
-  const pagination = await getPagination({ params });
   const columns = data && (data.masonry?.columns as unknown as MasonryWithLightBoxProps["columns"]);
   const gap = data && (data.masonry?.gap as unknown as MasonryWithLightBoxProps["gap"]);
   const images = data && (data?.masonry?.images as unknown as MasonryWithLightBoxProps["images"]);
@@ -138,20 +120,6 @@ export default async function Page({ params }: { params: Params }) {
               }}
             />
           )}
-        </Container>
-      </Section>
-      <Section className="flex-none py-20">
-        <Container className="grid grid-cols-2 gap-5 py-20">
-          <Pagination
-            next={{
-              title: pagination.next?.title,
-              route: pagination.next?.route,
-            }}
-            prev={{
-              title: pagination.prev?.title,
-              route: pagination.prev?.route,
-            }}
-          />
         </Container>
       </Section>
     </>

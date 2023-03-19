@@ -16,9 +16,14 @@ import { Image } from "./image";
 import type { MasonryProps } from "./masonry";
 import { Masonry } from "./masonry";
 
+type Slide = {
+  src: string;
+  index: number;
+};
+
 type LightBoxContextType = {
-  slides: { src: string; index: number }[];
-  setSlides: (slides: { src: string; index: number }[]) => void;
+  slides: Array<Slide>;
+  setSlides: (slides: Array<Slide>) => void;
   index: number;
   setIndex: (value: number) => void;
 };
@@ -36,7 +41,7 @@ export const useLightBox = () => useContext(LightBoxContext);
 
 export const LightBox: FC<{ children: ReactNode }> = ({ children }) => {
   const [index, setIndex] = useState<number>(-1);
-  const [slides, setSlides] = useState<{ src: string; index: number }[]>([]);
+  const [slides, setSlides] = useState<Array<Slide>>([]);
 
   return (
     <LightBoxContext.Provider
@@ -63,7 +68,7 @@ export const LightBox: FC<{ children: ReactNode }> = ({ children }) => {
   );
 };
 
-type Images = { images: ImageProps[] };
+type Images = { images: Array<ImageProps> };
 
 export type MasonryWithLightBoxProps = Omit<MasonryProps, "children"> & Images;
 

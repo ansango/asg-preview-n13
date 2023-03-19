@@ -7,7 +7,7 @@ import type { RequestHandler } from "next-connect/dist/types/node";
 export const corsMiddleware = expressWrapper(cors());
 
 export const customErrors:
-  | HandlerOptions<RequestHandler<NextApiRequest, NextApiResponse<any>>>
+  | HandlerOptions<RequestHandler<NextApiRequest, NextApiResponse<unknown>>>
   | undefined = {
   onError: (err, req, res) => {
     res.status(500).end("Something broke!");

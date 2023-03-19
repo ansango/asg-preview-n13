@@ -1,11 +1,16 @@
 import type { FC } from "react";
 
+import type { TinaMarkdownContent } from "tinacms/dist/rich-text";
+
 import type { Page, Serie } from ".tina/__generated__/types";
 
 import { getBlurUrl } from "../../lib";
 import type { ImageProps } from "../image";
 import { Image } from "../image";
 
+import type { BodySimpleProps } from "./bodies";
+import { BodySimple } from "./bodies";
+import type { ContactFormProps } from "./forms";
 import { ContactForm } from "./forms";
 import { HeroBase, type HeroBaseProps } from "./hero";
 import { MasonryBase } from "./masonry";
@@ -13,7 +18,7 @@ import type { MasonryBaseProps } from "./masonry";
 import { Series } from "./series";
 
 type Props = Pick<Page, "blocks"> & {
-  data?: any;
+  data?: unknown;
 };
 
 export const Blocks: FC<Props> = ({ blocks, data }) => {
@@ -43,12 +48,19 @@ export const Blocks: FC<Props> = ({ blocks, data }) => {
             );
           }
           case "PageBlocksAllSeries": {
-            if (!block.visible) return null;
-            return <Series key={key} data={data.series as Serie[]} />;
+            const raw = data as { series: Array<Serie> } | undefined;
+            if (!block.visible || !raw) return null;
+
+            return <Series key={key} data={raw.series} />;
           }
           case "PageBlocksContactForm": {
             if (!block.visible) return null;
-            return <ContactForm key={key} />;
+            return <ContactForm key={key} {...(block as ContactFormProps)} />;
+          }
+          case "PageBlocksBodySimple": {
+            const content = block.content as TinaMarkdownContent;
+            if (!block.visible || content.children.length === 0) return null;
+            return <BodySimple key={key} {...(block as BodySimpleProps)} />;
           }
           default:
             return null;

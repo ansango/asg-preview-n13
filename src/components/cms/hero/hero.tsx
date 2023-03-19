@@ -3,10 +3,10 @@ import type { FC } from "react";
 import Balancer from "react-wrap-balancer";
 import type { Template } from "tinacms";
 import type { TinaMarkdownContent } from "tinacms/dist/rich-text";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 import { Container } from "../../container";
 import { Section } from "../../section";
+import { optionsDark, optionsLight } from "../backgrounds";
 
 export type HeroBaseProps = {
   headline: string;
@@ -15,6 +15,8 @@ export type HeroBaseProps = {
   align: "left" | "center" | "right" | null;
   rotationTitle: "left" | "center" | "right" | null;
   parragraph?: TinaMarkdownContent;
+  backgroundLight?: string;
+  backgroundDark?: string;
 };
 
 const algignCnText = {
@@ -41,43 +43,31 @@ export const HeroBase: FC<HeroBaseProps> = ({
   text,
   align = "center",
   rotationTitle = "center",
-  parragraph,
+  backgroundLight,
+  backgroundDark,
 }) => {
   const cnContainer = align && alignCnContainer[align];
   const cnText = align && algignCnText[align];
   const cnRotationTitle = rotationTitle && rotationTitleCn[rotationTitle];
 
   return (
-    <>
-      <Section>
-        <Container className={`h-[65vh] flex items-center ${cnContainer}`}>
-          <div className={`space-y-5 ${cnText}`}>
-            {tagline && (
-              <span>
-                <Balancer>{tagline}</Balancer>
-              </span>
-            )}
-            <h1 className={`${cnRotationTitle} max-w-screen-lg`}>{headline}</h1>
-            {text && (
-              <span>
-                <Balancer>{text}</Balancer>
-              </span>
-            )}
-          </div>
-        </Container>
-      </Section>
-      {parragraph && parragraph.children.length > 0 && (
-        <Section className="flex-none">
-          <Container>
-            <article className="pb-20 prose prose-lg md:pb-40 lg:pb-72 lg:prose-xl xl:prose-2xl">
-              <Balancer>
-                <TinaMarkdown content={parragraph} />
-              </Balancer>
-            </article>
-          </Container>
-        </Section>
-      )}
-    </>
+    <Section className={`${backgroundLight} ${backgroundDark}`}>
+      <Container className={`h-[65vh] flex items-center ${cnContainer}`}>
+        <div className={`space-y-5 ${cnText}`}>
+          {tagline && (
+            <span>
+              <Balancer>{tagline}</Balancer>
+            </span>
+          )}
+          <h1 className={`${cnRotationTitle} max-w-screen-lg`}>{headline}</h1>
+          {text && (
+            <span>
+              <Balancer>{text}</Balancer>
+            </span>
+          )}
+        </div>
+      </Container>
+    </Section>
   );
 };
 
@@ -145,9 +135,16 @@ export const heroBaseTemplate: Template = {
       ],
     },
     {
-      type: "rich-text",
-      label: "Parragraph",
-      name: "parragraph",
+      type: "string",
+      label: "Background Light",
+      name: "backgroundLight",
+      options: optionsLight,
+    },
+    {
+      type: "string",
+      label: "Background Dark",
+      name: "backgroundDark",
+      options: optionsDark,
     },
   ],
 };

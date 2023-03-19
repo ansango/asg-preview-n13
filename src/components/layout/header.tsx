@@ -1,7 +1,7 @@
 import type { FC } from "react";
 
 import Link from "next/link";
-import { useSelectedLayoutSegment } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 
 import { useMounted } from "@/lib";
@@ -14,17 +14,22 @@ type LinkJSON = {
 };
 
 type Props = {
-  nav: LinkJSON[];
+  navigation: Array<LinkJSON>;
 };
 
 const ThemeChanger = () => {
   const { theme, setTheme } = useTheme();
   const mounted = useMounted();
 
+  const handleThemeChange = () => {
+    const themeCondition = theme === "dark" ? "light" : "dark";
+    setTheme(themeCondition);
+  };
+
   return (
     <>
       <>
-        <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+        <button onClick={handleThemeChange}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="1em"
@@ -58,22 +63,22 @@ const ThemeChanger = () => {
   );
 };
 
-export const Header: FC<Props> = ({ nav }) => {
-  const segment = useSelectedLayoutSegment();
-  const active = segment === "home" ? "" : segment || "";
+export const Header: FC<Props> = ({ navigation }) => {
+  const segment = usePathname();
+
   return (
     <header>
       <Container className="flex items-start justify-between">
         <ThemeChanger />
         <nav>
           <ul className="flex flex-col items-end space-y-2">
-            {nav.map((item, i) => {
+            {navigation.map((item, i) => {
               return (
                 <li key={`${item.label}-${i}`}>
                   <Link
                     href={`/${item.href}`}
                     className={
-                      active === item.href
+                      segment === `/${item.href}`
                         ? "underline underline-offset-4 block odd:rotate-[1.5deg] even:-rotate-[1.5deg]"
                         : ""
                     }
