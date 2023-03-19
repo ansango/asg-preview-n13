@@ -14,7 +14,7 @@ type LinkJSON = {
 };
 
 type Props = {
-  nav: Array<LinkJSON>;
+  navigation: Array<LinkJSON>;
 };
 
 const ThemeChanger = () => {
@@ -63,7 +63,7 @@ const ThemeChanger = () => {
   );
 };
 
-export const Header: FC<Props> = ({ nav }) => {
+export const Header: FC<Props> = ({ navigation }) => {
   const segment = useSelectedLayoutSegment();
   const active = segment === "home" ? "" : segment || "";
   return (
@@ -72,7 +72,7 @@ export const Header: FC<Props> = ({ nav }) => {
         <ThemeChanger />
         <nav>
           <ul className="flex flex-col items-end space-y-2">
-            {nav.map((item, i) => {
+            {navigation.map((item, i) => {
               return (
                 <li key={`${item.label}-${i}`}>
                   <Link

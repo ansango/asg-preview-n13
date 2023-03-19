@@ -1,0 +1,6 @@
+{
+  "background": {
+    "light": "bg-hero-topography-offset-light-15",
+    "dark": "dark:bg-hero-topography-offset-dark-15"
+  }
+}

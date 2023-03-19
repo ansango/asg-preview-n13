@@ -1,0 +1,6 @@
+{
+  "background": {
+    "light": "bg-hero-graph-paper-offset-light-15",
+    "dark": "dark:bg-hero-graph-paper-offset-dark-15"
+  }
+}

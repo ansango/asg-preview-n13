@@ -14,12 +14,12 @@ import { Footer } from "./footer";
 import { Header } from "./header";
 
 export const Theme: FC<Props> = ({ children }) => {
-  const { footer, header } = GlobalData;
+  const { navigation, social } = GlobalData;
   return (
     <ThemeProvider attribute="class" themes={["light", "dark"]} enableSystem={false}>
-      <Header {...header} />
+      <Header {...{ navigation }} />
       {children}
-      <Footer {...footer} />
+      <Footer {...{ navigation, social }} />
     </ThemeProvider>
   );
 };
