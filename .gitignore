@@ -38,3 +38,6 @@ next-env.d.ts
 
 node_modules
 
+.images
+.images___output
+.images___output_blur

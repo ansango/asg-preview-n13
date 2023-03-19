@@ -8,6 +8,7 @@
     "cover": "NODE_OPTIONS='--experimental-json-modules' node ./src/scripts/cover.mjs",
     "sitemap": "NODE_OPTIONS='--experimental-json-modules' node ./src/scripts/sitemap.mjs",
     "rss": "NODE_OPTIONS='--experimental-json-modules' node ./src/scripts/rss.mjs",
+    "resize": "NODE_OPTIONS='--experimental-json-modules' node ./src/scripts/resize.mjs",
     "build": "tinacms build && next build",
     "postbuild": "npm run sitemap && npm run rss && npm run cover",
     "start": "tinacms build && next start",

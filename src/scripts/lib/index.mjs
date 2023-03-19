@@ -5,9 +5,9 @@ import fetch from "cross-fetch";
 import matter from "gray-matter";
 import sharp from "sharp";
 
-export const createFolder = (folderName) => {
+export const createFolder = (folderName, options) => {
   if (!fs.existsSync(folderName)) {
-    fs.mkdirSync(folderName);
+    fs.mkdirSync(folderName, options);
   }
 };
 
