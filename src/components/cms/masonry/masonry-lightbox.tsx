@@ -34,28 +34,6 @@ export const masonryLightBoxTemplate: Template = {
       type: "boolean",
     },
     {
-      name: "meta",
-      label: "Meta",
-      type: "object",
-      fields: [
-        {
-          name: "title",
-          label: "Title",
-          type: "string",
-        },
-        {
-          name: "description",
-          label: "Description",
-          type: "string",
-        },
-        {
-          name: "link",
-          label: "Link",
-          type: "string",
-        },
-      ],
-    },
-    {
       name: "columns",
       label: "Columns",
       type: "object",
