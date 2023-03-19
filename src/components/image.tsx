@@ -97,7 +97,7 @@ export const Image: FC<ImageProps> = ({
         <ImageNext
           className={`object-cover ${centerCn} ${aspectRatioCn[aspectRatio]} ${
             onClick
-              ? "cursor-pointer hover:opacity-80 group-hover:opacity-80 transition-all duration-300"
+              ? `duration-300 transform transition-all cursor-pointer hover:opacity-[0.89] group-hover:opacity-[0.89]`
               : ""
           }`}
           src={url}
