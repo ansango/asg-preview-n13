@@ -6,6 +6,7 @@ import PagesConfig from "../../content/global/pages.json";
 
 export default function PageLayout({ children }: { children: ReactNode }) {
   const { background } = PagesConfig;
+
   return (
     <div className={`${background.light} ${background.dark}`}>
       <Theme>

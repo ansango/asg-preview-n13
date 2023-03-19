@@ -56,6 +56,7 @@ module.exports = {
   plugins: [
     require("tailwindcss-debug-screens"),
     require("@tailwindcss/forms"),
+    require("@downwindcss/easings"),
     require("@tailwindcss/typography"),
     require("@tailwindcss/line-clamp"),
     require("tailwindcss-fluid-type")({

@@ -1,7 +1,7 @@
 import type { FC } from "react";
 
 import Link from "next/link";
-import { useSelectedLayoutSegment } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 
 import { useMounted } from "@/lib";
@@ -64,8 +64,8 @@ const ThemeChanger = () => {
 };
 
 export const Header: FC<Props> = ({ navigation }) => {
-  const segment = useSelectedLayoutSegment();
-  const active = segment === "home" ? "" : segment || "";
+  const segment = usePathname();
+
   return (
     <header>
       <Container className="flex items-start justify-between">
@@ -78,7 +78,7 @@ export const Header: FC<Props> = ({ navigation }) => {
                   <Link
                     href={`/${item.href}`}
                     className={
-                      active === item.href
+                      segment === `/${item.href}`
                         ? "underline underline-offset-4 block odd:rotate-[1.5deg] even:-rotate-[1.5deg]"
                         : ""
                     }
