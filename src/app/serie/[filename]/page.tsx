@@ -76,7 +76,7 @@ export default async function Page({ params }: { params: Params }) {
             if (!block.images) return null;
             return (
               <Section key={key}>
-                <Container>
+                <Container className="flex items-end justify-center">
                   <MasonryWithLightBox
                     {...{
                       columns: block.columns as unknown as MasonryWithLightBoxProps["columns"],

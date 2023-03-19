@@ -2,6 +2,8 @@ import type { FC } from "react";
 
 import ImageNext from "next/image";
 
+import { getSize } from "../lib";
+
 type AspectRatio = {
   "4/3": "aspect-4/3";
   "4/5": "aspect-4/5";
@@ -11,7 +13,6 @@ type AspectRatio = {
   "3/2": "aspect-3/2";
   square: "aspect-square";
   video: "aspect-video";
-  auto: "aspect-auto";
 };
 
 export type ImageProps = {
@@ -42,7 +43,6 @@ export const aspectRatioCn = {
   "3/2": "aspect-3/2",
   square: "aspect-square",
   video: "aspect-video",
-  auto: "aspect-auto",
 };
 
 export const objectPositionCn = {
@@ -57,33 +57,10 @@ export const objectPositionCn = {
   "right-bottom": "object-right-bottom",
 };
 
-const getSize = (aspectRatio: keyof typeof aspectRatioCn | string) => {
-  switch (aspectRatio) {
-    case "2/3":
-      return { width: 1365, height: 2048 };
-    case "3/2":
-      return { width: 2048, height: 1365 };
-    case "4/3":
-      return { width: 2048, height: 1536 };
-    case "4/5":
-      return { width: 1638, height: 2048 };
-    case "5/4":
-      return { width: 2048, height: 1638 };
-    case "9/16":
-      return { width: 1152, height: 2048 };
-    case "auto":
-      return { width: 2048, height: 1365 };
-    case "square":
-      return { width: 2048, height: 2048 };
-    case "video":
-      return { width: 2048, height: 1152 };
-  }
-};
-
 export const Image: FC<ImageProps> = ({
   alt = "",
   url,
-  aspectRatio = "auto",
+  aspectRatio = "4/3",
   centerImage = "center",
   loading = "lazy",
   onClick,
@@ -92,7 +69,7 @@ export const Image: FC<ImageProps> = ({
   const centerCn = objectPositionCn[centerImage] || objectPositionCn["center"];
 
   return (
-    <span className="flex flex-col">
+    <span className="flex flex-col items-center">
       {url ? (
         <ImageNext
           className={`object-cover ${centerCn} ${aspectRatioCn[aspectRatio]} ${

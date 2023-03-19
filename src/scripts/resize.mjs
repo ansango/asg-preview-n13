@@ -21,7 +21,7 @@ function getImagesFromFolder(folderPath) {
   return images;
 }
 
-async function resize(inputPath, outputPath, outputBlurPath, format = "webp", quality = 80) {
+async function resize(inputPath, outputPath, outputBlurPath, format = "webp", quality = 85) {
   console.log("Starting image resizing");
   console.log("Input path:", inputPath);
   createFolder(inputPath);
@@ -64,7 +64,7 @@ async function resize(inputPath, outputPath, outputBlurPath, format = "webp", qu
     if (isLandscape) {
       await image
         .webp({ quality, effort: 6 })
-        .resize({ width: 1536, height: 1024, fit: "cover" })
+        .resize({ width: 1920, height: 1080, fit: "cover" })
         .toFile(
           path.join(outputFolder, path.basename(imagePath, path.extname(imagePath)) + outputExt)
         );
@@ -81,7 +81,7 @@ async function resize(inputPath, outputPath, outputBlurPath, format = "webp", qu
     } else if (isPortrait) {
       await image
         .webp({ quality, effort: 6 })
-        .resize({ width: 1024, height: 1536, fit: "cover" })
+        .resize({ width: 1080, height: 1920, fit: "cover" })
         .toFile(
           path.join(outputFolder, path.basename(imagePath, path.extname(imagePath)) + outputExt)
         );
@@ -98,7 +98,7 @@ async function resize(inputPath, outputPath, outputBlurPath, format = "webp", qu
     } else {
       await image
         .webp({ quality, effort: 6 })
-        .resize({ width: 1536, height: 1536, fit: "cover" })
+        .resize({ width: 1920, height: 1920, fit: "cover" })
         .toFile(
           path.join(outputFolder, path.basename(imagePath, path.extname(imagePath)) + outputExt)
         );
