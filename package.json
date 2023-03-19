@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "dev": "tinacms dev -c \"next dev\"",
-    "blur": "NODE_OPTIONS='--experimental-json-modules' node ./src/scripts/blur.mjs",
     "cover": "NODE_OPTIONS='--experimental-json-modules' node ./src/scripts/cover.mjs",
     "sitemap": "NODE_OPTIONS='--experimental-json-modules' node ./src/scripts/sitemap.mjs",
     "rss": "NODE_OPTIONS='--experimental-json-modules' node ./src/scripts/rss.mjs",
@@ -63,6 +62,7 @@
     "lint-staged": "^13.1.2",
     "postcss": "^8.4.21",
     "prettier": "^2.8.4",
+    "raw-loader": "^4.0.2",
     "rss": "^1.2.2",
     "sharp": "^0.31.3",
     "tailwind-heropatterns": "^0.0.8",

@@ -7,18 +7,18 @@ import { createFolder } from "./lib/index.mjs";
 
 const imageExtensions = [".jpg", ".jpeg", ".png", ".gif"];
 
-async function generateBase64Image(
-  inputPath,
-  outputPath,
-  width = 800,
-  format = "webp",
-  quality = 50
-) {
-  const image = sharp(inputPath);
-  const buffer = await image.resize(width).toFormat(format, { quality }).toBuffer();
-  const base64Image = `data:image/${format};base64,${buffer.toString("base64")}`;
-  fs.writeFileSync(outputPath, base64Image);
-}
+// async function generateBase64Image(
+//   inputPath,
+//   outputPath,
+//   width = 800,
+//   format = "webp",
+//   quality = 50
+// ) {
+//   const image = sharp(inputPath);
+//   const buffer = await image.resize(width).toFormat(format, { quality }).toBuffer();
+//   const base64Image = `export default 'data:image/${format};base64,${buffer.toString("base64")}'`;
+//   fs.writeFileSync(outputPath, base64Image);
+// }
 
 function getImagesFromFolder(folderPath) {
   let images = [];
@@ -82,12 +82,15 @@ async function resize(inputPath, outputPath, outputBlurPath, format = "webp", qu
           path.join(outputFolder, path.basename(imagePath, path.extname(imagePath)) + outputExt)
         );
       console.log("Resized", imagePath);
-      const base64OutputPath = path.join(
-        outputBlurFolder,
-        path.basename(imagePath, path.extname(imagePath)) + ".txt"
-      );
-      await generateBase64Image(imagePath, base64OutputPath, 800, format);
-      console.log("Generated base64 image", base64OutputPath);
+      await image
+        .webp({ quality: 50, effort: 6 })
+        .resize(800)
+        .blur(10)
+        .toFile(
+          path.join(outputBlurFolder, path.basename(imagePath, path.extname(imagePath)) + outputExt)
+        );
+
+      console.log("Generated blur image", imagePath);
     } else if (isPortrait) {
       await image
         .webp({ quality, effort: 6 })
@@ -96,12 +99,15 @@ async function resize(inputPath, outputPath, outputBlurPath, format = "webp", qu
           path.join(outputFolder, path.basename(imagePath, path.extname(imagePath)) + outputExt)
         );
       console.log("Resized", imagePath);
-      const base64OutputPath = path.join(
-        outputBlurFolder,
-        path.basename(imagePath, path.extname(imagePath)) + ".txt"
-      );
-      await generateBase64Image(imagePath, base64OutputPath, 800, format);
-      console.log("Generated base64 image", base64OutputPath);
+      await image
+        .webp({ quality: 50, effort: 6 })
+        .resize(800)
+        .blur(10)
+        .toFile(
+          path.join(outputBlurFolder, path.basename(imagePath, path.extname(imagePath)) + outputExt)
+        );
+
+      console.log("Generated blur image", imagePath);
     } else {
       await image
         .webp({ quality, effort: 6 })
@@ -110,12 +116,15 @@ async function resize(inputPath, outputPath, outputBlurPath, format = "webp", qu
           path.join(outputFolder, path.basename(imagePath, path.extname(imagePath)) + outputExt)
         );
       console.log("Resized", imagePath);
-      const base64OutputPath = path.join(
-        outputBlurFolder,
-        path.basename(imagePath, path.extname(imagePath)) + ".txt"
-      );
-      await generateBase64Image(imagePath, base64OutputPath, 800, format);
-      console.log("Generated base64 image", base64OutputPath);
+      await image
+        .webp({ quality: 50, effort: 6 })
+        .resize(800)
+        .blur(10)
+        .toFile(
+          path.join(outputBlurFolder, path.basename(imagePath, path.extname(imagePath)) + outputExt)
+        );
+
+      console.log("Generated blur image", imagePath);
     }
   }
   console.log("Finished image resizing");
