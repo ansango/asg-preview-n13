@@ -1,7 +1,6 @@
 import {
   heroBaseTemplate,
   masonryBaseTemplate,
-  masonrySerieTemplate,
   masonryLightBoxTemplate,
   allSeriesTemplate,
   contactFormTemplate,
@@ -10,7 +9,6 @@ import {
 export {
   heroBaseTemplate,
   masonryBaseTemplate,
-  masonrySerieTemplate,
   masonryLightBoxTemplate,
   allSeriesTemplate,
   contactFormTemplate,

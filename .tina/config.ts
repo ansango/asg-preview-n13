@@ -1,7 +1,7 @@
 import { defineConfig } from "tinacms";
 import { optionsDark, optionsLight } from "../src/components/cms/backgrounds";
 import { kebabCase } from "../src/lib";
-import { metaSchema, masonrySchemaField, gallerySerieSchemaField } from "./schemas";
+import { metaSchema, gallerySerieSchemaField } from "./schemas";
 import {
   heroBaseTemplate,
   masonryBaseTemplate,

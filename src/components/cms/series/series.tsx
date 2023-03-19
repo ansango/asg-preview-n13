@@ -10,9 +10,9 @@ import { getBlurUrl } from "../../../lib";
 import { Container } from "../../container";
 import type { ImageProps } from "../../image";
 import { Image } from "../../image";
+import type { MasonryProps } from "../../masonry";
+import { Masonry } from "../../masonry";
 import { Section } from "../../section";
-import type { MasonrySerieProps } from "../masonry";
-import { MasonrySerie } from "../masonry";
 
 type Props = {
   data?: Array<Serie>;
@@ -28,17 +28,19 @@ export const Series: FC<Props> = ({ data }) => {
               return (
                 <li key={id}>
                   <article className="group">
-                    <MasonrySerie {...(gallerySerie as MasonrySerieProps)}>
-                      {gallerySerie?.images?.map((image, iGallery) => (
-                        <Image
-                          key={iGallery}
-                          {...(image as ImageProps)}
-                          alt={image?.alt}
-                          loading={iBlock < 2 && iGallery < 2 ? "eager" : "lazy"}
-                          blurDataURL={getBlurUrl(image as ImageProps)}
-                        />
-                      ))}
-                    </MasonrySerie>
+                    {gallerySerie?.visible && (
+                      <Masonry {...(gallerySerie as MasonryProps)}>
+                        {gallerySerie?.images?.map((image, iGallery) => (
+                          <Image
+                            key={iGallery}
+                            {...(image as ImageProps)}
+                            alt={image?.alt}
+                            loading={iBlock < 2 && iGallery < 2 ? "eager" : "lazy"}
+                            blurDataURL={getBlurUrl(image as ImageProps)}
+                          />
+                        ))}
+                      </Masonry>
+                    )}
                     <div className="flex justify-between">
                       <div>
                         <h3 className="text-2xl font-semibold tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em]">
