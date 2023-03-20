@@ -1,7 +1,10 @@
 import type { aspectRatioCn, ImageProps } from "@/components";
 
 export const getBlurUrl = (obj: ImageProps): string =>
-  `/blur${obj.url?.replace(`${process.env.NEXT_PUBLIC_BUCKET_URL}`, "")}`;
+  `${process.env.NEXT_PUBLIC_WEB_URI}/blur${obj.url?.replace(
+    `${process.env.NEXT_PUBLIC_BUCKET_URL}`,
+    ""
+  )}`;
 
 export const getSize = (
   ratio: keyof typeof aspectRatioCn | string
