@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import type { TinaMarkdownContent } from "tinacms/dist/rich-text";
 
-import type { SerieBlocks } from ".tina/__generated__/types";
 import { Container, MasonryWithLightBox, Section } from "@/components";
 import type { MasonryWithLightBoxProps } from "@/components";
 import type { BodySimpleProps, HeroSerieProps } from "@/components/cms";
 import { BodySimple, HeroSerie, PaginationBase } from "@/components/cms";
 import { getSerie, getSerieConnection, getPagination } from "@/lib";
+
+import type { SerieBlocks } from ".tina/__generated__/types";
 
 type Params = {
   filename: string;

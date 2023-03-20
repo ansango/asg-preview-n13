@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: [`${process.env.BUCKET_URL.replace("https://", "")}`],
+    domains: [`${process.env.NEXT_PUBLIC_BUCKET_URL.replace("https://", "")}`],
     formats: ["image/webp"],
   },
   async rewrites() {
