@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     .split(", ");
 
   return {
-    title: `${data?.title} | Serie | Aníbal Santos Gómez | ${tags.slice(0, 2).join(", ")}`,
+    title: `${data?.title} | Serie | Aníbal Santos | ${tags.slice(0, 2).join(", ")}`,
     description: data?.meta?.description || "",
     openGraph: {
       title: data?.title,
@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
       url,
       images: [
         {
-          url: `${process.env.NEXT_PUBLIC_WEB_URI}/static/series/${data?.sequence}.jpg`,
+          url: `${process.env.NEXT_PUBLIC_WEB_URI}/covers/${data?.sequence}.jpg`,
           width: 400,
           height: 400,
           alt: data?.title,
@@ -125,7 +125,7 @@ export default async function Page({ params }: { params: Params }) {
             );
           }
           default: {
-            return <>Not found</>;
+            return null;
           }
         }
       })}

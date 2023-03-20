@@ -7,7 +7,7 @@ import { Inter, PT_Serif, Bebas_Neue } from "next/font/google";
 import GlobalData from "../content/global/index.json";
 
 export const metadata = {
-  title: "Film captures",
+  title: "Film captures | Aníbal Santos",
   description: "Un portfolio de fotografía química",
   authors: [
     {
