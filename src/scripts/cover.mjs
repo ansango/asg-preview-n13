@@ -8,7 +8,6 @@ const makeCover = async () => {
   const seriesStaticDir = route("public/covers");
   createFolder(seriesStaticDir);
   const { series } = getSeries();
-  console.log(series);
   for (const serie of series) {
     console.log(`Processing ${serie.cover}`);
     const filename = serie.filename.split("-")[0];

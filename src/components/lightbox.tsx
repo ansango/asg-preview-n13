@@ -57,10 +57,6 @@ export const LightBox: FC<{ children: ReactNode }> = ({ children }) => {
         close={() => setIndex(-1)}
         slides={slides}
         plugins={[Fullscreen]}
-        render={{
-          buttonNext: () => null,
-          buttonPrev: () => null,
-        }}
       />
     </LightBoxContext.Provider>
   );
