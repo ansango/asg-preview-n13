@@ -109,6 +109,14 @@ export default defineConfig({
             required: true,
           },
           {
+            name: "description",
+            type: "string",
+            label: "Description",
+            ui: {
+              component: "textarea",
+            },
+          },
+          {
             type: "object",
             list: true,
             name: "blocks",
@@ -144,10 +152,16 @@ export default defineConfig({
               defaultItem: {
                 href: "home",
                 label: "Home",
+                visible: false,
               },
             },
 
             fields: [
+              {
+                type: "boolean",
+                label: "Visible",
+                name: "visible",
+              },
               {
                 type: "string",
                 label: "Link",
@@ -172,10 +186,16 @@ export default defineConfig({
               defaultItem: {
                 href: "home",
                 label: "Home",
+                visible: false,
               },
             },
 
             fields: [
+              {
+                type: "boolean",
+                label: "Visible",
+                name: "visible",
+              },
               {
                 type: "string",
                 label: "Link",

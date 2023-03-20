@@ -44,25 +44,23 @@ export const HeroSerie: FC<HeroSerieProps> = ({
               <Balancer>{summary}</Balancer>
             </p>
           )}
-          {(camera && film) ||
-            (shot?.start && shot.end && (
-              <p>
-                {camera && film && (
-                  <span className="block">
-                    <Balancer>
-                      {camera} - {film}
-                    </Balancer>
-                  </span>
-                )}
-                {shot && shot.start && shot.end && (
-                  <span>
-                    <Balancer>
-                      {formatDate(shot?.start as string)} / {formatDate(shot?.end as string)}
-                    </Balancer>
-                  </span>
-                )}
-              </p>
-            ))}
+
+          <p>
+            {camera && film && (
+              <span className="block">
+                <Balancer>
+                  {camera} - {film}
+                </Balancer>
+              </span>
+            )}
+            {shot && shot.start && shot.end && (
+              <span>
+                <Balancer>
+                  {formatDate(shot?.start as string)} / {formatDate(shot?.end as string)}
+                </Balancer>
+              </span>
+            )}
+          </p>
 
           {tags && (
             <p className="flex flex-wrap pb-5">

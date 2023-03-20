@@ -1,28 +1,34 @@
 {
   "navigation": [
     {
+      "visible": true,
       "href": "",
       "label": "inicio"
     },
     {
+      "visible": true,
       "href": "series",
       "label": "series"
     },
     {
+      "visible": true,
       "href": "sobremi",
       "label": "sobre mi"
     },
     {
+      "visible": true,
       "href": "contacto",
       "label": "contacto"
     }
   ],
   "social": [
     {
+      "visible": true,
       "href": "https://www.instagram.com/iamasync/",
       "label": "instagram"
     },
     {
+      "visible": false,
       "href": "https://github.com/ansango/",
       "label": "github"
     }
@@ -30,10 +36,5 @@
   "background": {
     "light": "",
     "dark": ""
-  },
-  "_collection": "global",
-  "_keepTemplateKey": false,
-  "_template": "global",
-  "_relativePath": "index.json",
-  "_id": "content/global/index.json"
+  }
 }
