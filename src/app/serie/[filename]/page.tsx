@@ -32,13 +32,17 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const data = await getSerie({ params });
   const url = `${process.env.NEXT_PUBLIC_WEB_URI}/serie/${params.filename}`;
-  const tags = (data?.meta?.tags as unknown as Array<string>) || ["serie"];
+  const tags = (data?.meta?.tags as unknown as Array<string>)
+    .join(", ")
+    .replaceAll("-", " ")
+    .split(", ");
+
   return {
-    title: `${data?.title} | Serie `,
-    description: data?.meta?.summary,
+    title: `${data?.title} | Serie | Aníbal Santos Gómez | ${tags.slice(0, 2).join(", ")}`,
+    description: data?.meta?.description || "",
     openGraph: {
       title: data?.title,
-      description: data?.meta?.summary || "",
+      description: data?.meta?.description || "",
       url,
       images: [
         {
