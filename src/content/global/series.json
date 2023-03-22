@@ -1,6 +1,6 @@
 {
   "background": {
-    "light": "bg-hero-pie-factory-primary-light-15",
-    "dark": ""
+    "light": "bg-hero-pie-factory-primary-light-10",
+    "dark": "dark:bg-hero-pie-factory-primary-dark-10"
   }
 }
