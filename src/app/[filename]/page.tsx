@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const data = await getPage({ params });
 
   return {
-    title: `${data?.title ?? "Film captures"} | Aníbal Santos Gómez`,
+    title: `${data?.title ?? "Film captures"} | Aníbal Santos Gómez `,
     description: data?.description,
     openGraph: {
       title: data?.title,
