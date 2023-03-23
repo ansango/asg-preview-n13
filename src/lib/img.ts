@@ -1,10 +1,17 @@
 import type { aspectRatioCn, ImageProps } from "@/components";
 
-export const getBlurUrl = (obj: ImageProps): string =>
-  `${process.env.NEXT_PUBLIC_WEB_URI}/blur${obj.url?.replace(
-    `${process.env.NEXT_PUBLIC_BUCKET_URL}`,
-    ""
-  )}`;
+import data from "../constants/data";
+export const getBlurUrl = (obj: ImageProps): string => {
+  const folder = `/${obj.url
+    ?.replace(`${process.env.NEXT_PUBLIC_BUCKET_URL}`, "")
+    .split("/")
+    .slice(1, 3)
+    .join("/")}`;
+
+  const image = data.filter((ob) => ob.folder === folder)[0].img;
+
+  return image;
+};
 
 export const getSize = (
   ratio: keyof typeof aspectRatioCn | string
