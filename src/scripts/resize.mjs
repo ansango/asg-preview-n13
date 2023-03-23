@@ -86,9 +86,10 @@ async function resize(inputPath, outputPath, outputBlurPath, format = "webp", qu
     }
     console.log("Resized", imagePath);
     const base64 = await getBase64FromUrl(imagePath);
+
     jsonblur.push(
       JSON.stringify({
-        folder: `/${subFolderPath}`,
+        url: `/${subFolderPath}/${path.basename(imagePath, path.extname(imagePath)) + outputExt}`,
         img: base64,
       })
     );

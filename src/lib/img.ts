@@ -2,13 +2,13 @@ import type { aspectRatioCn, ImageProps } from "@/components";
 
 import data from "../constants/data";
 export const getBlurUrl = (obj: ImageProps): string => {
-  const folder = `/${obj.url
+  const url = `/${obj.url
     ?.replace(`${process.env.NEXT_PUBLIC_BUCKET_URL}`, "")
     .split("/")
-    .slice(1, 3)
+    .slice(1, 4)
     .join("/")}`;
 
-  const image = data.filter((ob) => ob.folder === folder)[0].img;
+  const image = data.filter((ob) => ob.url === url)[0]?.img;
 
   return image;
 };
