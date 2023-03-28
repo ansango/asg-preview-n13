@@ -40,13 +40,7 @@ export default defineConfig({
         ui: {
           filename: {
             readonly: true,
-            slugify: ({ title, sequence }) => {
-              if (title && sequence) {
-                return kebabCase(`${sequence}-${title}`);
-              } else {
-                return "";
-              }
-            },
+            slugify: ({ title }) => (title && kebabCase(title)) || "",
           },
         },
 
@@ -56,16 +50,7 @@ export default defineConfig({
             label: "Visible",
             type: "boolean",
           },
-          {
-            label: "Sequence",
-            name: "sequence",
-            type: "number",
-            required: true,
-            ui: {
-              validate: (value: number) =>
-                value < 1 ? "Sequence must be greater than 0" : undefined,
-            },
-          },
+
           {
             label: "Title",
             name: "title",

@@ -33,12 +33,12 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const data = await getSerie({ params });
   const url = `${process.env.NEXT_PUBLIC_WEB_URI}/serie/${params.filename}`;
   const tags = (data?.meta?.tags as unknown as Array<string>)
-    .join(", ")
-    .replaceAll("-", " ")
-    .split(", ");
+    ?.join(", ")
+    ?.replaceAll("-", " ")
+    ?.split(", ");
 
   return {
-    title: `${data?.title} | Serie | Aníbal Santos | ${tags.slice(0, 2).join(", ")}`,
+    title: `${data?.title} | Serie | Aníbal Santos | ${tags?.slice(0, 2)?.join(", ")}`,
     description: data?.meta?.description || "",
     openGraph: {
       title: data?.title,
@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
       url,
       images: [
         {
-          url: `${process.env.NEXT_PUBLIC_WEB_URI}/covers/${data?.sequence}.jpg`,
+          url: `${process.env.NEXT_PUBLIC_WEB_URI}/covers/${params.filename}.jpg`,
           width: 400,
           height: 400,
           alt: data?.title,

@@ -10,7 +10,7 @@ const makeCover = async () => {
   const { series } = getSeries();
   for (const serie of series) {
     console.log(`Processing ${serie.cover}`);
-    const filename = serie.filename.split("-")[0];
+    const filename = serie.filename;
     console.log(`Processing ${filename}`);
     const output = await getImageFromUrl({
       url: serie.cover,

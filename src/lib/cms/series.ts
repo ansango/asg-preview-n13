@@ -26,10 +26,9 @@ export async function getSeries() {
     data
       .map((serie) => {
         if (serie) {
-          const { id, sequence, title, meta, visible, _sys, thumbnails } = serie;
+          const { id, title, meta, visible, _sys, thumbnails } = serie;
           return {
             id,
-            sequence,
             title,
             meta,
             visible,

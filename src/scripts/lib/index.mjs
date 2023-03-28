@@ -42,9 +42,6 @@ export const getSeries = () => {
 };
 
 export const getBase64FromUrl = async (url) => {
-  // const response = await fetch(url);
-  // const buffer = await response.arrayBuffer();
-  // const minified = await sharp(Buffer.from(buffer)).resize(8).webp({ quality: 50 }).toBuffer();
   const minified = await sharp(url).resize(8).webp({ quality: 50 }).toBuffer();
   const image = `data:image/webp;base64,${Buffer.from(minified).toString("base64")}`;
   return image;

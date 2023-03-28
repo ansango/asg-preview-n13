@@ -6,7 +6,7 @@ import type { Template } from "tinacms";
 
 import type { Serie } from ".tina/__generated__/types";
 
-import { getBlurUrl } from "../../../lib";
+import { getBlurUrl, formatDate } from "../../../lib";
 import { Container } from "../../container";
 import type { ImageProps } from "../../image";
 import { Image } from "../../image";
@@ -23,7 +23,7 @@ export const Series: FC<Props> = ({ data }) => {
     <Section className="flex-none">
       <Container className="!py-2 !sm:py-2 !md:py-6">
         <ul className="space-y-12">
-          {data?.map(({ id, title, meta, sequence, thumbnails, _sys: { filename } }, iBlock) => {
+          {data?.map(({ id, title, meta, thumbnails, _sys: { filename } }, iBlock) => {
             const mergedThumbs = thumbnails && [
               thumbnails.firstThumbnail,
               thumbnails.secondThumbnail,
@@ -61,7 +61,7 @@ export const Series: FC<Props> = ({ data }) => {
                         ver más
                       </Link>
                     </div>
-                    <span className="text-xs"># {sequence}</span>
+                    <span className="text-xs"># {formatDate(meta?.publishedAt as string)}</span>
                   </div>
                 </article>
               </li>
