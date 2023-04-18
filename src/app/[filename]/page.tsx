@@ -92,7 +92,6 @@ export default async function Page({ params }: { params: Params }) {
           }
           case "PageBlocksAllSeries": {
             if (!block.visible || !series) return null;
-
             return <Series key={key} data={series as unknown as Array<Serie>} />;
           }
           case "PageBlocksContactForm": {

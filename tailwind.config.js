@@ -86,7 +86,6 @@ module.exports = {
     }),
     require("tailwind-heropatterns")({
       variants: [],
-
       patterns: ["graph-paper", "pie-factory", "topography"],
       colors: {
         "primary-light": "#171717",

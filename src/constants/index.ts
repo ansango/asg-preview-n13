@@ -14,7 +14,7 @@ const kodak = [
   "Ultramax 400",
   "T-Max 400",
 ];
-const fuji = ["Fujifilm", "Superia 400", "C200"];
+const fuji = ["Fujifilm", "Superia 400", "C200", "200"];
 const cineStill = ["CineStill", "800T"];
 const ilford = ["Ilford", "HP5 400", "Delta 3200", "XP2 400"];
 
@@ -40,5 +40,6 @@ export const films = [
   "Ilford HP5 Plus 400",
   "Ilford XP2 Super 400",
   "Fujifilm C200",
+  "Fujifilm 200",
   "Fujifilm Superia 400",
 ];

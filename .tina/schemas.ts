@@ -83,11 +83,6 @@ export const thumbnailsSchemaField: TinaField = {
           type: "image",
         },
         {
-          name: "alt",
-          label: "Alt Text",
-          type: "string",
-        },
-        {
           name: "centerImage",
           label: "Center Image",
           type: "string",
@@ -106,11 +101,6 @@ export const thumbnailsSchemaField: TinaField = {
           type: "image",
         },
         {
-          name: "alt",
-          label: "Alt Text",
-          type: "string",
-        },
-        {
           name: "centerImage",
           label: "Center Image",
           type: "string",
@@ -127,11 +117,6 @@ export const thumbnailsSchemaField: TinaField = {
           name: "url",
           label: "URL",
           type: "image",
-        },
-        {
-          name: "alt",
-          label: "Alt Text",
-          type: "string",
         },
         {
           name: "centerImage",

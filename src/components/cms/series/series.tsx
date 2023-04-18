@@ -45,7 +45,7 @@ export const Series: FC<Props> = ({ data }) => {
                           key={iThumbnail}
                           {...(image as ImageProps)}
                           aspectRatio="4/3"
-                          alt={image?.alt || `thumbnail-${iThumbnail}`}
+                          alt={`${filename}-thumbnail-${iThumbnail}`}
                           loading={iBlock < 2 && iThumbnail < 2 ? "eager" : "lazy"}
                           blurDataURL={getBlurUrl(image as ImageProps)}
                         />
@@ -54,7 +54,7 @@ export const Series: FC<Props> = ({ data }) => {
                   )}
 
                   <h3 className="text-2xl font-semibold tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em]">
-                    <Balancer>{filename?.replace(".mdx", "").replaceAll("-", " ")}</Balancer>
+                    <Balancer>{filename?.replaceAll("-", " ")}</Balancer>
                   </h3>
                   <p className="text-sm">{meta?.description}</p>
                   <Link className="text-sm" href={`/serie/${filename}`}>
