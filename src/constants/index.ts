@@ -18,7 +18,7 @@ const fuji = ["Fujifilm", "Superia 400", "C200"];
 const cineStill = ["CineStill", "800T"];
 const ilford = ["Ilford", "HP5 400", "Delta 3200", "XP2 400"];
 
-export const tags = [...kodak, ...fuji, ...cineStill, ...ilford, ...generic].map((value) =>
+export const tags = [...generic, ...kodak, ...fuji, ...cineStill, ...ilford].map((value) =>
   kebabParser(value)
 );
 

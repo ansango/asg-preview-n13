@@ -6,6 +6,7 @@ export const metaSchema: TinaField = {
   type: "object",
   name: "meta",
   label: "Meta",
+
   fields: [
     {
       label: "Description",
