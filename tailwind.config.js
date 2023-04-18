@@ -57,7 +57,6 @@ module.exports = {
     require("tailwindcss-debug-screens"),
     require("@tailwindcss/forms"),
     require("@tailwindcss/typography"),
-    require("@tailwindcss/line-clamp"),
     require("tailwindcss-fluid-type")({
       settings: {
         fontSizeMin: 1.125, // 1.125rem === 18px
