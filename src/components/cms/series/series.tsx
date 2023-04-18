@@ -23,7 +23,7 @@ export const Series: FC<Props> = ({ data }) => {
     <Section className="flex-none">
       <Container className="!py-2 !sm:py-2 !md:py-6">
         <ul className="space-y-12">
-          {data?.map(({ id, title, meta, thumbnails, _sys: { filename } }, iBlock) => {
+          {data?.map(({ id, meta, thumbnails, _sys: { filename } }, iBlock) => {
             const mergedThumbs = thumbnails && [
               thumbnails.firstThumbnail,
               thumbnails.secondThumbnail,
@@ -32,6 +32,7 @@ export const Series: FC<Props> = ({ data }) => {
             return (
               <li key={id}>
                 <article className="group">
+                  <time className="text-xs"># {formatDate(meta?.publishedAt as string)}</time>
                   {thumbnails && (
                     <Masonry
                       {...({
@@ -51,18 +52,14 @@ export const Series: FC<Props> = ({ data }) => {
                       ))}
                     </Masonry>
                   )}
-                  <div className="flex justify-between">
-                    <div>
-                      <h3 className="text-2xl font-semibold tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em]">
-                        <Balancer>{title}</Balancer>
-                      </h3>
-                      <p className="text-sm">{meta?.description}</p>
-                      <Link className="text-sm" href={`/serie/${filename}`}>
-                        ver más
-                      </Link>
-                    </div>
-                    <span className="text-xs"># {formatDate(meta?.publishedAt as string)}</span>
-                  </div>
+
+                  <h3 className="text-2xl font-semibold tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em]">
+                    <Balancer>{filename?.replace(".mdx", "").replaceAll("-", " ")}</Balancer>
+                  </h3>
+                  <p className="text-sm">{meta?.description}</p>
+                  <Link className="text-sm" href={`/serie/${filename}`}>
+                    ver más
+                  </Link>
                 </article>
               </li>
             );

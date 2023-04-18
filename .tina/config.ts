@@ -40,7 +40,10 @@ export default defineConfig({
         ui: {
           filename: {
             readonly: true,
-            slugify: ({ title }) => (title && kebabCase(title)) || "",
+            slugify: ({ cover }) => {
+              const splitter = cover?.split("series/")[1].split("/")[0] || "";
+              return splitter && kebabCase(`${splitter}`);
+            },
           },
         },
 
@@ -50,13 +53,10 @@ export default defineConfig({
             label: "Visible",
             type: "boolean",
           },
-
           {
-            label: "Title",
-            name: "title",
-            type: "string",
-            required: true,
-            isTitle: true,
+            type: "image",
+            name: "cover",
+            label: "Cover Url",
           },
 
           { ...metaSchema },

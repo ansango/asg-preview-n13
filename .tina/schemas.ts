@@ -8,23 +8,8 @@ export const metaSchema: TinaField = {
   label: "Meta",
   fields: [
     {
-      type: "boolean",
-      label: "Is Featured",
-      name: "isFeatured",
-    },
-    {
-      type: "image",
-      name: "cover",
-      label: "Cover Url",
-    },
-    {
       label: "Description",
       name: "description",
-      type: "string",
-    },
-    {
-      label: "Summary",
-      name: "summary",
       type: "string",
       ui: {
         component: "textarea",

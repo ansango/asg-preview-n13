@@ -31,17 +31,18 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const data = await getSerie({ params });
+  const serie = `${data?._sys.filename.replace(".mdx", "").replaceAll("-", " ")} |`;
   const url = `${process.env.NEXT_PUBLIC_WEB_URI}/serie/${params.filename}`;
   const tags = (data?.meta?.tags as unknown as Array<string>)
     ?.join(", ")
     ?.replaceAll("-", " ")
     ?.split(", ");
-
+  const title = `Serie | ${serie} Aníbal Santos Gómez`;
   return {
-    title: `${data?.title} | Serie | Aníbal Santos | ${tags?.slice(0, 2)?.join(", ")}`,
+    title,
     description: data?.meta?.description || "",
     openGraph: {
-      title: data?.title,
+      title: title,
       description: data?.meta?.description || "",
       url,
       images: [
@@ -49,7 +50,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
           url: `${process.env.NEXT_PUBLIC_WEB_URI}/covers/${params.filename}.jpg`,
           width: 400,
           height: 400,
-          alt: data?.title,
+          alt: title,
         },
       ],
       tags,
@@ -67,6 +68,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 
 export default async function Page({ params }: { params: Params }) {
   const data = await getSerie({ params });
+  const title = data?._sys.filename.replace(".mdx", "").replaceAll("-", " ");
   const blocks = data?.blocks as Array<SerieBlocks>;
   if (!data || !data.visible || !blocks) notFound();
   const pagination = await getPagination({ params });
@@ -104,7 +106,7 @@ export default async function Page({ params }: { params: Params }) {
                 key={key}
                 {...{
                   meta: (data?.meta as unknown as HeroSerieProps["meta"]) || {},
-                  title: (data?.title as unknown as HeroSerieProps["title"]) || "",
+                  title: (title as unknown as HeroSerieProps["title"]) || "",
                 }}
               />
             );

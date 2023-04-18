@@ -15,7 +15,7 @@ type Meta = {
   };
   tags?: string[];
   publishedAt?: string;
-  summary?: string;
+  description?: string;
 };
 
 export type HeroSerieProps = {
@@ -25,7 +25,7 @@ export type HeroSerieProps = {
 
 export const HeroSerie: FC<HeroSerieProps> = ({
   title,
-  meta: { camera, film, publishedAt, shot, summary, tags },
+  meta: { camera, film, publishedAt, shot, description, tags },
 }) => {
   return (
     <Section className="flex-none py-20">
@@ -39,9 +39,9 @@ export const HeroSerie: FC<HeroSerieProps> = ({
         )}
 
         <article className="space-y-5 prose prose-lg lg:prose-xl xl:prose-2xl ">
-          {summary && (
+          {description && (
             <p>
-              <Balancer>{summary}</Balancer>
+              <Balancer>{description}</Balancer>
             </p>
           )}
 
@@ -55,7 +55,7 @@ export const HeroSerie: FC<HeroSerieProps> = ({
             )}
             {shot && shot.start && shot.end && (
               <span>
-                <Balancer>
+                <Balancer as={"time"}>
                   {formatDate(shot?.start as string)} / {formatDate(shot?.end as string)}
                 </Balancer>
               </span>
