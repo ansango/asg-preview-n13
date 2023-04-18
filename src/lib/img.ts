@@ -2,7 +2,7 @@ import type { aspectRatioCn, ImageProps } from "@/components";
 
 import data from "../constants/data";
 export const getBlurUrl = (obj: ImageProps): string => {
-  const url = `/${obj.url
+  const url = `/${obj?.url
     ?.replace(`${process.env.NEXT_PUBLIC_BUCKET_URL}`, "")
     .split("/")
     .slice(1, 4)

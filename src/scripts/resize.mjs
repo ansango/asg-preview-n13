@@ -65,14 +65,14 @@ async function resize(inputPath, outputPath, outputBlurPath, format = "webp", qu
     if (isLandscape) {
       await image
         .webp({ quality, effort: 6 })
-        .resize({ width: 1920, height: 1080, fit: "cover" })
+        .resize({ width: 1920, height: 1280, fit: "cover" })
         .toFile(
           path.join(outputFolder, path.basename(imagePath, path.extname(imagePath)) + outputExt)
         );
     } else if (isPortrait) {
       await image
         .webp({ quality, effort: 6 })
-        .resize({ width: 1080, height: 1920, fit: "cover" })
+        .resize({ width: 1280, height: 1920, fit: "cover" })
         .toFile(
           path.join(outputFolder, path.basename(imagePath, path.extname(imagePath)) + outputExt)
         );
