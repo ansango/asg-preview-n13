@@ -21,9 +21,17 @@ export const getPagination = async ({ params }: { params: Params }) => {
     const prevSerie = series[index - 1] || null;
     const nextSerie = series[index + 1] || null;
     const prev =
-      (prevSerie && { title: prevSerie.title, route: `/serie/${prevSerie._sys.filename}` }) || null;
+      (prevSerie && {
+        title: prevSerie._sys.filename.replaceAll("-", " "),
+        route: `/serie/${prevSerie._sys.filename}`,
+      }) ||
+      null;
     const next =
-      (nextSerie && { title: nextSerie.title, route: `/serie/${nextSerie._sys.filename}` }) || null;
+      (nextSerie && {
+        title: nextSerie._sys.filename.replaceAll("-", " "),
+        route: `/serie/${nextSerie._sys.filename}`,
+      }) ||
+      null;
     return { prev, next };
   } catch (error) {
     console.error("Error while getting pagination", error);

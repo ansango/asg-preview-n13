@@ -75,7 +75,7 @@ export default async function Page({ params }: { params: Params }) {
 
   return (
     <>
-      {blocks?.map((block, iBlock) => {
+      {blocks.map((block, iBlock) => {
         const key = `${block?.__typename}-${iBlock}`;
         switch (block?.__typename) {
           case "SerieBlocksMasonryFS": {
