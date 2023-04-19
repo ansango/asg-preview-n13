@@ -10,7 +10,6 @@ import {
   allSeriesTemplate,
   contactFormTemplate,
   bodySimpleTemplate,
-  paginationBaseTemplate,
 } from "./templates";
 
 const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
@@ -66,12 +65,7 @@ export default defineConfig({
             list: true,
             name: "blocks",
             label: "Blocks",
-            templates: [
-              heroSerieTemplate,
-              bodySimpleTemplate,
-              masonryFSTemplate,
-              paginationBaseTemplate,
-            ],
+            templates: [heroSerieTemplate, bodySimpleTemplate, masonryFSTemplate],
           },
         ],
       },
