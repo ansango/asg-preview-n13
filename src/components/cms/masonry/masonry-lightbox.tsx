@@ -117,7 +117,7 @@ export const masonryFSTemplate: Template = {
           return { label: item?.label };
         },
         defaultItem: {
-          url: "https://asg-cms.s3.eu-west-3.amazonaws.com/01-series/34-septiembre-2020-fujifilm-color-200/01.webp",
+          url: "https://asg-cms.s3.eu-west-3.amazonaws.com/01-series/36-julio-2021-fujifilm-superia-400/01.webp",
           label: "Image",
           aspectRatio: "square",
           centerImage: "center",
