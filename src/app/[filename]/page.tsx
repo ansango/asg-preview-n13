@@ -82,7 +82,7 @@ export default async function Page({ params }: { params: Params }) {
                   <Image
                     {...(image as ImageProps)}
                     key={iGallery}
-                    alt={image?.alt}
+                    alt={image?.label ?? "Image"}
                     loading={iBlock < 2 && iGallery < 2 ? "eager" : "lazy"}
                     blurDataURL={getBlurUrl(image as ImageProps)}
                   />

@@ -64,7 +64,7 @@ export const LightBox: FC<{ children: ReactNode }> = ({ children }) => {
   );
 };
 
-type Images = { images: Array<ImageProps> };
+type Images = { images: Array<Omit<ImageProps, "alt"> & { label: string }> };
 
 export type MasonryWithLightBoxProps = Omit<MasonryProps, "children"> & Images;
 
@@ -89,7 +89,7 @@ export const MasonryWidget: FC<MasonryWithLightBoxProps> = ({ columns, gap, imag
         <Image
           key={index}
           {...image}
-          alt={image.alt}
+          alt={image.label}
           onClick={() => setIndex(index)}
           loading={index < 4 ? "eager" : "lazy"}
           blurDataURL={getBlurUrl(image as ImageProps)}

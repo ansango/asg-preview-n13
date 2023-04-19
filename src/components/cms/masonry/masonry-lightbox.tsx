@@ -114,11 +114,10 @@ export const masonryFSTemplate: Template = {
       list: true,
       ui: {
         itemProps: (item) => {
-          return { label: item?.alt };
+          return { label: item?.label };
         },
         defaultItem: {
-          url: "https://asg-cms.s3.eu-west-3.amazonaws.com/01-series/33-septiembre-2020-fuji-c200/02.webp",
-          alt: "Image",
+          url: "https://asg-cms.s3.eu-west-3.amazonaws.com/01-series/33-septiembre-2020-fujifilm-color-200/02.webp",
           label: "Image",
           aspectRatio: "square",
           centerImage: "center",
@@ -134,12 +133,6 @@ export const masonryFSTemplate: Template = {
           name: "url",
           label: "URL",
           type: "image",
-          required: true,
-        },
-        {
-          name: "alt",
-          label: "Alt Text",
-          type: "string",
           required: true,
         },
         {

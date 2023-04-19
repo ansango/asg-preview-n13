@@ -134,11 +134,10 @@ export const masonryBaseTemplate: Template = {
       list: true,
       ui: {
         itemProps: (item) => {
-          return { label: item?.alt };
+          return { label: item?.label };
         },
         defaultItem: {
           url: "https://asg-cms.s3.eu-west-3.amazonaws.com/43-junio-2022-kodak-gold-200-website/11.webp",
-          alt: "Image",
           label: "Image",
           aspectRatio: "square",
           centerImage: "center",
@@ -154,12 +153,6 @@ export const masonryBaseTemplate: Template = {
           name: "url",
           label: "URL",
           type: "image",
-          required: true,
-        },
-        {
-          name: "alt",
-          label: "Alt Text",
-          type: "string",
           required: true,
         },
         {
