@@ -66,20 +66,31 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   };
 }
 
-export default async function Page({ params }: { params: Params }) {
+const getBlocks = async ({ params }: { params: Params }) => {
   const data = await getSerie({ params });
   const title = data?._sys.filename.replace(".mdx", "").replaceAll("-", " ");
   const blocks = data?.blocks as Array<SerieBlocks>;
+
   if (!data || !data.visible || !blocks) notFound();
   const pagination = await getPagination({ params });
+  return {
+    data,
+    blocks,
+    pagination,
+    title,
+  };
+};
+
+export default async function Page({ params }: { params: Params }) {
+  const { data, blocks, pagination, title } = await getBlocks({ params });
 
   return (
-    <>
+    <div>
       {blocks.map((block, iBlock) => {
         const key = `${block?.__typename}-${iBlock}`;
         switch (block?.__typename) {
           case "SerieBlocksMasonryFS": {
-            if (!block.images) return null;
+            if (!block.images) return <></>;
             return (
               <Section key={key}>
                 <Container className="flex items-end justify-center">
@@ -96,11 +107,11 @@ export default async function Page({ params }: { params: Params }) {
           }
           case "SerieBlocksBodySimple": {
             const content = block.content as TinaMarkdownContent;
-            if (!block.visible || content.children.length === 0) return null;
+            if (!block.visible || content.children.length === 0) return <></>;
             return <BodySimple key={key} {...(block as BodySimpleProps)} />;
           }
           case "SerieBlocksHeroSerie": {
-            if (!block.visible) return null;
+            if (!block.visible) return <></>;
             return (
               <HeroSerie
                 key={key}
@@ -112,7 +123,7 @@ export default async function Page({ params }: { params: Params }) {
             );
           }
           case "SerieBlocksPagination": {
-            if (!block.visible || !pagination) return null;
+            if (!block.visible || !pagination) return <></>;
             return (
               <PaginationBase
                 next={{
@@ -127,10 +138,10 @@ export default async function Page({ params }: { params: Params }) {
             );
           }
           default: {
-            return null;
+            return <></>;
           }
         }
       })}
-    </>
+    </div>
   );
 }

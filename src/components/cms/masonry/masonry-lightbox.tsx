@@ -117,7 +117,7 @@ export const masonryFSTemplate: Template = {
           return { label: item?.alt };
         },
         defaultItem: {
-          url: "https://asg-cms.s3.eu-west-3.amazonaws.com/43-junio-2022-kodak-gold-200-website/11.webp",
+          url: "https://asg-cms.s3.eu-west-3.amazonaws.com/01-series/33-septiembre-2020-fuji-c200/02.webp",
           alt: "Image",
           label: "Image",
           aspectRatio: "square",
