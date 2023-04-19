@@ -26,11 +26,13 @@ export const getSeries = () => {
       if (data?.visible === false) return null;
       if (!data?.blocks) return null;
 
+      const replaced = filename.replaceAll("-", " ");
+      const title = replaced.charAt(0).toUpperCase() + replaced.slice(1);
       return {
-        title: data?.title,
+        title,
         description: data?.meta?.description,
         filename,
-        cover: data?.meta?.cover,
+        cover: data?.cover,
         publishedAt: data?.meta?.publishedAt,
         tags: data?.meta?.tags,
       };

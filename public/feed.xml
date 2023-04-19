@@ -4,13 +4,383 @@
         <description><![CDATA[Anibal Santos]]></description>
         <link>https://anibalsantosgomez.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 19 Mar 2023 22:40:53 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 19 Apr 2023 00:31:56 GMT</lastBuildDate>
         <atom:link href="https://anibalsantosgomez.com/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
-            <title><![CDATA[prueba]]></title>
-            <link>https://anibalsantosgomez.com/serie/1-prueba</link>
-            <guid isPermaLink="true">https://anibalsantosgomez.com/serie/1-prueba</guid>
+            <title><![CDATA[32 agosto 2020 fuji c200]]></title>
+            <link>https://anibalsantosgomez.com/serie/32-agosto-2020-fuji-c200</link>
+            <guid isPermaLink="true">https://anibalsantosgomez.com/serie/32-agosto-2020-fuji-c200</guid>
+            <category><![CDATA[viajes]]></category>
+            <category><![CDATA[35mm]]></category>
+            <category><![CDATA[fotografía]]></category>
+            <category><![CDATA[miscelánea]]></category>
             <dc:creator><![CDATA[Anibal Santos]]></dc:creator>
+            <pubDate>Fri, 04 Nov 2022 23:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[33 septiembre 2020 fuji c200]]></title>
+            <link>https://anibalsantosgomez.com/serie/33-septiembre-2020-fuji-c200</link>
+            <guid isPermaLink="true">https://anibalsantosgomez.com/serie/33-septiembre-2020-fuji-c200</guid>
+            <category><![CDATA[35mm]]></category>
+            <category><![CDATA[viajes]]></category>
+            <category><![CDATA[miscelánea]]></category>
+            <category><![CDATA[fotografía]]></category>
+            <category><![CDATA[fujifilm]]></category>
+            <category><![CDATA[c200]]></category>
+            <dc:creator><![CDATA[Anibal Santos]]></dc:creator>
+            <pubDate>Mon, 14 Nov 2022 23:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[34 septiembre 2020 fuji c200]]></title>
+            <link>https://anibalsantosgomez.com/serie/34-septiembre-2020-fuji-c200</link>
+            <guid isPermaLink="true">https://anibalsantosgomez.com/serie/34-septiembre-2020-fuji-c200</guid>
+            <category><![CDATA[35mm]]></category>
+            <category><![CDATA[viajes]]></category>
+            <category><![CDATA[fotografía]]></category>
+            <category><![CDATA[fujifilm]]></category>
+            <category><![CDATA[c200]]></category>
+            <dc:creator><![CDATA[Anibal Santos]]></dc:creator>
+            <pubDate>Thu, 29 Sep 2022 22:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[35 febrero julio 2021 fuji c200]]></title>
+            <link>https://anibalsantosgomez.com/serie/35-febrero-julio-2021-fuji-c200</link>
+            <guid isPermaLink="true">https://anibalsantosgomez.com/serie/35-febrero-julio-2021-fuji-c200</guid>
+            <category><![CDATA[35mm]]></category>
+            <category><![CDATA[viajes]]></category>
+            <category><![CDATA[miscelánea]]></category>
+            <category><![CDATA[fotografía]]></category>
+            <category><![CDATA[fujifilm]]></category>
+            <category><![CDATA[c200]]></category>
+            <dc:creator><![CDATA[Anibal Santos]]></dc:creator>
+            <pubDate>Mon, 19 Dec 2022 23:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[36 julio 2021 fuji superia 400]]></title>
+            <link>https://anibalsantosgomez.com/serie/36-julio-2021-fuji-superia-400</link>
+            <guid isPermaLink="true">https://anibalsantosgomez.com/serie/36-julio-2021-fuji-superia-400</guid>
+            <dc:creator><![CDATA[Anibal Santos]]></dc:creator>
+            <pubDate>Wed, 18 Jan 2023 23:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[37 julio 2021 kodak portra 400]]></title>
+            <link>https://anibalsantosgomez.com/serie/37-julio-2021-kodak-portra-400</link>
+            <guid isPermaLink="true">https://anibalsantosgomez.com/serie/37-julio-2021-kodak-portra-400</guid>
+            <category><![CDATA[35mm]]></category>
+            <category><![CDATA[viajes]]></category>
+            <category><![CDATA[retrato]]></category>
+            <category><![CDATA[miscelánea]]></category>
+            <category><![CDATA[fotografía]]></category>
+            <category><![CDATA[kodak]]></category>
+            <category><![CDATA[portra-400]]></category>
+            <dc:creator><![CDATA[Anibal Santos]]></dc:creator>
+            <pubDate>Tue, 14 Feb 2023 23:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[38 agosto 2021 kodak ektar 100]]></title>
+            <link>https://anibalsantosgomez.com/serie/38-agosto-2021-kodak-ektar-100</link>
+            <guid isPermaLink="true">https://anibalsantosgomez.com/serie/38-agosto-2021-kodak-ektar-100</guid>
+            <category><![CDATA[35mm]]></category>
+            <category><![CDATA[viajes]]></category>
+            <category><![CDATA[miscelánea]]></category>
+            <category><![CDATA[fotografía]]></category>
+            <category><![CDATA[kodak]]></category>
+            <category><![CDATA[ektar-100]]></category>
+            <dc:creator><![CDATA[Anibal Santos]]></dc:creator>
+            <pubDate>Fri, 16 Dec 2022 23:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[39 septiembre 2021 ilford xp2 400]]></title>
+            <link>https://anibalsantosgomez.com/serie/39-septiembre-2021-ilford-xp2-400</link>
+            <guid isPermaLink="true">https://anibalsantosgomez.com/serie/39-septiembre-2021-ilford-xp2-400</guid>
+            <category><![CDATA[35mm]]></category>
+            <category><![CDATA[viajes]]></category>
+            <category><![CDATA[retrato]]></category>
+            <category><![CDATA[miscelánea]]></category>
+            <category><![CDATA[fotografía]]></category>
+            <category><![CDATA[ilford]]></category>
+            <category><![CDATA[xp2-400]]></category>
+            <dc:creator><![CDATA[Anibal Santos]]></dc:creator>
+            <pubDate>Sun, 11 Dec 2022 23:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[40 octubre 2021 kodak pro image 100]]></title>
+            <link>https://anibalsantosgomez.com/serie/40-octubre-2021-kodak-pro-image-100</link>
+            <guid isPermaLink="true">https://anibalsantosgomez.com/serie/40-octubre-2021-kodak-pro-image-100</guid>
+            <category><![CDATA[35mm]]></category>
+            <category><![CDATA[miscelánea]]></category>
+            <category><![CDATA[fotografía]]></category>
+            <category><![CDATA[kodak]]></category>
+            <category><![CDATA[pro-image-100]]></category>
+            <dc:creator><![CDATA[Anibal Santos]]></dc:creator>
+            <pubDate>Sun, 16 Oct 2022 22:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[41 mayo 2022 ilford delta 3200]]></title>
+            <link>https://anibalsantosgomez.com/serie/41-mayo-2022-ilford-delta-3200</link>
+            <guid isPermaLink="true">https://anibalsantosgomez.com/serie/41-mayo-2022-ilford-delta-3200</guid>
+            <category><![CDATA[35mm]]></category>
+            <category><![CDATA[retrato]]></category>
+            <category><![CDATA[miscelánea]]></category>
+            <category><![CDATA[fotografía]]></category>
+            <category><![CDATA[ilford]]></category>
+            <category><![CDATA[delta-3200]]></category>
+            <dc:creator><![CDATA[Anibal Santos]]></dc:creator>
+            <pubDate>Wed, 01 Feb 2023 23:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[42 junio 2022 kodak gold 200]]></title>
+            <link>https://anibalsantosgomez.com/serie/42-junio-2022-kodak-gold-200</link>
+            <guid isPermaLink="true">https://anibalsantosgomez.com/serie/42-junio-2022-kodak-gold-200</guid>
+            <category><![CDATA[35mm]]></category>
+            <category><![CDATA[miscelánea]]></category>
+            <category><![CDATA[fotografía]]></category>
+            <category><![CDATA[kodak]]></category>
+            <category><![CDATA[gold-200]]></category>
+            <dc:creator><![CDATA[Anibal Santos]]></dc:creator>
+            <pubDate>Thu, 12 Jan 2023 23:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[43 junio 2022 kodak gold 200]]></title>
+            <link>https://anibalsantosgomez.com/serie/43-junio-2022-kodak-gold-200</link>
+            <guid isPermaLink="true">https://anibalsantosgomez.com/serie/43-junio-2022-kodak-gold-200</guid>
+            <category><![CDATA[35mm]]></category>
+            <category><![CDATA[viajes]]></category>
+            <category><![CDATA[miscelánea]]></category>
+            <category><![CDATA[fotografía]]></category>
+            <category><![CDATA[kodak]]></category>
+            <category><![CDATA[gold-200]]></category>
+            <dc:creator><![CDATA[Anibal Santos]]></dc:creator>
+            <pubDate>Wed, 05 Oct 2022 22:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[44 junio 2022 kodak gold 200]]></title>
+            <link>https://anibalsantosgomez.com/serie/44-junio-2022-kodak-gold-200</link>
+            <guid isPermaLink="true">https://anibalsantosgomez.com/serie/44-junio-2022-kodak-gold-200</guid>
+            <category><![CDATA[35mm]]></category>
+            <category><![CDATA[viajes]]></category>
+            <category><![CDATA[miscelánea]]></category>
+            <category><![CDATA[fotografía]]></category>
+            <category><![CDATA[kodak]]></category>
+            <category><![CDATA[gold-200]]></category>
+            <dc:creator><![CDATA[Anibal Santos]]></dc:creator>
+            <pubDate>Tue, 24 Jan 2023 23:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[45 julio 2022 kodak gold 200]]></title>
+            <link>https://anibalsantosgomez.com/serie/45-julio-2022-kodak-gold-200</link>
+            <guid isPermaLink="true">https://anibalsantosgomez.com/serie/45-julio-2022-kodak-gold-200</guid>
+            <category><![CDATA[35mm]]></category>
+            <category><![CDATA[viajes]]></category>
+            <category><![CDATA[retrato]]></category>
+            <category><![CDATA[fotografía]]></category>
+            <category><![CDATA[kodak]]></category>
+            <category><![CDATA[gold-200]]></category>
+            <dc:creator><![CDATA[Anibal Santos]]></dc:creator>
+            <pubDate>Sat, 01 Oct 2022 22:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[46 julio 2022 fuji c200]]></title>
+            <link>https://anibalsantosgomez.com/serie/46-julio-2022-fuji-c200</link>
+            <guid isPermaLink="true">https://anibalsantosgomez.com/serie/46-julio-2022-fuji-c200</guid>
+            <category><![CDATA[35mm]]></category>
+            <category><![CDATA[viajes]]></category>
+            <category><![CDATA[miscelánea]]></category>
+            <category><![CDATA[fotografía]]></category>
+            <category><![CDATA[fujifilm]]></category>
+            <category><![CDATA[c200]]></category>
+            <dc:creator><![CDATA[Anibal Santos]]></dc:creator>
+            <pubDate>Mon, 20 Mar 2023 23:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[47 agosto 2022 kodak gold 200]]></title>
+            <link>https://anibalsantosgomez.com/serie/47-agosto-2022-kodak-gold-200</link>
+            <guid isPermaLink="true">https://anibalsantosgomez.com/serie/47-agosto-2022-kodak-gold-200</guid>
+            <category><![CDATA[35mm]]></category>
+            <category><![CDATA[viajes]]></category>
+            <category><![CDATA[miscelánea]]></category>
+            <category><![CDATA[fotografía]]></category>
+            <category><![CDATA[kodak]]></category>
+            <category><![CDATA[gold-200]]></category>
+            <dc:creator><![CDATA[Anibal Santos]]></dc:creator>
+            <pubDate>Mon, 27 Feb 2023 23:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[48 agosto 2022 ilford xp2 400]]></title>
+            <link>https://anibalsantosgomez.com/serie/48-agosto-2022-ilford-xp2-400</link>
+            <guid isPermaLink="true">https://anibalsantosgomez.com/serie/48-agosto-2022-ilford-xp2-400</guid>
+            <category><![CDATA[35mm]]></category>
+            <category><![CDATA[viajes]]></category>
+            <category><![CDATA[miscelánea]]></category>
+            <category><![CDATA[fotografía]]></category>
+            <category><![CDATA[ilford]]></category>
+            <category><![CDATA[xp2-400]]></category>
+            <dc:creator><![CDATA[Anibal Santos]]></dc:creator>
+            <pubDate>Thu, 23 Feb 2023 23:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[49 agosto 2022 kodak ultramax 400]]></title>
+            <link>https://anibalsantosgomez.com/serie/49-agosto-2022-kodak-ultramax-400</link>
+            <guid isPermaLink="true">https://anibalsantosgomez.com/serie/49-agosto-2022-kodak-ultramax-400</guid>
+            <category><![CDATA[35mm]]></category>
+            <category><![CDATA[viajes]]></category>
+            <category><![CDATA[miscelánea]]></category>
+            <category><![CDATA[fotografía]]></category>
+            <category><![CDATA[kodak]]></category>
+            <category><![CDATA[ultramax-400]]></category>
+            <dc:creator><![CDATA[Anibal Santos]]></dc:creator>
+            <pubDate>Thu, 16 Mar 2023 23:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[50 agosto 2022 ilford xp2 400]]></title>
+            <link>https://anibalsantosgomez.com/serie/50-agosto-2022-ilford-xp2-400</link>
+            <guid isPermaLink="true">https://anibalsantosgomez.com/serie/50-agosto-2022-ilford-xp2-400</guid>
+            <category><![CDATA[35mm]]></category>
+            <category><![CDATA[viajes]]></category>
+            <category><![CDATA[miscelánea]]></category>
+            <category><![CDATA[fotografía]]></category>
+            <category><![CDATA[ilford]]></category>
+            <category><![CDATA[xp2-400]]></category>
+            <dc:creator><![CDATA[Anibal Santos]]></dc:creator>
+            <pubDate>Fri, 21 Oct 2022 22:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[51 agosto 2022 kodak gold 200]]></title>
+            <link>https://anibalsantosgomez.com/serie/51-agosto-2022-kodak-gold-200</link>
+            <guid isPermaLink="true">https://anibalsantosgomez.com/serie/51-agosto-2022-kodak-gold-200</guid>
+            <category><![CDATA[35mm]]></category>
+            <category><![CDATA[viajes]]></category>
+            <category><![CDATA[miscelánea]]></category>
+            <category><![CDATA[fotografía]]></category>
+            <category><![CDATA[kodak]]></category>
+            <category><![CDATA[gold-200]]></category>
+            <dc:creator><![CDATA[Anibal Santos]]></dc:creator>
+            <pubDate>Sun, 26 Mar 2023 22:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[52 septiembre 2022 kodak gold 200]]></title>
+            <link>https://anibalsantosgomez.com/serie/52-septiembre-2022-kodak-gold-200</link>
+            <guid isPermaLink="true">https://anibalsantosgomez.com/serie/52-septiembre-2022-kodak-gold-200</guid>
+            <category><![CDATA[35mm]]></category>
+            <category><![CDATA[viajes]]></category>
+            <category><![CDATA[retrato]]></category>
+            <category><![CDATA[miscelánea]]></category>
+            <category><![CDATA[fotografía]]></category>
+            <category><![CDATA[kodak]]></category>
+            <category><![CDATA[gold-200]]></category>
+            <dc:creator><![CDATA[Anibal Santos]]></dc:creator>
+            <pubDate>Fri, 25 Nov 2022 23:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[53 septiembre 2022 kodak gold 200]]></title>
+            <link>https://anibalsantosgomez.com/serie/53-septiembre-2022-kodak-gold-200</link>
+            <guid isPermaLink="true">https://anibalsantosgomez.com/serie/53-septiembre-2022-kodak-gold-200</guid>
+            <category><![CDATA[35mm]]></category>
+            <category><![CDATA[viajes]]></category>
+            <category><![CDATA[miscelánea]]></category>
+            <category><![CDATA[fotografía]]></category>
+            <category><![CDATA[kodak]]></category>
+            <category><![CDATA[gold-200]]></category>
+            <dc:creator><![CDATA[Anibal Santos]]></dc:creator>
+            <pubDate>Mon, 31 Oct 2022 23:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[54 septiembre 2022 kodak gold 200]]></title>
+            <link>https://anibalsantosgomez.com/serie/54-septiembre-2022-kodak-gold-200</link>
+            <guid isPermaLink="true">https://anibalsantosgomez.com/serie/54-septiembre-2022-kodak-gold-200</guid>
+            <category><![CDATA[35mm]]></category>
+            <category><![CDATA[viajes]]></category>
+            <category><![CDATA[miscelánea]]></category>
+            <category><![CDATA[fotografía]]></category>
+            <category><![CDATA[kodak]]></category>
+            <category><![CDATA[gold-200]]></category>
+            <dc:creator><![CDATA[Anibal Santos]]></dc:creator>
+            <pubDate>Sun, 27 Nov 2022 23:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[55 septiembre 2022 kodak gold 200]]></title>
+            <link>https://anibalsantosgomez.com/serie/55-septiembre-2022-kodak-gold-200</link>
+            <guid isPermaLink="true">https://anibalsantosgomez.com/serie/55-septiembre-2022-kodak-gold-200</guid>
+            <category><![CDATA[35mm]]></category>
+            <category><![CDATA[viajes]]></category>
+            <category><![CDATA[miscelánea]]></category>
+            <category><![CDATA[fotografía]]></category>
+            <category><![CDATA[kodak]]></category>
+            <category><![CDATA[gold-200]]></category>
+            <dc:creator><![CDATA[Anibal Santos]]></dc:creator>
+            <pubDate>Sun, 04 Dec 2022 23:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[56 octubre 2022 kodak ultramax 400]]></title>
+            <link>https://anibalsantosgomez.com/serie/56-octubre-2022-kodak-ultramax-400</link>
+            <guid isPermaLink="true">https://anibalsantosgomez.com/serie/56-octubre-2022-kodak-ultramax-400</guid>
+            <category><![CDATA[35mm]]></category>
+            <category><![CDATA[miscelánea]]></category>
+            <category><![CDATA[fotografía]]></category>
+            <category><![CDATA[kodak]]></category>
+            <category><![CDATA[ultramax-400]]></category>
+            <dc:creator><![CDATA[Anibal Santos]]></dc:creator>
+            <pubDate>Thu, 29 Dec 2022 23:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[57 octubre 2022 fuji c200]]></title>
+            <link>https://anibalsantosgomez.com/serie/57-octubre-2022-fuji-c200</link>
+            <guid isPermaLink="true">https://anibalsantosgomez.com/serie/57-octubre-2022-fuji-c200</guid>
+            <category><![CDATA[35mm]]></category>
+            <category><![CDATA[viajes]]></category>
+            <category><![CDATA[miscelánea]]></category>
+            <category><![CDATA[fotografía]]></category>
+            <category><![CDATA[fujifilm]]></category>
+            <category><![CDATA[c200]]></category>
+            <dc:creator><![CDATA[Anibal Santos]]></dc:creator>
+            <pubDate>Wed, 04 Jan 2023 23:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[58 noviembre 2022 kodak gold 200]]></title>
+            <link>https://anibalsantosgomez.com/serie/58-noviembre-2022-kodak-gold-200</link>
+            <guid isPermaLink="true">https://anibalsantosgomez.com/serie/58-noviembre-2022-kodak-gold-200</guid>
+            <dc:creator><![CDATA[Anibal Santos]]></dc:creator>
+            <pubDate>Mon, 10 Apr 2023 22:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[59 noviembre 2022 fuji 200]]></title>
+            <link>https://anibalsantosgomez.com/serie/59-noviembre-2022-fuji-200</link>
+            <guid isPermaLink="true">https://anibalsantosgomez.com/serie/59-noviembre-2022-fuji-200</guid>
+            <category><![CDATA[35mm]]></category>
+            <category><![CDATA[viajes]]></category>
+            <category><![CDATA[miscelánea]]></category>
+            <category><![CDATA[fotografía]]></category>
+            <category><![CDATA[fujifilm]]></category>
+            <category><![CDATA[200]]></category>
+            <dc:creator><![CDATA[Anibal Santos]]></dc:creator>
+            <pubDate>Mon, 06 Mar 2023 23:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[60 noviembre 2022 kodak gold 200]]></title>
+            <link>https://anibalsantosgomez.com/serie/60-noviembre-2022-kodak-gold-200</link>
+            <guid isPermaLink="true">https://anibalsantosgomez.com/serie/60-noviembre-2022-kodak-gold-200</guid>
+            <category><![CDATA[35mm]]></category>
+            <category><![CDATA[viajes]]></category>
+            <category><![CDATA[miscelánea]]></category>
+            <category><![CDATA[retrato]]></category>
+            <category><![CDATA[fotografía]]></category>
+            <category><![CDATA[kodak]]></category>
+            <category><![CDATA[gold-200]]></category>
+            <dc:creator><![CDATA[Anibal Santos]]></dc:creator>
+            <pubDate>Tue, 18 Apr 2023 22:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[61 diciembre 2022 fuji 200]]></title>
+            <link>https://anibalsantosgomez.com/serie/61-diciembre-2022-fuji-200</link>
+            <guid isPermaLink="true">https://anibalsantosgomez.com/serie/61-diciembre-2022-fuji-200</guid>
+            <category><![CDATA[35mm]]></category>
+            <category><![CDATA[miscelánea]]></category>
+            <category><![CDATA[fotografía]]></category>
+            <category><![CDATA[fujifilm]]></category>
+            <category><![CDATA[200]]></category>
+            <category><![CDATA[viajes]]></category>
+            <dc:creator><![CDATA[Anibal Santos]]></dc:creator>
+            <pubDate>Fri, 31 Mar 2023 22:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
