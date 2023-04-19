@@ -41,3 +41,7 @@ node_modules
 .images
 .images___output
 .images___output_blur
+
+public/covers
+public/sitemap.xml
+public/feed.xml
