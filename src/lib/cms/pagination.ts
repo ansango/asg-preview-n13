@@ -10,7 +10,7 @@ type SerieTina = {
   title: string;
 };
 
-export const getPagination = async ({ params }: { params: Params }) => {
+export const getSeriesPagination = async ({ params }: { params: Params }) => {
   try {
     const series = (await getSeries()) as unknown as Array<SerieTina>;
 

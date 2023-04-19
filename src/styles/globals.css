@@ -42,7 +42,7 @@ h3 {
 }
 
 h1 {
-  @apply !leading-relaxed !tracking-widest !text-8xl !text-primary;
+  @apply !leading-relaxed !tracking-widest !text-9xl !text-primary;
 }
 
 h2 {

@@ -53,7 +53,7 @@ export const Series: FC<Props> = ({ data }) => {
                     </Masonry>
                   )}
 
-                  <h3 className="text-2xl font-semibold tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em]">
+                  <h3 className="!text-xl md:!text-2xl lg:!text-4xl font-semibold tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em]">
                     <Balancer>{filename?.replaceAll("-", " ")}</Balancer>
                   </h3>
                   <p className="text-sm">{meta?.description}</p>

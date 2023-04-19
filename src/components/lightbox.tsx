@@ -99,8 +99,10 @@ export const MasonryWidget: FC<MasonryWithLightBoxProps> = ({ columns, gap, imag
   );
 };
 
-export const MasonryWithLightBox: FC<MasonryWithLightBoxProps> = ({ columns, gap, images }) => {
+const MasonryWithLightBox: FC<MasonryWithLightBoxProps> = ({ columns, gap, images }) => {
   return (
     <LightBox>{images && <MasonryWidget columns={columns} gap={gap} images={images} />}</LightBox>
   );
 };
+
+export default MasonryWithLightBox;

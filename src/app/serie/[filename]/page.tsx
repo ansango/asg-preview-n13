@@ -3,11 +3,13 @@ import { notFound } from "next/navigation";
 import type { TinaMarkdownContent } from "tinacms/dist/rich-text";
 
 import type { SerieBlocks } from ".tina/__generated__/types";
-import { Container, MasonryWithLightBox, Section } from "@/components";
+import { Container, Section } from "@/components";
 import type { MasonryWithLightBoxProps } from "@/components";
 import type { BodySimpleProps, HeroSerieProps } from "@/components/cms";
-import { BodySimple, HeroSerie, PaginationBase } from "@/components/cms";
-import { getSerie, getSerieConnection, getPagination } from "@/lib";
+import { BodySimple, HeroSerie } from "@/components/cms";
+import { getSerie, getSerieConnection } from "@/lib";
+
+import MasonryWithLightBox from "../../../components/lightbox";
 
 type Params = {
   filename: string;
@@ -68,24 +70,21 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 
 const getBlocks = async ({ params }: { params: Params }) => {
   const data = await getSerie({ params });
-  const title = data?._sys.filename.replace(".mdx", "").replaceAll("-", " ");
+  const title = data?._sys.filename.replaceAll("-", " ");
   const blocks = data?.blocks as Array<SerieBlocks>;
 
-  if (!data || !data.visible || !blocks) notFound();
-  const pagination = await getPagination({ params });
   return {
     data,
     blocks,
-    pagination,
     title,
   };
 };
 
 export default async function Page({ params }: { params: Params }) {
-  const { data, blocks, pagination, title } = await getBlocks({ params });
-
+  const { data, blocks, title } = await getBlocks({ params });
+  if (!data || !data.visible || !blocks) notFound();
   return (
-    <div>
+    <>
       {blocks.map((block, iBlock) => {
         const key = `${block?.__typename}-${iBlock}`;
         switch (block?.__typename) {
@@ -122,26 +121,12 @@ export default async function Page({ params }: { params: Params }) {
               />
             );
           }
-          case "SerieBlocksPagination": {
-            if (!block.visible || !pagination) return <></>;
-            return (
-              <PaginationBase
-                next={{
-                  title: pagination.next?.title,
-                  route: pagination.next?.route,
-                }}
-                prev={{
-                  title: pagination.prev?.title,
-                  route: pagination.prev?.route,
-                }}
-              />
-            );
-          }
+
           default: {
-            return <></>;
+            return null;
           }
         }
       })}
-    </div>
+    </>
   );
 }
