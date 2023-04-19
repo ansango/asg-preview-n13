@@ -1,318 +1,318 @@
 const data = [
   {
-    url: "/01-series/32-agosto-2020-fuji-c200/01.webp",
+    url: "/01-series/32-agosto-2020-fujifilm-color-200/01.webp",
     img: "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADQAQCdASoIAAUAAsBMJYwCdAEOt/H1AAD+sj+N0ujt9sK8XbzA4AtlhRfSL3toEQn4AA==",
   },
   {
-    url: "/01-series/32-agosto-2020-fuji-c200/02.webp",
+    url: "/01-series/32-agosto-2020-fujifilm-color-200/02.webp",
     img: "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAACwAQCdASoIAAUAAsBMJZQCdADyfvaAAP7m+mu3Q1EjL/aeBG5rsbbjqRHtgJQAAAA=",
   },
   {
-    url: "/01-series/32-agosto-2020-fuji-c200/03.webp",
+    url: "/01-series/32-agosto-2020-fujifilm-color-200/03.webp",
     img: "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADQAQCdASoIAAUAAsBMJYwCdAEWTctooAD+568w+3Oud9H3Go4hq/Z3eP1aOID3RRPwAA==",
   },
   {
-    url: "/01-series/32-agosto-2020-fuji-c200/04.webp",
+    url: "/01-series/32-agosto-2020-fujifilm-color-200/04.webp",
     img: "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADwAQCdASoIAAUAAsBMJYgCdAEfbkzN4AAA/PMiNuBp1LSCexXYDbIabYuAqlLzWS2xV/BBltt77IAA",
   },
   {
-    url: "/01-series/32-agosto-2020-fuji-c200/05.webp",
+    url: "/01-series/32-agosto-2020-fujifilm-color-200/05.webp",
     img: "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAACwAQCdASoIAAUAAsBMJQBOgCHM/jvAAPz8LfoJIYWWUHPr62x+CGjF/qCARGLWCa0lAAAA",
   },
   {
-    url: "/01-series/32-agosto-2020-fuji-c200/06.webp",
+    url: "/01-series/32-agosto-2020-fujifilm-color-200/06.webp",
     img: "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADQAQCdASoIAAUAAsBMJaACdAD0rDrLwAD+lQx+x3OOn+I6Yn7LgT43U0yjVwlZHh3fNm7hfoxtmqgAAAA=",
   },
   {
-    url: "/01-series/32-agosto-2020-fuji-c200/07.webp",
+    url: "/01-series/32-agosto-2020-fujifilm-color-200/07.webp",
     img: "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAACwAQCdASoIAAUAAsBMJZACdADze7UQAP7SsOULERIa72CW0JIxx67b2paoKpUd3r5bompfYb8AAA==",
   },
   {
-    url: "/01-series/32-agosto-2020-fuji-c200/08.webp",
+    url: "/01-series/32-agosto-2020-fujifilm-color-200/08.webp",
     img: "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAACwAQCdASoIAAUAAsBMJYgCdAEOZ/HeAPyPm0oj58j5bi2+kkV6BdBBRj5MoycpcphLs1SwxzoaAAAA",
   },
   {
-    url: "/01-series/32-agosto-2020-fuji-c200/09.webp",
+    url: "/01-series/32-agosto-2020-fujifilm-color-200/09.webp",
     img: "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAAAwAgCdASoIAAUAAsBMJbACdLoBJgALMEL7AAD947lE1lwUCQZqIVbloQarb7fxxIjlEHOYZS+PXFoXTK+AAA==",
   },
   {
-    url: "/01-series/32-agosto-2020-fuji-c200/10.webp",
+    url: "/01-series/32-agosto-2020-fujifilm-color-200/10.webp",
     img: "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAACQAQCdASoIAAUAAsBMJQBOgCHF2AAA/mjLUrzgd77exu+rAYnNDhbXwFTs6ReGbZcs5GwAAAA=",
   },
   {
-    url: "/01-series/32-agosto-2020-fuji-c200/11.webp",
+    url: "/01-series/32-agosto-2020-fujifilm-color-200/11.webp",
     img: "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAACwAQCdASoIAAUAAsBMJQBOgCHXXEIAAM45tn4TAM3tmlg9/pwn63Mh1getXYxYeG1yr1oioAA=",
   },
   {
-    url: "/01-series/32-agosto-2020-fuji-c200/12.webp",
+    url: "/01-series/32-agosto-2020-fujifilm-color-200/12.webp",
     img: "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAACwAQCdASoIAAUAAsBMJZACdAD0Ma2oAPa50gi9GwqsMidSerlVQmnCcLDCZKN0rR3tG1AAAAA=",
   },
   {
-    url: "/01-series/32-agosto-2020-fuji-c200/13.webp",
+    url: "/01-series/32-agosto-2020-fujifilm-color-200/13.webp",
     img: "data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAADQAQCdASoIAAUAAsBMJZQCdAEO92ZIAADLT/jquXwIM21h7DxtcMPgQAA=",
   },
   {
-    url: "/01-series/32-agosto-2020-fuji-c200/14.webp",
+    url: "/01-series/32-agosto-2020-fujifilm-color-200/14.webp",
     img: "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADQAQCdASoIAAUAAsBMJQBOgCIChlyCAADN8/ad4IZ8siMpXCdfMsA4d7m5tV62PoAAAA==",
   },
   {
-    url: "/01-series/33-septiembre-2020-fuji-c200/01.webp",
+    url: "/01-series/33-septiembre-2020-fujifilm-color-200/01.webp",
     img: "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADQAQCdASoIAAUAAsBMJYgCdAEO137vwAD45fmwDCl9ezSdufvUg6hypdXH006WHJqJktmygwuUAAAA",
   },
   {
-    url: "/01-series/33-septiembre-2020-fuji-c200/02.webp",
+    url: "/01-series/33-septiembre-2020-fujifilm-color-200/02.webp",
     img: "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADQAQCdASoIAAUAAsBMJQBOgCPQFSjvAAD+m7O3/sJiGO3Gd82ZvGfpDBcbULNR+ebI/UNF6plXq8rgAAA=",
   },
   {
-    url: "/01-series/33-septiembre-2020-fuji-c200/03.webp",
+    url: "/01-series/33-septiembre-2020-fujifilm-color-200/03.webp",
     img: "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAACwAQCdASoIAAUAAsBMJQBOgCHM+SOAAPjlzH+CkzYTbDkBEELXKzIlm+0h9kGW508AAA==",
   },
   {
-    url: "/01-series/33-septiembre-2020-fuji-c200/04.webp",
+    url: "/01-series/33-septiembre-2020-fujifilm-color-200/04.webp",
     img: "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAACwAQCdASoIAAUAAsBMJagCdAD0h/pcAP4nnnOoETUC6iup3QbJmd66fYKD195S6Ij/naBZ22k04kmJygAAAA==",
   },
   {
-    url: "/01-series/33-septiembre-2020-fuji-c200/05.webp",
+    url: "/01-series/33-septiembre-2020-fujifilm-color-200/05.webp",
     img: "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAACwAQCdASoIAAUAAsBMJbACdAD0eqnsAP55PFXbIAjkxvEjJTQteHxMSIoh7f0Bug0FZ9Cvk4PRNfKOxzvttTJH0zZor3cr+DJAAA==",
   },
   {
-    url: "/01-series/33-septiembre-2020-fuji-c200/06.webp",
+    url: "/01-series/33-septiembre-2020-fujifilm-color-200/06.webp",
     img: "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAACwAQCdASoIAAUAAsBMJbACdAD0eqnsAP5P8j3dxB+eWaK1NVHaRex5iH0waf3X+v0fTB5Wk0+ZgAAA",
   },
   {
-    url: "/01-series/33-septiembre-2020-fuji-c200/07.webp",
+    url: "/01-series/33-septiembre-2020-fujifilm-color-200/07.webp",
     img: "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAACwAQCdASoIAAUAAsBMJagCdADZkRowAN4OBkWyB1M6jeH5x7g0r/HNDavnLv5yqoYFWAAA",
   },
   {
-    url: "/01-series/33-septiembre-2020-fuji-c200/08.webp",
+    url: "/01-series/33-septiembre-2020-fujifilm-color-200/08.webp",
     img: "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADwAQCdASoIAAUAAsBMJaACdAEUngZ1nAAA/uxQu5NXJU4Io2AebZaUml3cL1wtrkAvGEtvn1uUdK2AAAA=",
   },
   {
-    url: "/01-series/33-septiembre-2020-fuji-c200/09.webp",
+    url: "/01-series/33-septiembre-2020-fujifilm-color-200/09.webp",
     img: "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADQAQCdASoIAAUAAsBMJQBOgCB/Ayju8AD+0HSUsj63fS6lFpr5GXbkqrLqH/SQWrPFFbldsiREoUc60NmDwAAA",
   },
   {
-    url: "/01-series/33-septiembre-2020-fuji-c200/10.webp",
+    url: "/01-series/33-septiembre-2020-fujifilm-color-200/10.webp",
     img: "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAAAQAgCdASoIAAUAAsBMJQBOjXAAXwCzP+UAAN4wUWXpUqsNdtHI9laBwSLHEdADhXh294/b94kAAA==",
   },
   {
-    url: "/01-series/33-septiembre-2020-fuji-c200/11.webp",
+    url: "/01-series/33-septiembre-2020-fujifilm-color-200/11.webp",
     img: "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAACwAQCdASoIAAUAAsBMJbACdADx+HEAAP6VDGzTtL+wQ7YaVnTZdq/B7NlAbwP1Nq0vBk3vnX1TbfbWZVZ2+P3gAAA=",
   },
   {
-    url: "/01-series/33-septiembre-2020-fuji-c200/12.webp",
+    url: "/01-series/33-septiembre-2020-fujifilm-color-200/12.webp",
     img: "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAAAQAgCdASoIAAUAAsBMJbACdLoAArgS1QcAAP6Zf+x9qPd2SJDPVTga5bnV8COW8FlDV+MtIYBljt/bmQKG4xeAAAA=",
   },
   {
-    url: "/01-series/33-septiembre-2020-fuji-c200/13.webp",
+    url: "/01-series/33-septiembre-2020-fujifilm-color-200/13.webp",
     img: "data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAACwAQCdASoIAAUAAsBMJZQCdAEOZztQAMtP6lgsrx7nA7DdUPOcCyd4gAA=",
   },
   {
-    url: "/01-series/33-septiembre-2020-fuji-c200/14.webp",
+    url: "/01-series/33-septiembre-2020-fujifilm-color-200/14.webp",
     img: "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADQAQCdASoIAAUAAsBMJQBOgB8xhksaAAD+Sdqb9xWFxtm2qQOnh03pwlJdDPeCaZyAAA==",
   },
   {
-    url: "/01-series/33-septiembre-2020-fuji-c200/15.webp",
+    url: "/01-series/33-septiembre-2020-fujifilm-color-200/15.webp",
     img: "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADQAQCdASoIAAUAAsBMJYgCdAD0eqqyAADLR4e2q+29jt2oHDeqqYC9q984E5NVLTT1RAAA",
   },
   {
-    url: "/01-series/34-septiembre-2020-fuji-c200/01.webp",
+    url: "/01-series/34-septiembre-2020-fujifilm-color-200/01.webp",
     img: "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAACwAQCdASoIAAUAAsBMJQBOgB5vdqIAAPjcqopuRRy2yAlsPTiKY+GA/bnqeMOPcHxldVpNIkAAAA==",
   },
   {
-    url: "/01-series/34-septiembre-2020-fuji-c200/02.webp",
+    url: "/01-series/34-septiembre-2020-fujifilm-color-200/02.webp",
     img: "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAAAQAgCdASoIAAwAAsBMJYgCdAEQ/f3GATHoAP73ILLuMz4+njWtmLrhsZPr/D4HrkniGuszd23raGOh0OAAAA==",
   },
   {
-    url: "/01-series/34-septiembre-2020-fuji-c200/03.webp",
+    url: "/01-series/34-septiembre-2020-fujifilm-color-200/03.webp",
     img: "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAACwAQCdASoIAAUAAsBMJQBOgCHXYJAAAP5b/02358e2f8SAkLu2J3J85y89cEi0BukdysJV64E1VaUAAAA=",
   },
   {
-    url: "/01-series/34-septiembre-2020-fuji-c200/04.webp",
+    url: "/01-series/34-septiembre-2020-fujifilm-color-200/04.webp",
     img: "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAACQAQCdASoIAAUAAsBMJQBOgB4/EIgA/u+txenHEiYxu+pYHwlGnm2MR3zZa6KuG4gLtS/fb/3MAAAA",
   },
   {
-    url: "/01-series/34-septiembre-2020-fuji-c200/05.webp",
+    url: "/01-series/34-septiembre-2020-fujifilm-color-200/05.webp",
     img: "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADQAQCdASoIAAUAAsBMJZgCdAEO+yG0AAD+1irtW2YTq6IaX081d1ULQ/0CGMm+b85rW7RRnhDgje+AAAA=",
   },
   {
-    url: "/01-series/34-septiembre-2020-fuji-c200/06.webp",
+    url: "/01-series/34-septiembre-2020-fujifilm-color-200/06.webp",
     img: "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAACwAQCdASoIAAUAAsBMJQBOgCHM+TcAAP5qtRK4y3HewyNt/6nFn+D7ZCRBbTB4oAA=",
   },
   {
-    url: "/01-series/34-septiembre-2020-fuji-c200/07.webp",
+    url: "/01-series/34-septiembre-2020-fujifilm-color-200/07.webp",
     img: "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADQAQCdASoIAAUAAsBMJZgCdAEUmfIBQAD9479n6VgBc2tTLkAEqcFFUocpBvsMRjDfDr8+R+K6gAAA",
   },
   {
-    url: "/01-series/34-septiembre-2020-fuji-c200/08.webp",
+    url: "/01-series/34-septiembre-2020-fujifilm-color-200/08.webp",
     img: "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADQAQCdASoIAAUAAsBMJagCdAEUoxxZoADiaOIB1D2Vg/9v1ixdlyiiLfVVUBcR5fI7D47Q+4AAAA==",
   },
   {
-    url: "/01-series/34-septiembre-2020-fuji-c200/09.webp",
+    url: "/01-series/34-septiembre-2020-fujifilm-color-200/09.webp",
     img: "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAACwAQCdASoIAAUAAsBMJYgCdAD0gwQwAP5PxX8yfLqs9vFuu2U/cucxygrFUmdJ3UxWsTTA1iAAAA==",
   },
   {
-    url: "/01-series/35-febrero-julio-2021-fuji-c200/01.webp",
+    url: "/01-series/35-febrero-julio-2021-fujifilm-color-200/01.webp",
     img: "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAACwAQCdASoIAAUAAsBMJYgCdAEOuwSAAP3jvfysB8OGi74CnC/t+DQLIGCrJiSAAAA=",
   },
   {
-    url: "/01-series/35-febrero-julio-2021-fuji-c200/02.webp",
+    url: "/01-series/35-febrero-julio-2021-fujifilm-color-200/02.webp",
     img: "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACwAQCdASoIAAUAAsBMJQBOgB6OKagAAPjl/OL2J5uWw7kkEu+/DlmcK9NW0AAA",
   },
   {
-    url: "/01-series/35-febrero-julio-2021-fuji-c200/03.webp",
+    url: "/01-series/35-febrero-julio-2021-fujifilm-color-200/03.webp",
     img: "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADQAQCdASoIAAUAAsBMJZACdAEfaw1MMAD9/T+mTdRPgXW4pgYkrA5XmVIkHPmhow7InLvS1f+0AAAA",
   },
   {
-    url: "/01-series/35-febrero-julio-2021-fuji-c200/04.webp",
+    url: "/01-series/35-febrero-julio-2021-fujifilm-color-200/04.webp",
     img: "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAACwAQCdASoIAAUAAsBMJZACdADdGF3sAM42uyIxDkqTIdlM+Bc51ZV4AB38O7m69a2dq2PrsAA=",
   },
   {
-    url: "/01-series/35-febrero-julio-2021-fuji-c200/05.webp",
+    url: "/01-series/35-febrero-julio-2021-fujifilm-color-200/05.webp",
     img: "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADwAQCdASoIAAwAAsBMJQBOgCHNF9q1mgAA/vAb5a6PULwJCdC+r38k+831xV6v0Y15mMqd9qYRyNLJPczQApOICSAnAAzigAA=",
   },
   {
-    url: "/01-series/35-febrero-julio-2021-fuji-c200/06.webp",
+    url: "/01-series/35-febrero-julio-2021-fujifilm-color-200/06.webp",
     img: "data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAACwAQCdASoIAAUAAsBMJQBOgCHfGbugAPlC41XevY1dtJ3HPOwwibynwAA=",
   },
   {
-    url: "/01-series/35-febrero-julio-2021-fuji-c200/07.webp",
+    url: "/01-series/35-febrero-julio-2021-fujifilm-color-200/07.webp",
     img: "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADQAQCdASoIAAUAAsBMJYwCdAEXe4ZkHAD9/T+pw5orvcfgec3T1+uVntIgtAMAAAA=",
   },
   {
-    url: "/01-series/35-febrero-julio-2021-fuji-c200/08.webp",
+    url: "/01-series/35-febrero-julio-2021-fujifilm-color-200/08.webp",
     img: "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADQAQCdASoIAAUAAsBMJQBOgCPtyWH9AAD+6ADe6MT0fv5XKnCqbHeFiDg+jHirJwAAAA==",
   },
   {
-    url: "/01-series/35-febrero-julio-2021-fuji-c200/09.webp",
+    url: "/01-series/35-febrero-julio-2021-fujifilm-color-200/09.webp",
     img: "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACwAQCdASoIAAUAAsBMJYwCdAEOZ/HeAOIH8aB9/zM0YSQuu8IAFL8n6P6N1AAA",
   },
   {
-    url: "/01-series/35-febrero-julio-2021-fuji-c200/10.webp",
+    url: "/01-series/35-febrero-julio-2021-fujifilm-color-200/10.webp",
     img: "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAACwAQCdASoIAAUAAsBMJZgCdADyf2OgAOJnMeJEO3QFFt6X9ixYmV5Mvfietiy5OXdWJa0VAAA=",
   },
   {
-    url: "/01-series/35-febrero-julio-2021-fuji-c200/11.webp",
+    url: "/01-series/35-febrero-julio-2021-fujifilm-color-200/11.webp",
     img: "data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAACwAQCdASoIAAUAAsBMJYwCdAEO+KbQAN5n8J1tKHG0cnRZQIAAAA==",
   },
   {
-    url: "/01-series/35-febrero-julio-2021-fuji-c200/12.webp",
+    url: "/01-series/35-febrero-julio-2021-fujifilm-color-200/12.webp",
     img: "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAACQAQCdASoIAAUAAsBMJQBOgB5P3tAA/eO/j5/4t5vZlru0jTFz64rxCjosN9tiSE5asXwAAAA=",
   },
   {
-    url: "/01-series/35-febrero-julio-2021-fuji-c200/13.webp",
+    url: "/01-series/35-febrero-julio-2021-fujifilm-color-200/13.webp",
     img: "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAACwAQCdASoIAAUAAsBMJZACdAEOZ/HeAP7iWI3k1XOy2OS4oHhCebAvT7+5Mn5qscOaF+TXJkteKbUAAAA=",
   },
   {
-    url: "/01-series/35-febrero-julio-2021-fuji-c200/14.webp",
+    url: "/01-series/35-febrero-julio-2021-fujifilm-color-200/14.webp",
     img: "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADQAQCdASoIAAUAAsBMJZACdAD0OYqxoAD+6KDF+If7mZpf3t+ZzKCG7dr6kE0vbX6/cJeAZ/W49lj3pZuR5p+N0jcgAAAA",
   },
   {
-    url: "/01-series/35-febrero-julio-2021-fuji-c200/15.webp",
+    url: "/01-series/35-febrero-julio-2021-fujifilm-color-200/15.webp",
     img: "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAACwAQCdASoIAAUAAsBMJZACdADyfvaAAPff3kVZbpTVWDKGCX5YGqB5Gc+WZw161lWTEkAA",
   },
   {
-    url: "/01-series/35-febrero-julio-2021-fuji-c200/16.webp",
+    url: "/01-series/35-febrero-julio-2021-fujifilm-color-200/16.webp",
     img: "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAACwAQCdASoIAAUAAsBMJYgCdADzesjgAP6aZ1S6ohnIMC4fbSx+h/Rgr/0YeFnFHGLDdZ1ssC4AAA==",
   },
   {
-    url: "/01-series/35-febrero-julio-2021-fuji-c200/17.webp",
+    url: "/01-series/35-febrero-julio-2021-fujifilm-color-200/17.webp",
     img: "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAACwAQCdASoIAAUAAsBMJYgCdADze7hYAM45gxNG/TCRQhd/43J8yQJP4CBqVHNkRQ6GDc9aJygAAA==",
   },
   {
-    url: "/01-series/35-febrero-julio-2021-fuji-c200/18.webp",
+    url: "/01-series/35-febrero-julio-2021-fujifilm-color-200/18.webp",
     img: "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADQAQCdASoIAAUAAsBMJZgCdAEUngW0AAD+xgcBxdcQYMZ9mkIGwcxYqiCdLM01ERWEjBaAAAA=",
   },
   {
-    url: "/01-series/35-febrero-julio-2021-fuji-c200/19.webp",
+    url: "/01-series/35-febrero-julio-2021-fujifilm-color-200/19.webp",
     img: "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAACwAQCdASoIAAUAAsBMJQBOgCHXVyAAAP7VFM8OYdhyLwPMJ2O9U9ItrrI2MWHh8m2UCfbgAAA=",
   },
   {
-    url: "/01-series/35-febrero-julio-2021-fuji-c200/20.webp",
+    url: "/01-series/35-febrero-julio-2021-fujifilm-color-200/20.webp",
     img: "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAACwAQCdASoIAAUAAsBMJQBOgCHXYJAAAP7HbBrj885bT+GVCllfQ3/hYYTBORagr6AAAA==",
   },
   {
-    url: "/01-series/35-febrero-julio-2021-fuji-c200/21.webp",
+    url: "/01-series/35-febrero-julio-2021-fujifilm-color-200/21.webp",
     img: "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAACwAQCdASoIAAUAAsBMJQBOgCHSx68AAP6Rt154cU5MHc1aPRMamr8GPlJdLmuSm3K4AAAA",
   },
   {
-    url: "/01-series/35-febrero-julio-2021-fuji-c200/22.webp",
+    url: "/01-series/35-febrero-julio-2021-fujifilm-color-200/22.webp",
     img: "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADQAQCdASoIAAUAAsBMJYgCdAEO+M3dAAD94c9cTmYNK5F35n5VaO74NNhhMHJSr1euGeGAAAA=",
   },
   {
-    url: "/01-series/35-febrero-julio-2021-fuji-c200/23.webp",
+    url: "/01-series/35-febrero-julio-2021-fujifilm-color-200/23.webp",
     img: "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAACwAQCdASoIAAUAAsBMJYgCdADze7hYAP6VD1iN6YjUtrFdWSnyfYimIfRxRvD9RU4SEYTV43ePG+rrgAA=",
   },
   {
-    url: "/01-series/35-febrero-julio-2021-fuji-c200/24.webp",
+    url: "/01-series/35-febrero-julio-2021-fujifilm-color-200/24.webp",
     img: "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAACwAQCdASoIAAUAAsBMJQBOgB6SdTKAAP7JhOd2mOAdIFii92IBlNdL2AGawU3wnwghQAAA",
   },
   {
-    url: "/01-series/36-julio-2021-fuji-superia-400/01.webp",
+    url: "/01-series/36-julio-2021-fujifilm-superia-400/01.webp",
     img: "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADQAQCdASoIAAUAAsBMJYwCdAD0klxXgAD+yYKew285PVy5BAWtorVIauIF4Zs1BXhQAAAA",
   },
   {
-    url: "/01-series/36-julio-2021-fuji-superia-400/02.webp",
+    url: "/01-series/36-julio-2021-fujifilm-superia-400/02.webp",
     img: "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADwAQCdASoIAAUAAsBMJagCdLoAAwdGZHAA/fBbIrwcMJOwDd4XbX6Aqg17MD4eDNgQtCvCc/F4UcUZVNoTQAAA",
   },
   {
-    url: "/01-series/36-julio-2021-fuji-superia-400/03.webp",
+    url: "/01-series/36-julio-2021-fujifilm-superia-400/03.webp",
     img: "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADwAQCdASoIAAUAAsBMJbACdEf/gecRy9AA/ugASc9Fs7l+FUbilmRsBMHCzCo05/a69BZgtW5XUHHb1gx5rnuHmVw8anIAAAA=",
   },
   {
-    url: "/01-series/36-julio-2021-fuji-superia-400/04.webp",
+    url: "/01-series/36-julio-2021-fujifilm-superia-400/04.webp",
     img: "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAACwAQCdASoIAAUAAsBMJagCdAEOsVHAAP7ts64qXHJerlfoFpq/wkb2F1k4uWje6In7Eex4YAA=",
   },
   {
-    url: "/01-series/36-julio-2021-fuji-superia-400/05.webp",
+    url: "/01-series/36-julio-2021-fujifilm-superia-400/05.webp",
     img: "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADwAQCdASoIAAUAAsBMJbACdLoAAwkG+4AA/ojbEtLP/Z8B/qTUlIIH7oqEGhHdIr/M1sdUO1aAAA==",
   },
   {
-    url: "/01-series/36-julio-2021-fuji-superia-400/06.webp",
+    url: "/01-series/36-julio-2021-fujifilm-superia-400/06.webp",
     img: "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADQAQCdASoIAAUAAsBMJagCdAEOJM67AAD8H84h4Io/Me2hdrWkQZj+8Wn0VLy2H35rfznatj67AAAA",
   },
   {
-    url: "/01-series/36-julio-2021-fuji-superia-400/07.webp",
+    url: "/01-series/36-julio-2021-fujifilm-superia-400/07.webp",
     img: "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAACwAQCdASoIAAUAAsBMJYgCdAEOuwSAAP6bH1015qZOrevfadkqLXHK0w8qOOsUMAAAAA==",
   },
   {
-    url: "/01-series/36-julio-2021-fuji-superia-400/08.webp",
+    url: "/01-series/36-julio-2021-fujifilm-superia-400/08.webp",
     img: "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAADQAQCdASoIAAUAAsBMJZQCdAEO9f7RmAD+7eG2dCDr9XHBH8niGJHFbXIAAA==",
   },
   {
-    url: "/01-series/36-julio-2021-fuji-superia-400/09.webp",
+    url: "/01-series/36-julio-2021-fujifilm-superia-400/09.webp",
     img: "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADQAQCdASoIAAUAAsBMJZACdAEUnwBKAAD+W/9tYPTuH3pxYGNoo1/W50SjEsvoMWOXJ10ujul9y2bLFwQAAA==",
   },
   {
-    url: "/01-series/36-julio-2021-fuji-superia-400/10.webp",
+    url: "/01-series/36-julio-2021-fujifilm-superia-400/10.webp",
     img: "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAACwAQCdASoIAAUAAsBMJYgCdAD0LTLgAP7q86dA9qNn8fTnDxsD9tTlPPHCG5RYQfwHSWykFJJAAA==",
   },
   {
-    url: "/01-series/36-julio-2021-fuji-superia-400/11.webp",
+    url: "/01-series/36-julio-2021-fujifilm-superia-400/11.webp",
     img: "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAACwAQCdASoIAAUAAsBMJQBOgCHM/jvAAP3jsR5eg2bdU4R8TaacE6AhEmw7NaV5m8HWhBNabcAAAA==",
   },
   {
-    url: "/01-series/36-julio-2021-fuji-superia-400/12.webp",
+    url: "/01-series/36-julio-2021-fujifilm-superia-400/12.webp",
     img: "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAACwAQCdASoIAAUAAsBMJQBOgCB7/FwAAP7mxomkdgHTv64ziEUPunZrIetDL0sMJgnH5DkAAAA=",
   },
   {
-    url: "/01-series/36-julio-2021-fuji-superia-400/13.webp",
+    url: "/01-series/36-julio-2021-fujifilm-superia-400/13.webp",
     img: "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADQAQCdASoIAAUAAsBMJbACdAEXe4Zk2AD5dvxFk4zdkULTZPiAVabMLdl/ImT2V39qZcL2RHEwKsAA",
   },
   {
-    url: "/01-series/36-julio-2021-fuji-superia-400/14.webp",
+    url: "/01-series/36-julio-2021-fujifilm-superia-400/14.webp",
     img: "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAACwAQCdASoIAAUAAsBMJQBOgBue0YsAAP27M2HUxUqf7kl3t9eMg1LtwEw80nEBSHJuwMAA",
   },
   {
-    url: "/01-series/36-julio-2021-fuji-superia-400/15.webp",
+    url: "/01-series/36-julio-2021-fujifilm-superia-400/15.webp",
     img: "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADQAQCdASoIAAUAAsBMJaACdAEfbiCVEAD+mYWexsVavF9oaUxttQL6VuPNbD32Vm54oqT89zYAAA==",
   },
   {
-    url: "/01-series/36-julio-2021-fuji-superia-400/16.webp",
+    url: "/01-series/36-julio-2021-fujifilm-superia-400/16.webp",
     img: "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAAAwAgCdASoIAAUAAsBMJaACdGuAAvgztlW9QAD88vk7h0ceIAduYmkuqiZf06Q91HnEOfp2oOjhHpZAAAA=",
   },
   {
-    url: "/01-series/36-julio-2021-fuji-superia-400/17.webp",
+    url: "/01-series/36-julio-2021-fujifilm-superia-400/17.webp",
     img: "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAACwAQCdASoIAAUAAsBMJQBOgCHM/lRwAP6YX1zwvvMvJkchy9cTUwpvANxCgDnK4AA=",
   },
   {
@@ -856,79 +856,79 @@ const data = [
     img: "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADQAQCdASoIAAUAAsBMJZwCdAEO2pONAAD+0PPcvebvQJPDziSxPizhoH3lCuuFmFVJgAAA",
   },
   {
-    url: "/01-series/46-julio-2022-fuji-c200/01.webp",
+    url: "/01-series/46-julio-2022-fujifilm-color-200/01.webp",
     img: "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAACwAQCdASoIAAUAAsBMJYwCdAD0MYo0AP7AWX2UKQ5oDNWoVTHd996CoBdoCbpwAAA=",
   },
   {
-    url: "/01-series/46-julio-2022-fuji-c200/02.webp",
+    url: "/01-series/46-julio-2022-fujifilm-color-200/02.webp",
     img: "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAACwAQCdASoIAAUAAsBMJZQCdAD0Ma2oAP5rD+JxQq43jOni+qBMIo5GdF9nKgprrDFqgAAA",
   },
   {
-    url: "/01-series/46-julio-2022-fuji-c200/03.webp",
+    url: "/01-series/46-julio-2022-fujifilm-color-200/03.webp",
     img: "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADQAQCdASoIAAUAAsBMJYwCdAEXe4XTmAD5XXgTznC1s9hAjvyddbftcsAcF88lAAA=",
   },
   {
-    url: "/01-series/46-julio-2022-fuji-c200/04.webp",
+    url: "/01-series/46-julio-2022-fujifilm-color-200/04.webp",
     img: "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAACwAQCdASoIAAUAAsBMJQBOgB5vdqIAAP5ouPvMwNvsi4HQc6qyYo9S87bgv9Vn4kI9FRWrxPWVpNIkAAA=",
   },
   {
-    url: "/01-series/46-julio-2022-fuji-c200/05.webp",
+    url: "/01-series/46-julio-2022-fujifilm-color-200/05.webp",
     img: "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAACwAQCdASoIAAUAAsBMJYwCdACg3bWAAM45sc+5rsqpCIeHZf4iu0fzsAPEUeqHgoDwAAAA",
   },
   {
-    url: "/01-series/46-julio-2022-fuji-c200/06.webp",
+    url: "/01-series/46-julio-2022-fujifilm-color-200/06.webp",
     img: "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADQAQCdASoIAAUAAsBMJZwC7ADzfGTMAAD+t3ubysIBs9gShR4/HrvdUQFvBw9HHrwAAA==",
   },
   {
-    url: "/01-series/46-julio-2022-fuji-c200/07.webp",
+    url: "/01-series/46-julio-2022-fujifilm-color-200/07.webp",
     img: "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAACwAQCdASoIAAUAAsBMJZQCdAEOuwSAAPzzIw5pm5eWfmO3fLUS+XCmu936BFm98RZelAAA",
   },
   {
-    url: "/01-series/46-julio-2022-fuji-c200/08.webp",
+    url: "/01-series/46-julio-2022-fujifilm-color-200/08.webp",
     img: "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAADwAQCdASoIAAUAAsBMJZQCdAEUov+RFwAA/sqVNnqfKt7b/USkFQINGgAAAA==",
   },
   {
-    url: "/01-series/46-julio-2022-fuji-c200/09.webp",
+    url: "/01-series/46-julio-2022-fujifilm-color-200/09.webp",
     img: "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADQAQCdASoIAAUAAsBMJZQC7AD0l+jAgAD+mF+2Lzi3teezJwa7//AViEsJadMsOakXAZgA",
   },
   {
-    url: "/01-series/47-agosto-2022-kodak-color-200/01.webp",
+    url: "/01-series/47-agosto-2022-kodak-gold-200/01.webp",
     img: "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADwAQCdASoIAAUAAsBMJZgCdAEWUNWMYYAA/PIBeYHpqnYrSu2gHQIrWF1NE3njpgUy2C5siJsxGEy63xO3QAAA",
   },
   {
-    url: "/01-series/47-agosto-2022-kodak-color-200/02.webp",
+    url: "/01-series/47-agosto-2022-kodak-gold-200/02.webp",
     img: "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADQAQCdASoIAAUAAsBMJQBOgCPQFRSOAAD9Us3gNuKxwgVQu+Oh+i4929ZYbGE0k5loVA9gAAA=",
   },
   {
-    url: "/01-series/47-agosto-2022-kodak-color-200/03.webp",
+    url: "/01-series/47-agosto-2022-kodak-gold-200/03.webp",
     img: "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADQAQCdASoIAAUAAsBMJQBOgCLadwEiAAD+hgVSMsn60i39qRnNlgPo15GSQ1Ics/ElEiAA",
   },
   {
-    url: "/01-series/47-agosto-2022-kodak-color-200/04.webp",
+    url: "/01-series/47-agosto-2022-kodak-gold-200/04.webp",
     img: "data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAACwAQCdASoIAAUAAsBMJQBOgCKUc0H4AP7WKUVShNZWdLDCYJyLUSbcAAA=",
   },
   {
-    url: "/01-series/47-agosto-2022-kodak-color-200/05.webp",
+    url: "/01-series/47-agosto-2022-kodak-gold-200/05.webp",
     img: "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAACwAQCdASoIAAUAAsBMJQBOgCHgoJwuAP7oitZFjaEmjrkCS07TaUg/xlsMJgnItRJtwAAA",
   },
   {
-    url: "/01-series/47-agosto-2022-kodak-color-200/06.webp",
+    url: "/01-series/47-agosto-2022-kodak-gold-200/06.webp",
     img: "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAACwAQCdASoIAAUAAsBMJQBOgCHXWSwAAP7gCcZPAFHKrwqOoPiw5hM1qP73XFgS6TYRqCTkAAA=",
   },
   {
-    url: "/01-series/47-agosto-2022-kodak-color-200/07.webp",
+    url: "/01-series/47-agosto-2022-kodak-gold-200/07.webp",
     img: "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADQAQCdASoIAAwAAsBMJYgCdAEOu3tNAAD+sYaWjT1IkY2Dn4gCcvJ6v9OQPWXOlw3+TYZokdUDu5OsXcAAAA==",
   },
   {
-    url: "/01-series/47-agosto-2022-kodak-color-200/08.webp",
+    url: "/01-series/47-agosto-2022-kodak-gold-200/08.webp",
     img: "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAABwAgCdASoIAAwAAsBMJYwCdH8GJ/gehw8mM9mAAP7q8VBZ44eI35b8QQvdHljiWusMMhy6+ElcojCZOVN02rsa4AA=",
   },
   {
-    url: "/01-series/47-agosto-2022-kodak-color-200/09.webp",
+    url: "/01-series/47-agosto-2022-kodak-gold-200/09.webp",
     img: "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAACQAQCdASoIAAwAAsBMJQBOgCHVqiAA/t8jSwmhvqhaBftNeHI6qps0FU3MxsdWB+1rWKGjswzyhNMgpVZl4AAA",
   },
   {
-    url: "/01-series/47-agosto-2022-kodak-color-200/10.webp",
+    url: "/01-series/47-agosto-2022-kodak-gold-200/10.webp",
     img: "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADQAQCdASoIAAwAAsBMJaACdAEO6QWAAAD+9+hY2Lq8n96vp4xTGmi6UHHH7sSCp3i6oelVExYhs+F2YBBV2BZ+F/wAAA==",
   },
   {
@@ -1560,63 +1560,63 @@ const data = [
     img: "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAAAQAgCdASoIAAUAAsBMJZgCdH8AGN3Lu0eAAP4GA2ZCA8HeVgcOdDNdiL8hdAhZnbXOqD8VDOAe7bBDItOeBzmFJ8jAAA==",
   },
   {
-    url: "/01-series/57-octubre-2022-fuji-c200/01.webp",
+    url: "/01-series/57-octubre-2022-fujifilm-color-200/01.webp",
     img: "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADQAQCdASoIAAUAAsBMJbACdAEO+M4GwADN8/GlhsuQCjytw9G+6Lp5obGPf6cxzRNTKDC6pAAAAA==",
   },
   {
-    url: "/01-series/57-octubre-2022-fuji-c200/02.webp",
+    url: "/01-series/57-octubre-2022-fujifilm-color-200/02.webp",
     img: "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAACwAQCdASoIAAwAAsBMJQBOgBszB+AAAP718LyCO7AX+qO3Bfz0zW/Y1aZu1sPxwZ4FbG2t7h3YZBkEYTSMAa5w9qgAAA==",
   },
   {
-    url: "/01-series/57-octubre-2022-fuji-c200/03.webp",
+    url: "/01-series/57-octubre-2022-fujifilm-color-200/03.webp",
     img: "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADwAQCdASoIAAwAAsBMJbACdAEPAPHY4AAA/Z1/AR78yW9sT2yuB540/6POFpLrOzTYKowwCNlEZLJbnAZY6oPJs2mrr/Dz3FhHncVQAAA=",
   },
   {
-    url: "/01-series/57-octubre-2022-fuji-c200/04.webp",
+    url: "/01-series/57-octubre-2022-fujifilm-color-200/04.webp",
     img: "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAABQAgCdASoIAAwAAsBMJbACdLoAEIsVpCBIkPgA/agsjdY57vgoIYEFt616R6hI+TgZItsT9QWgmkszzucxevPafFPuw+Wx0AA=",
   },
   {
-    url: "/01-series/57-octubre-2022-fuji-c200/05.webp",
+    url: "/01-series/57-octubre-2022-fujifilm-color-200/05.webp",
     img: "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADQAQCdASoIAAUAAsBMJZgCdAEUnc1PgAD+8nIuV5IHUGFz5lJjrvxyp3G7969k9t9vPgV40msvpGY57iyAAA==",
   },
   {
-    url: "/01-series/57-octubre-2022-fuji-c200/06.webp",
+    url: "/01-series/57-octubre-2022-fujifilm-color-200/06.webp",
     img: "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAQAgCdASoIAAwAAsBMJYgCdAEf3YaqvmEAAP72eifmuw9VQ4XMxzpRkFZlL9U98bpGj9djOUXGwqhof1aXc3+f2mtuDp4AAAA=",
   },
   {
-    url: "/01-series/57-octubre-2022-fuji-c200/07.webp",
+    url: "/01-series/57-octubre-2022-fujifilm-color-200/07.webp",
     img: "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAABwAQCdASoIAAUAAsBMJYwCdAFAAAD+8x47om4yt5TDWmlJilH+0mVIw0Z2TvEAAAA=",
   },
   {
-    url: "/01-series/57-octubre-2022-fuji-c200/08.webp",
+    url: "/01-series/57-octubre-2022-fujifilm-color-200/08.webp",
     img: "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAACwAQCdASoIAAUAAsBMJYgCdAEOO/CwAP60L+ejuy26fiELTfuXQFVTPGXlyLDGbLurnVlrRUAAAA==",
   },
   {
-    url: "/01-series/57-octubre-2022-fuji-c200/09.webp",
+    url: "/01-series/57-octubre-2022-fujifilm-color-200/09.webp",
     img: "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAACwAQCdASoIAAUAAsBMJQBOgCHHg7fAAPzzLTz940mBF9XpXdwo3V5biri3e5apAlsoGuJAAAA=",
   },
   {
-    url: "/01-series/57-octubre-2022-fuji-c200/10.webp",
+    url: "/01-series/57-octubre-2022-fujifilm-color-200/10.webp",
     img: "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADQAQCdASoIAAUAAsBMJQBOgCPg+7J5gAD+imfQ15o4CC0yDF9GGDbeBdVDCfFHMHx/cO8HxcoTfR3gAAA=",
   },
   {
-    url: "/01-series/57-octubre-2022-fuji-c200/11.webp",
+    url: "/01-series/57-octubre-2022-fujifilm-color-200/11.webp",
     img: "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADwAQCdASoIAAwAAsBMJbACdLoAArdy5AAAze6baezO8DZZMo9625OeDMCXWgz4nCeoAX4xTOyI9bkzq/eO36FGyia8eU60RfYAAA==",
   },
   {
-    url: "/01-series/57-octubre-2022-fuji-c200/12.webp",
+    url: "/01-series/57-octubre-2022-fujifilm-color-200/12.webp",
     img: "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADwAQCdASoIAAwAAsBMJaACdAEOZxd1+JAA/aoGZNxCMZsZ/1zSjKp98NabJyc1CwXUlM+8FnzVpTM7eln5t8oWinso4X3qENpcZr4AAAA=",
   },
   {
-    url: "/01-series/57-octubre-2022-fuji-c200/13.webp",
+    url: "/01-series/57-octubre-2022-fujifilm-color-200/13.webp",
     img: "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAAAQAgCdASoIAAUAAsBMJaACdLoAArqrA+WAAP7XP92jLo9VuHP2+yQwtgPFioRED94bVWt2o/Ipt64CAAA=",
   },
   {
-    url: "/01-series/57-octubre-2022-fuji-c200/14.webp",
+    url: "/01-series/57-octubre-2022-fujifilm-color-200/14.webp",
     img: "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADQAQCdASoIAAUAAsBMJZACdAEPBE/ewAD+8nBgyTAWLIj3iAxN2LtdVnHpVBp8fGW9yhcQjsokDjRAAAA=",
   },
   {
-    url: "/01-series/57-octubre-2022-fuji-c200/15.webp",
+    url: "/01-series/57-octubre-2022-fujifilm-color-200/15.webp",
     img: "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAACwAQCdASoIAAUAAsBMJQBOgB5vdqIAAOJlugXty3ofaftF59t1crzLzQ8iIz1hoo+QAA==",
   },
   {
@@ -1696,79 +1696,79 @@ const data = [
     img: "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADQAQCdASoIAAwAAsBMJbACdADz2saCIAD+mfND2PnbBDnTT28zrQ/zY27lHrr5xrG4uZ9rJUcJgpfQfefkP2qUPyc5Jr0IAAA=",
   },
   {
-    url: "/01-series/59-noviembre-2022-fuji-200/01.webp",
+    url: "/01-series/59-noviembre-2022-fujifilm-color-200/01.webp",
     img: "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADQAQCdASoIAAwAAsBMJZACdAEO4c2FgAD+mrY9seE90FS6zB4ydnGkZqO26/al3donOdBz7SKYZWUqrYvcdtVsLxH5Pjb3JoZDxoMJH3ZoAAAA",
   },
   {
-    url: "/01-series/59-noviembre-2022-fuji-200/02.webp",
+    url: "/01-series/59-noviembre-2022-fujifilm-color-200/02.webp",
     img: "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAQAgCdASoIAAwAAsBMJbACdAYs3kpgYEWEAP7vLPnx0y6GprlTetFhGg9FFdwf64dqVSeaZ7GH+6jyBvkPjoXHIjtX7kAIjz/3DTVPQWAbRUAA",
   },
   {
-    url: "/01-series/59-noviembre-2022-fuji-200/03.webp",
+    url: "/01-series/59-noviembre-2022-fujifilm-color-200/03.webp",
     img: "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADwAQCdASoIAAwAAsBMJbACdAD0TvvqcRoA/uwkDeEpdl04krm41Y7CZq4J7wL2R00zCn7bv7MznH7AlLJGm9lnq6Ver0NAAAA=",
   },
   {
-    url: "/01-series/59-noviembre-2022-fuji-200/04.webp",
+    url: "/01-series/59-noviembre-2022-fujifilm-color-200/04.webp",
     img: "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAwAgCdASoIAAwAAsBMJbACdAEegoPo1w5ZAAD+76FzpLRmW8FHF8DQF2yrI5KA+sKawTTTXXO+8xQim2X1STpfuzDXUGm+bxpteKbUAAA=",
   },
   {
-    url: "/01-series/59-noviembre-2022-fuji-200/05.webp",
+    url: "/01-series/59-noviembre-2022-fujifilm-color-200/05.webp",
     img: "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAACwAQCdASoIAAUAAsBMJbACdADyfv4AAP3DEd1DwKhvvEQBihVL4bvbx+8gfv6iLyhzPuD4rrqr0zGDMAAAAA==",
   },
   {
-    url: "/01-series/59-noviembre-2022-fuji-200/06.webp",
+    url: "/01-series/59-noviembre-2022-fujifilm-color-200/06.webp",
     img: "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAAAwAgCdASoIAAwAAsBMJbACdAEUpGH4pqcKQAD+xge+9ucVxpXf251R4VebgjlncACh7TDyp7220bTQ5GlgAA==",
   },
   {
-    url: "/01-series/59-noviembre-2022-fuji-200/07.webp",
+    url: "/01-series/59-noviembre-2022-fujifilm-color-200/07.webp",
     img: "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADQAQCdASoIAAUAAsBMJaACdAEU7bBUoAD+6k3mTBNcofPe/xZ22X80JzzXQgpHbC5MznAKOANfREmwZgAAAA==",
   },
   {
-    url: "/01-series/59-noviembre-2022-fuji-200/08.webp",
+    url: "/01-series/59-noviembre-2022-fujifilm-color-200/08.webp",
     img: "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADQAQCdASoIAAUAAsBMJZQCdAEfUBk4YAD+8Emgbu7pbdJzSkJ0aZnF2YGAgoUOR8wZwAAA",
   },
   {
-    url: "/01-series/59-noviembre-2022-fuji-200/09.webp",
+    url: "/01-series/59-noviembre-2022-fujifilm-color-200/09.webp",
     img: "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADwAQCdASoIAAwAAsBMJbACdAD0tLIW7wAA/Z15zH5FKtJvrzvSX6BBSNDjp2WJoc5KgNU4bCtplfMkm0wQtLxCMGQ/e1YPVepcV5vyPAAAAA==",
   },
   {
-    url: "/01-series/59-noviembre-2022-fuji-200/10.webp",
+    url: "/01-series/59-noviembre-2022-fujifilm-color-200/10.webp",
     img: "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADwAQCdASoIAAwAAsBMJbACdAEO4rhSzgAA/uDbnO8FJ5BDyCbDUSD/qeEcWG99q63IE/1Kdt8xetP1sIloR4AA",
   },
   {
-    url: "/01-series/59-noviembre-2022-fuji-200/11.webp",
+    url: "/01-series/59-noviembre-2022-fujifilm-color-200/11.webp",
     img: "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAAAQAgCdASoIAAwAAsBMJaACdAEPEDJryhQAAP7Hg9Eyz9CRMohfZ2+2m30fhysYNLcxo66nCW+H3dUQ+8nqYg5K/KjW6AAA",
   },
   {
-    url: "/01-series/59-noviembre-2022-fuji-200/12.webp",
+    url: "/01-series/59-noviembre-2022-fujifilm-color-200/12.webp",
     img: "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADwAQCdASoIAAwAAsBMJbACdAEO9en3atwA+UKTz7RC3P34roStWaBg2h9Khb9v5lm2+Y+Jvdn33KAd5o/XzQzXlPTKDisOnoAAAA==",
   },
   {
-    url: "/01-series/59-noviembre-2022-fuji-200/13.webp",
+    url: "/01-series/59-noviembre-2022-fujifilm-color-200/13.webp",
     img: "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAQAgCdASoIAAwAAsBMJZACdAEO5gTyEyQAAP7WK+lRHU39H1gpJo4RNxgZMpvyFiYAUfQ4ThuYwT80ON0pcphvyzIvUeeAAAA=",
   },
   {
-    url: "/01-series/59-noviembre-2022-fuji-200/14.webp",
+    url: "/01-series/59-noviembre-2022-fujifilm-color-200/14.webp",
     img: "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADwAQCdASoIAAwAAsBMJYwCdAEO6SyrqrAA/vYGAY+5lXl9uHFTrm9Pr8gCiWoey/8Wp2+rAAA=",
   },
   {
-    url: "/01-series/59-noviembre-2022-fuji-200/15.webp",
+    url: "/01-series/59-noviembre-2022-fujifilm-color-200/15.webp",
     img: "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADQAQCdASoIAAwAAsBMJQBOgCHZrEvQAAD+8hVv4FMUoiIsFoHrdR8ENgv1IxZsTdhRoAAA",
   },
   {
-    url: "/01-series/59-noviembre-2022-fuji-200/16.webp",
+    url: "/01-series/59-noviembre-2022-fujifilm-color-200/16.webp",
     img: "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAABQAgCdASoIAAwAAsBMJZACdGuAt/8D5hgWcpQA/vUaKT71LwMx7o3zenqDfN1a7VEPg+1J+B53VP3kgsySTQwphnozhYAA",
   },
   {
-    url: "/01-series/59-noviembre-2022-fuji-200/17.webp",
+    url: "/01-series/59-noviembre-2022-fujifilm-color-200/17.webp",
     img: "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADwAQCdASoIAAwAAsBMJQBOgCHiGv/H8UAA/uU77UsyGUaFLDyCVhz4W+5Xou51Sa5wjopgyya6ccwDBvqJ1g6I0Ev2aukEYnYAAA==",
   },
   {
-    url: "/01-series/59-noviembre-2022-fuji-200/18.webp",
+    url: "/01-series/59-noviembre-2022-fujifilm-color-200/18.webp",
     img: "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAAAQAgCdASoIAAwAAsBMJaACdAEPArIB44eYAP6Rv9sxpnLDhd2gYw65e/JvzfhfkVdYaUR9CqRtoF+w/ZZiNVyUdLr5unuPX4AAAA==",
   },
   {
-    url: "/01-series/59-noviembre-2022-fuji-200/19.webp",
+    url: "/01-series/59-noviembre-2022-fujifilm-color-200/19.webp",
     img: "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADQAQCdASoIAAwAAsBMJYgCdAEOtv6eAAD+9ku885LBsNdP4AEQBonY9KGXPQEjw7vNECq87UAAAA==",
   },
   {
@@ -1836,79 +1836,79 @@ const data = [
     img: "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADwAQCdASoIAAUAAsBMJQBOiP/wPOyhQ4AA/seD4frg2jMakDD6QHEZj9XFxfGGyjw/1bkkUzsNf2cAAAA=",
   },
   {
-    url: "/01-series/61-diciembre-2022-fuji-200/01.webp",
+    url: "/01-series/61-diciembre-2022-fujifilm-color-200/01.webp",
     img: "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAABQAgCdASoIAAwAAsBMJYgCdH8IwABZu4XnOAAA/u4qFy4jWB6b5m0ZjLB+Bs9wpAHYCd56b8iwSQ3gk+UAAA==",
   },
   {
-    url: "/01-series/61-diciembre-2022-fuji-200/02.webp",
+    url: "/01-series/61-diciembre-2022-fujifilm-color-200/02.webp",
     img: "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAAAQAgCdASoIAAwAAsBMJZACdAEPEN60j9QAAP7yEg3kqgm7QNQGn1th7pd1DNakAOLVnk4CBXnYU6NRgDbwAA==",
   },
   {
-    url: "/01-series/61-diciembre-2022-fuji-200/03.webp",
+    url: "/01-series/61-diciembre-2022-fujifilm-color-200/03.webp",
     img: "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAAAQAgCdASoIAAwAAsBMJYgCdAD0of/ExsQAAP709cUakMajX4jwVzOYL0FYTI+dIMFqpAgNwcaU3VGM47j4vh4gAAA=",
   },
   {
-    url: "/01-series/61-diciembre-2022-fuji-200/04.webp",
+    url: "/01-series/61-diciembre-2022-fujifilm-color-200/04.webp",
     img: "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADwAQCdASoIAAwAAsBMJbACdAD0OYjvQgAA/kfihCMGxMifF5ZQeqLk6BusnU2IBqs+tPv0KGm1pp7Fv61e6/M++P1K36qi9wAAAA==",
   },
   {
-    url: "/01-series/61-diciembre-2022-fuji-200/05.webp",
+    url: "/01-series/61-diciembre-2022-fujifilm-color-200/05.webp",
     img: "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADwAQCdASoIAAwAAsBMJagCdAD0Y6+mnAAA/vZjfRdbgPspn4lm8pqgio+ziCZezPWwuc+K6hCnZ+GuLpzj1W9XGSQAAA==",
   },
   {
-    url: "/01-series/61-diciembre-2022-fuji-200/06.webp",
+    url: "/01-series/61-diciembre-2022-fujifilm-color-200/06.webp",
     img: "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADwAQCdASoIAAwAAsBMJbACdADcgCmmEgAA/kf03gdwjNuehZOAN8C/kKspFMnttBQzC1XPlXv56uzRIT9Cu7M3Lvuf3jmXNcEAAA==",
   },
   {
-    url: "/01-series/61-diciembre-2022-fuji-200/07.webp",
+    url: "/01-series/61-diciembre-2022-fujifilm-color-200/07.webp",
     img: "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAAAQAgCdASoIAAwAAsBMJQBOj+ACuOS+tDQAAP6yDWWY9NN7tVhVvrUyMPso7Ku3ViOcz0MG4pdEz8AAAAA=",
   },
   {
-    url: "/01-series/61-diciembre-2022-fuji-200/08.webp",
+    url: "/01-series/61-diciembre-2022-fujifilm-color-200/08.webp",
     img: "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAQAgCdASoIAAwAAsBMJaACdAEPCPLy1drAAP7wG2sjofm0VLqvmV+KoB30eFaLIIEgnQO9cew99mI/w3w0QHfbZEemobqQAAA=",
   },
   {
-    url: "/01-series/61-diciembre-2022-fuji-200/09.webp",
+    url: "/01-series/61-diciembre-2022-fujifilm-color-200/09.webp",
     img: "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADwAQCdASoIAAwAAsBMJbACdAEO9EEVToAA/u3vPB3GqRdgxe8uJ89zzaAJZDE/3ZwbioJFW560aleR5Ur9nDGw+iamVcjogAAAAA==",
   },
   {
-    url: "/01-series/61-diciembre-2022-fuji-200/10.webp",
+    url: "/01-series/61-diciembre-2022-fujifilm-color-200/10.webp",
     img: "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADwAQCdASoIAAwAAsBMJYwCdAEO4dgsjWAA/vPJf8F9XIFdsr4IS19W4WJ+DrIn7IvR9gAA",
   },
   {
-    url: "/01-series/61-diciembre-2022-fuji-200/11.webp",
+    url: "/01-series/61-diciembre-2022-fujifilm-color-200/11.webp",
     img: "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADQAQCdASoIAAwAAsBMJYgCdH8AGBMkwAD+9OqrP387wNvPnHbd0P9YHlm0uF6/86wdxSJJpcN+AAAA",
   },
   {
-    url: "/01-series/61-diciembre-2022-fuji-200/12.webp",
+    url: "/01-series/61-diciembre-2022-fujifilm-color-200/12.webp",
     img: "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAAAQAgCdASoIAAwAAsBMJaACdAD5hRqwgLUAAP7yFBpTi6Wu3lIk6bsaXbaRoGDd5hbJEh56HhSAJKZF6qfcgAAA",
   },
   {
-    url: "/01-series/61-diciembre-2022-fuji-200/13.webp",
+    url: "/01-series/61-diciembre-2022-fujifilm-color-200/13.webp",
     img: "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADwAQCdASoIAAwAAsBMJbACdLoAArns6gAA+pM1Fp9y4rf75+ZML8L2Dgb9zG7/skkgbbKwSLwbJ5LZbH90AfYmBepb2Lt0EAA=",
   },
   {
-    url: "/01-series/61-diciembre-2022-fuji-200/14.webp",
+    url: "/01-series/61-diciembre-2022-fujifilm-color-200/14.webp",
     img: "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADQAQCdASoIAAUAAsBMJZgCdAD0h/tsAAD838A0KtpgtfP90q/BjDhBz5cE3LzJlqILuo9zqAA=",
   },
   {
-    url: "/01-series/61-diciembre-2022-fuji-200/15.webp",
+    url: "/01-series/61-diciembre-2022-fujifilm-color-200/15.webp",
     img: "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAQCdASoIAAwAAsBMJZACdAEO8fFcE5AA/uJyBBmPcoLhZKJz9W79LzJ9CU/5h7Xbqh1mHiNwEENoa1eCiAcHUo85IrjOEQcPXsubjuezykpYAAA=",
   },
   {
-    url: "/01-series/61-diciembre-2022-fuji-200/16.webp",
+    url: "/01-series/61-diciembre-2022-fujifilm-color-200/16.webp",
     img: "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAQAgCdASoIAAwAAsBMJaACdAD0p0O7nRQAAP5aIpW49Aqte9zuiy3jYE2UV/qsBk6mwLcivvUfOTQ8sg+U5UtqUgxQzd1u0uZBjLuAfAA=",
   },
   {
-    url: "/01-series/61-diciembre-2022-fuji-200/17.webp",
+    url: "/01-series/61-diciembre-2022-fujifilm-color-200/17.webp",
     img: "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADQAQCdASoIAAUAAsBMJbACdADdIjqeAAD5UPzf2Jih4mCNYsJKxQxFgO/DkUohM8aNt5rHzjdQlLAVF1u8bi0VAAA=",
   },
   {
-    url: "/01-series/61-diciembre-2022-fuji-200/18.webp",
+    url: "/01-series/61-diciembre-2022-fujifilm-color-200/18.webp",
     img: "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADQAQCdASoIAAwAAsBMJYgCdAEOtSseAAD++BzvuIR1vcbj3LbfMmhV5H2SSDvsvTa9hdZEmf0UOL6Rk9QAAA==",
   },
   {
-    url: "/01-series/61-diciembre-2022-fuji-200/19.webp",
+    url: "/01-series/61-diciembre-2022-fujifilm-color-200/19.webp",
     img: "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAACwAQCdASoIAAUAAsBMJZACdAD0cgEQAP1PR0G4hpjiX7/R6++vdeGDjozOQ586tlk06Y7jVm8ZjBgAAAA=",
   },
 ];
