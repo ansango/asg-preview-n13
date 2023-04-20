@@ -34,26 +34,22 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const data = await getPage({ params });
-
+  const url = `${process.env.NEXT_PUBLIC_WEB_URI}${
+    params.filename === "index" ? "" : `/${params.filename}`
+  }`;
   return {
     title: `${data?.title ?? "Film captures"} | Aníbal Santos Gómez `,
     description: data?.description,
     openGraph: {
       type: "website",
-      title: data?.title,
-      description: "a description",
-      url: `https://anibalsantosgomez.com${
-        params.filename === "index" ? "" : `/${params.filename}`
-      }`,
+      title: `${data?.title ?? "Film captures"} | Aníbal Santos Gómez `,
+      description: data?.description ?? "Film captures",
+      url,
     },
     alternates: {
-      canonical: `https://anibalsantosgomez.com${
-        params.filename === "index" ? "" : `/${params.filename}`
-      }`,
+      canonical: url,
       languages: {
-        es: `https://anibalsantosgomez.com${
-          params.filename === "index" ? "" : `/${params.filename}`
-        }`,
+        es: url,
       },
     },
   };
