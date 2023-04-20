@@ -4,6 +4,8 @@ import "@/styles/globals.css";
 
 import { Inter, PT_Serif, Bebas_Neue } from "next/font/google";
 
+import { Analytics } from "@/components";
+
 import GlobalData from "../content/global/index.json";
 
 export const metadata = {
@@ -70,6 +72,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <meta content="#ffffff" name="theme-color" />
         <meta content="#ffffff" name="msapplication-TileColor" />
         <meta content="/browserconfig.xml" name="msapplication-config" />
+        <Analytics />
         {children}
       </body>
     </html>

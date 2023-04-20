@@ -7,7 +7,7 @@ import { Container, Section } from "@/components";
 import type { MasonryWithLightBoxProps } from "@/components";
 import type { BodySimpleProps, HeroSerieProps } from "@/components/cms";
 import { BodySimple, HeroSerie } from "@/components/cms";
-import { getSerie, getSerieConnection } from "@/lib";
+import { formatDate, getSerie, getSerieConnection } from "@/lib";
 
 import MasonryWithLightBox from "../../../components/lightbox";
 
@@ -33,19 +33,24 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const data = await getSerie({ params });
-  const serie = `${data?._sys.filename.replace(".mdx", "").replaceAll("-", " ")} |`;
+  const serie = `${data?._sys.filename.replaceAll("-", " ")} |`;
   const url = `${process.env.NEXT_PUBLIC_WEB_URI}/serie/${params.filename}`;
   const tags = (data?.meta?.tags as unknown as Array<string>)
     ?.join(", ")
     ?.replaceAll("-", " ")
     ?.split(", ");
   const title = `Serie | ${serie} Aníbal Santos Gómez`;
+  const description = ` Serie ${serie} producida con ${data?.meta?.camera} durante el ${formatDate(
+    data?.meta?.shot?.start as string
+  )} y el ${formatDate(data?.meta?.shot?.end as string)} y publicada el ${formatDate(
+    data?.meta?.publishedAt as string
+  )}`;
   return {
     title,
-    description: data?.meta?.description || "",
+    description,
     openGraph: {
-      title: title,
-      description: data?.meta?.description || "",
+      title,
+      description,
       url,
       images: [
         {

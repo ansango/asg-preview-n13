@@ -7,3 +7,4 @@ export * from "./masonry";
 export * from "./section";
 export * from "./layout";
 export * from "./pagination";
+export * from "./analytics";

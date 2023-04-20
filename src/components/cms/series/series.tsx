@@ -56,7 +56,7 @@ export const Series: FC<Props> = ({ data }) => {
                   <h3 className="font-semibold tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em]">
                     <Balancer>{filename?.replaceAll("-", " ")}</Balancer>
                   </h3>
-                  <p className="text-sm">{meta?.description}</p>
+
                   <Link className="text-sm" href={`/serie/${filename}`}>
                     ver más
                   </Link>

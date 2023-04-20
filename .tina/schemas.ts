@@ -9,15 +9,6 @@ export const metaSchema: TinaField = {
 
   fields: [
     {
-      label: "Description",
-      name: "description",
-      type: "string",
-      ui: {
-        component: "textarea",
-      },
-    },
-
-    {
       type: "datetime",
       label: "Published At",
       name: "publishedAt",
