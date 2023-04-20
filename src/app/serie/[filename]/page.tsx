@@ -49,6 +49,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     title,
     description,
     openGraph: {
+      type: "article",
       title,
       description,
       url,

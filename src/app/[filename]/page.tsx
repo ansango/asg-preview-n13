@@ -39,6 +39,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     title: `${data?.title ?? "Film captures"} | Aníbal Santos Gómez `,
     description: data?.description,
     openGraph: {
+      type: "website",
       title: data?.title,
       description: "a description",
       url: `https://anibalsantosgomez.com${
